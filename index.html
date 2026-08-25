@@ -1,529 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>E.G. Studio | White-Label Short-Form Content Fulfillment</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-  <style>
-    :root {
-      --bg: #07090f;
-      --panel: #0f1320;
-      --panel-soft: #141a2b;
-      --border: #2a3248;
-      --text: #f9fbff;
-      --muted: #a7b3ce;
-      --brand: #e8ecff;
-      --accent: #8ab4ff;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>E.G. Studio | White-Label Short-Form Content Fulfillment</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    body {
-      background: radial-gradient(circle at top, #0c1120 0%, var(--bg) 46%);
-      color: var(--text);
-      font-family: "Montserrat", sans-serif;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
+<style>
+:root{
+--bg:#07090f;
+--panel:#0f1320;
+--border:#2a3248;
+--text:#f9fbff;
+--muted:#a7b3ce;
+--brand:#e8ecff;
+--accent:#8ab4ff;
+}
 
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    header {
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-      background: rgba(7, 9, 15, 0.82);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    .navbar {
-      min-height: 84px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 12px 0;
-    }
+body{
+font-family:"Montserrat",sans-serif;
+background:radial-gradient(circle at top,#0c1120 0%,var(--bg) 46%);
+color:var(--text);
+line-height:1.7;
+}
 
-    .logo {
-      height: 56px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-      filter: drop-shadow(0 8px 24px rgba(138, 180, 255, 0.16));
-    }
+.container{
+max-width:1120px;
+margin:auto;
+padding:0 24px;
+}
 
-    .nav-actions {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
+header{
+position:sticky;
+top:0;
+z-index:100;
+backdrop-filter:blur(10px);
+background:rgba(7,9,15,.85);
+border-bottom:1px solid var(--border);
+}
 
-    section {
-      padding: 92px 0;
-    }
+.navbar{
+min-height:84px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+}
 
-    h1,
-    h2,
-    h3 {
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
+.logo{
+height:56px;
+}
 
-    h1 {
-      font-size: clamp(2.45rem, 6vw, 4.7rem);
-      line-height: 1.04;
-      margin-bottom: 20px;
-    }
+.nav-actions{
+display:flex;
+gap:12px;
+}
 
-    h2 {
-      font-size: clamp(1.95rem, 3.8vw, 2.85rem);
-      margin-bottom: 20px;
-    }
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 24px;
+border-radius:10px;
+font-weight:700;
+text-decoration:none;
+transition:.25s;
+}
 
-    h3 {
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-    }
+.btn:hover{
+transform:translateY(-2px);
+}
 
-    p {
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
+.btn-primary{
+background:var(--brand);
+color:#101936;
+}
 
-    .hero {
-      text-align: center;
-      padding: 118px 0 98px;
-    }
+.btn-secondary{
+border:1px solid var(--border);
+color:white;
+}
 
-    .badge {
-      display: inline-block;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(138, 180, 255, 0.08);
-      color: #c9dcff;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      padding: 7px 14px;
-      margin-bottom: 24px;
-    }
+.btn-accent{
+background:linear-gradient(120deg,#4f7dff,#7ca3ff);
+color:white;
+}
 
-    .hero p {
-      max-width: 760px;
-      margin: 0 auto 36px;
-      font-size: 1.1rem;
-    }
+.hero{
+padding:120px 0;
+}
 
-    .btn-group {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+.hero-grid{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+gap:50px;
+align-items:center;
+}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      padding: 13px 22px;
-      font-weight: 700;
-      border-radius: 10px;
-      border: 1px solid transparent;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
+.badge{
+display:inline-block;
+padding:8px 14px;
+border-radius:999px;
+border:1px solid var(--border);
+background:rgba(138,180,255,.08);
+color:#c9dcff;
+font-size:.8rem;
+font-weight:700;
+margin-bottom:22px;
+}
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+h1{
+font-size:clamp(2.8rem,5vw,4.8rem);
+line-height:1.05;
+margin-bottom:20px;
+}
 
-    .btn-primary {
-      background: var(--brand);
-      color: #111936;
-      box-shadow: 0 8px 26px rgba(232, 236, 255, 0.22);
-    }
+h2{
+font-size:clamp(2rem,4vw,3rem);
+margin-bottom:20px;
+}
 
-    .btn-primary:hover {
-      background: #ffffff;
-    }
+h3{
+margin-bottom:10px;
+}
 
-    .btn-secondary {
-      background: transparent;
-      border-color: var(--border);
-      color: var(--text);
-    }
+p{
+color:var(--muted);
+}
 
-    .btn-secondary:hover {
-      background: var(--panel);
-    }
+.hero-copy p{
+margin-bottom:30px;
+font-size:1.05rem;
+max-width:650px;
+}
 
-    .btn-accent {
-      background: linear-gradient(120deg, #4f7dff, #7ca3ff);
-      color: #ffffff;
-      box-shadow: 0 8px 26px rgba(79, 125, 255, 0.28);
-    }
+.btn-group{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
 
-    .btn-accent:hover {
-      filter: brightness(1.05);
-    }
+.hero-panel{
+display:grid;
+gap:18px;
+}
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 56px;
-    }
+.hero-stat{
+padding:28px;
+border:1px solid var(--border);
+border-radius:16px;
+background:linear-gradient(
+180deg,
+rgba(19,24,39,.95),
+rgba(15,20,33,.95)
+);
+}
 
-    .stat,
-    .card,
-    .step,
-    .video-card {
-      background: linear-gradient(180deg, rgba(19, 24, 39, 0.95) 0%, rgba(15, 20, 33, 0.95) 100%);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-    }
+.hero-stat span{
+display:block;
+font-size:2rem;
+font-weight:800;
+color:#dce8ff;
+}
 
-    .stat {
-      padding: 28px;
-      text-align: center;
-    }
+section{
+padding:90px 0;
+}
 
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #dce8ff;
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-    }
+.card,
+.video-card,
+.step{
+background:linear-gradient(
+180deg,
+rgba(19,24,39,.95),
+rgba(15,20,33,.95)
+);
+border:1px solid var(--border);
+border-radius:14px;
+}
 
-    .card {
-      padding: 28px;
-    }
+.card{
+padding:26px;
+}
 
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:20px;
+}
 
-    .video-card {
-      overflow: hidden;
-    }
+.video-card{
+overflow:hidden;
+}
 
-    .video-card video {
-      width: 100%;
-      display: block;
-      background: #02040b;
-    }
+.video-card video{
+width:100%;
+display:block;
+}
 
-    .video-content {
-      padding: 18px;
-    }
+.video-content{
+padding:18px;
+}
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
 
-    .step {
-      padding: 22px;
-    }
+.step{
+padding:22px;
+}
 
-    .step-number {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-      color: var(--accent);
-    }
+.step-number{
+font-size:2rem;
+font-weight:800;
+color:var(--accent);
+}
 
-    .founder {
-      max-width: 740px;
-      margin: 0 auto;
-      text-align: center;
-    }
+.founder{
+max-width:800px;
+margin:auto;
+text-align:center;
+}
 
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 22px 0;
-    }
+.faq-item{
+padding:20px 0;
+border-bottom:1px solid var(--border);
+}
 
-    .cta {
-      text-align: center;
-    }
+.cta{
+text-align:center;
+}
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 36px 0;
-      text-align: center;
-      color: var(--muted);
-    }
+footer{
+padding:40px 0;
+border-top:1px solid var(--border);
+text-align:center;
+}
 
-    @media (max-width: 900px) {
-      .steps {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+@media(max-width:900px){
 
-    @media (max-width: 768px) {
-      .navbar {
-        justify-content: center;
-        text-align: center;
-      }
+.steps{
+grid-template-columns:1fr 1fr;
+}
 
-      .nav-actions {
-        justify-content: center;
-      }
+.hero-grid{
+grid-template-columns:1fr;
+}
 
-      .hero {
-        padding: 94px 0 82px;
-      }
+.hero-copy{
+text-align:center;
+}
 
-      .stats,
-      .steps {
-        grid-template-columns: 1fr;
-      }
+.hero-copy p{
+margin-left:auto;
+margin-right:auto;
+}
+}
 
-      section {
-        padding: 68px 0;
-      }
-    }
-  </style>
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+padding:15px 0;
+}
+
+.steps{
+grid-template-columns:1fr;
+}
+
+.btn-group{
+justify-content:center;
+}
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <div class="navbar">
-        <img src="./IMG_1459.png" alt="E.G. Studio" class="logo" />
-        <div class="nav-actions">
-          <a class="btn btn-secondary" href="https://tally.so/r/aQXV4E" target="_blank" rel="noopener noreferrer">Book on Tally</a>
-          <a class="btn btn-accent" href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" aria-label="Pay for your sprint">Pay Now</a>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <section class="hero">
-    <div class="container">
-      <span class="badge">White-Label Fulfillment for B2B Agencies</span>
-      <h1>Turn Long-Form Content Into Premium Short-Form Video</h1>
-      <p>
-        Convert podcasts, webinars, interviews, and long-form sessions into platform-ready video assets without hiring in-house editors,
-        managing freelancers, or increasing payroll complexity.
-      </p>
-      <div class="btn-group">
-        <a class="btn btn-primary" href="https://tally.so/r/aQXV4E" target="_blank" rel="noopener noreferrer">Reserve a Pipeline Sprint</a>
-        <a class="btn btn-accent" href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06">Pay for Your Sprint</a>
-        <a class="btn btn-secondary" href="#samples">View Sample Work</a>
-      </div>
+<header>
+<div class="container">
+<div class="navbar">
 
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-number">15</div>
-          <p>Vertical Video Assets</p>
-        </div>
-        <div class="stat">
-          <div class="stat-number">$1,500</div>
-          <p>Flat One-Time Sprint</p>
-        </div>
-        <div class="stat">
-          <div class="stat-number">30</div>
-          <p>Day Delivery Window</p>
-        </div>
-      </div>
-    </div>
-  </section>
+./IMG_1459.png
 
-  <section>
-    <div class="container">
-      <h2>Add Short-Form Video Services Without Hiring Editors</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>White-Label Fulfillment</h3>
-          <p>All work is delivered behind your brand. Your clients stay your clients.</p>
-        </div>
-        <div class="card">
-          <h3>Operational Simplicity</h3>
-          <p>No recruiting, onboarding, payroll management, or freelancer supervision.</p>
-        </div>
-        <div class="card">
-          <h3>Platform Ready</h3>
-          <p>Optimized for LinkedIn, X, YouTube Shorts, Instagram Reels, and TikTok.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="nav-actions">
+intake.htmlGet Started</a>
+intake.htmlPay Now</a>
+</div>
 
-  <section id="samples">
-    <div class="container">
-      <h2>Sample Deliverables</h2>
-      <p>Examples of editing standards and content repurposing workflow.</p>
+</div>
+</div>
+</header>
 
-      <div class="video-grid">
-        <div class="video-card">
-          <video controls preload="metadata">
-            <source src="assets/videos/Sample01.MP4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div class="video-content">
-            <h3>Founder Thought Leadership</h3>
-            <p>Executive insight clip optimized for LinkedIn engagement.</p>
-          </div>
-        </div>
+<section class="hero">
+<div class="container">
 
-        <div class="video-card">
-          <video controls preload="metadata">
-            <source src="assets/videos/Sample02.MP4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div class="video-content">
-            <h3>Podcast Repurposing</h3>
-            <p>Long-form episode transformed into vertical short-form content.</p>
-          </div>
-        </div>
+<div class="hero-grid">
 
-        <div class="video-card">
-          <video controls preload="metadata">
-            <source src="assets/videos/Sample01.MP4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div class="video-content">
-            <h3>Authority Clip</h3>
-            <p>Single-speaker insight cut with captions and visual emphasis.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="hero-copy">
 
-  <section>
-    <div class="container">
-      <h2>How It Works</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Send Content</h3>
-          <p>Provide podcasts, webinars, interviews, or recordings.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>Clip Extraction</h3>
-          <p>We identify the strongest insights and authority moments.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Production</h3>
-          <p>Videos are edited, captioned, and formatted for vertical viewing.</p>
-        </div>
-        <div class="step">
-          <div class="step-number">4</div>
-          <h3>Delivery</h3>
-          <p>Assets are delivered through a streamlined white-label workflow.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<span class="badge">White-Label Fulfillment for B2B Agencies</span>
 
-  <section>
-    <div class="container">
-      <h2>What's Included</h2>
-      <div class="grid">
-        <div class="card"><h3>15 Vertical Videos</h3></div>
-        <div class="card"><h3>9:16 Reframing</h3></div>
-        <div class="card"><h3>Executive Captions</h3></div>
-        <div class="card"><h3>Pacing Optimization</h3></div>
-        <div class="card"><h3>Keyword Highlighting</h3></div>
-        <div class="card"><h3>White-Label Delivery</h3></div>
-      </div>
-    </div>
-  </section>
+<h1>
+Scale Short-Form Video Delivery Without Hiring Editors
+</h1>
 
-  <section>
-    <div class="container">
-      <div class="founder">
-        <h2>Why E.G. Studio Exists</h2>
-        <p>
-          Most B2B agencies already have clients producing valuable long-form content. The bottleneck is converting that content into
-          consistent short-form distribution without expanding internal operations.
-        </p>
-        <p>
-          E.G. Studio was created to provide a dedicated white-label fulfillment layer that helps agencies increase service value while
-          maintaining a lean operating structure.
-        </p>
-        <a class="btn btn-secondary" href="https://www.linkedin.com/company/egstudio/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
-      </div>
-    </div>
-  </section>
+<p>
+Turn podcasts, webinars, interviews, and long-form recordings
+into polished short-form content your clients can publish immediately.
+Increase client value without increasing headcount.
+</p>
 
-  <section>
-    <div class="container">
-      <h2>Frequently Asked Questions</h2>
+<div class="btn-group">
+intake.html
+Get Started
+</a>
 
-      <div class="faq-item">
-        <h3>Will my clients know E.G. Studio is involved?</h3>
-        <p>No. Deliverables are provided through a white-label workflow.</p>
-      </div>
+#samples
+View Samples
+</a>
+</div>
 
-      <div class="faq-item">
-        <h3>How many assets are included?</h3>
-        <p>Every Pipeline Sprint includes 15 finished vertical video assets.</p>
-      </div>
+</div>
 
-      <div class="faq-item">
-        <h3>What types of content can be repurposed?</h3>
-        <p>Podcasts, webinars, interviews, presentations, keynotes, and recorded discussions.</p>
-      </div>
+<div class="hero-panel">
 
-      <div class="faq-item">
-        <h3>How much does the sprint cost?</h3>
-        <p>$1,500 flat.</p>
-      </div>
-    </div>
-  </section>
+<div class="hero-stat">
+<span>15 Videos</span>
+<p>Professionally Produced Assets</p>
+</div>
 
-  <section class="cta">
-    <div class="container">
-      <h2>Reserve Your 30-Day Pipeline Sprint</h2>
-      <p>Receive 15 professionally produced short-form assets delivered through a streamlined white-label workflow.</p>
-      <div class="btn-group">
-        <a class="btn btn-primary" href="https://tally.so/r/aQXV4E" target="_blank" rel="noopener noreferrer">Get Started on Tally</a>
-        <a class="btn btn-accent" href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06">Pay Now</a>
-      </div>
-    </div>
-  </section>
+<div class="hero-stat">
+<span>$1,500</span>
+<p>Flat One-Time Sprint</p>
+</div>
 
-  <footer>
-    <div class="container">
-      <p>© 2026 E.G. Studio • White-Label Short-Form Content Fulfillment</p>
-      <p><a class="btn btn-secondary" href="mailto:ops@egstudio.tech">ops@egstudio.tech</a></p>
-    </div>
-  </footer>
+<div class="hero-stat">
+<span>30 Days</span>
+<p>Delivery Timeline</p>
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Add Short-Form Video Services Without Hiring Editors</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>White-Label Fulfillment</h3>
+<p>Everything delivered behind your brand.</p>
+</div>
+
+<div class="card">
+<h3>Operational Simplicity</h3>
+<p>No hiring, training, or freelancer management.</p>
+</div>
+
+<div class="card">
+<h3>Platform Ready</h3>
+<p>Optimized for LinkedIn, TikTok, Reels, Shorts, and X.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="samples">
+<div class="container">
+
+<h2>Sample Deliverables</h2>
+<p>Examples of editing standards and repurposed content.</p>
+
+<div class="video-grid">
+
+<div class="video-card">
+
+<video controls preload="metadata">
+assets/videos/Sample01.MP4
+</video>
+
+<div class="video-content">
+<h3>Founder Thought Leadership</h3>
+<p>Executive insight built for engagement.</p>
+</div>
+
+</div>
+
+<div class="video-card">
+
+<video controls preload="metadata">
+assets/videos/Sample03.MP4
+</video>
+
+<div class="video-content">
+<h3>Podcast Repurposing</h3>
+<p>Long-form content transformed into vertical clips.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>How It Works</h2>
+
+<div class="steps">
+
+<div class="step">
+<div class="step-number">1</div>
+<h3>Submit Content</h3>
+<p>Upload podcasts, webinars, interviews, and recordings.</p>
+</div>
+
+<div class="step">
+<div class="step-number">2</div>
+<h3>Clip Selection</h3>
+<p>We identify the strongest moments and insights.</p>
+</div>
+
+<div class="step">
+<div class="step-number">3</div>
+<h3>Production</h3>
+<p>Editing, captions, formatting, and visual optimization.</p>
+</div>
+
+<div class="step">
+<div class="step-number">4</div>
+<h3>Delivery</h3>
+<p>White-label assets delivered to your agency.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Reserve Your Pipeline Sprint</h2>
+
+<p>
+Receive 15 professional short-form videos delivered through a
+streamlined white-label workflow.
+</p>
+
+<div class="btn-group">
+
+intake.html
+Get Started
+</a>
+
+intake.html
+Pay Now
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<p>
+© 2026 E.G. Studio • White-Label Short-Form Content Fulfillment
+</p>
+
+<br>
+
+<a class="btn btn-secondary" href="mailto:ops@egstudio.tech">
+ops@egstudio.tech
+</a>
+
+</div>
+
+</footer>
+
 </body>
 </html>
