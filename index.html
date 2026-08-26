@@ -6,161 +6,219 @@
 
 <title>E.G. Studio | White-Label Short-Form Content Fulfillment</title>
 
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
---bg:#07090f;
---text:#f9fbff;
---muted:#a7b3ce;
---border:#2a3248;
---brand:#e8ecff;
+  --bg:#07090f;
+  --text:#f9fbff;
+  --muted:#a7b3ce;
+  --border:#2a3248;
+  --brand:#e8ecff;
 }
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-font-family:'Montserrat',sans-serif;
-background:#07090f;
-color:var(--text);
-line-height:1.7;
+  font-family:'Montserrat',sans-serif;
+  background:#07090f;
+  color:var(--text);
+  line-height:1.7;
 }
 
 .container{
-max-width:1100px;
-margin:auto;
-padding:0 24px;
+  max-width:1100px;
+  margin:auto;
+  padding:0 24px;
 }
 
 header{
-border-bottom:1px solid var(--border);
-padding:20px 0;
+  border-bottom:1px solid var(--border);
+  padding:20px 0;
 }
 
 .navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.brand-link{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:800;
+  font-size:1.4rem;
 }
 
 .logo{
-height:56px;
+  height:46px;
+  width:auto;
+  display:block;
+  object-fit:contain;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.nav-link{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:600;
+  transition:color 0.2s;
+}
+
+.nav-link:hover{
+  color:var(--text);
 }
 
 .btn{
-display:inline-block;
-padding:14px 24px;
-border-radius:10px;
-font-weight:700;
-text-decoration:none;
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  transition:opacity 0.2s ease;
+}
+
+.btn:hover{
+  opacity:0.9;
 }
 
 .btn-primary{
-background:var(--brand);
-color:#111;
+  background:var(--brand);
+  color:#111;
 }
 
 .btn-secondary{
-border:1px solid var(--border);
-color:white;
+  border:1px solid var(--border);
+  color:white;
 }
 
 .hero{
-padding:80px 0;
+  padding:80px 0;
 }
 
 .hero-grid{
-display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:40px;
-align-items:center;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+  align-items:center;
 }
 
 .badge{
-display:inline-block;
-padding:8px 14px;
-border:1px solid var(--border);
-border-radius:999px;
-margin-bottom:20px;
-color:#c9dcff;
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  margin-bottom:20px;
+  color:#c9dcff;
 }
 
 .hero-stat{
-padding:24px;
-border:1px solid var(--border);
-border-radius:14px;
-margin-bottom:15px;
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  margin-bottom:15px;
 }
 
 section{
-padding:70px 0;
+  padding:70px 0;
 }
 
 .card{
-padding:24px;
-border:1px solid var(--border);
-border-radius:14px;
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:14px;
 }
 
 .grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
 }
 
 .video-card{
-padding:24px;
-border:1px solid var(--border);
-border-radius:14px;
+  padding:24px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#0c101c;
+}
+
+.video-wrapper{
+  width:100%;
+  border-radius:10px;
+  overflow:hidden;
+  background:#000;
 }
 
 video{
-width:100%;
-border-radius:10px;
+  width:100%;
+  max-height:540px;
+  border-radius:10px;
+  display:block;
+  object-fit:cover;
 }
 
 h1{
-font-size:clamp(2.5rem,5vw,4.5rem);
-line-height:1.1;
-margin-bottom:20px;
+  font-size:clamp(2.2rem,5vw,4.2rem);
+  line-height:1.15;
+  margin-bottom:20px;
 }
 
 h2{
-margin-bottom:20px;
+  font-size:1.8rem;
+  margin-bottom:20px;
 }
 
 p{
-color:var(--muted);
+  color:var(--muted);
+}
+
+footer{
+  border-top:1px solid var(--border);
+  padding:40px 0 60px;
+  text-align:center;
 }
 
 @media(max-width:768px){
+  .hero-grid,
+  .grid{
+    grid-template-columns:1fr;
+  }
 
-.hero-grid,
-.grid{
-grid-template-columns:1fr;
-}
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
 
-.navbar{
-flex-direction:column;
-}
+  .nav-links{
+    width:100%;
+    justify-content:center;
+  }
 
-.btn{
-display:block;
-text-align:center;
-margin-bottom:10px;
-}
+  .btn{
+    display:block;
+    text-align:center;
+  }
 
-.logo{
-height:42px;
-}
+  .logo{
+    height:38px;
+  }
 }
 </style>
 </head>
@@ -169,173 +227,148 @@ height:42px;
 
 <header>
 <div class="container">
+  <div class="navbar">
+    <a href="/" class="brand-link">
+      <img src="assets/img/logo.png" alt="E.G. Studio" class="logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <span style="display:none;">E.G. Studio</span>
+    </a>
 
-<div class="navbar">
-
-<h2>E.G. Studio</h2>
-
-<div>
-  Vertical Pipeline</a>
-<a href="intake.html" class="btn btn-primary">Get Started</a>
-</div>
-
-</div>
-
-
+    <div class="nav-links">
+      <a href="#samples" class="nav-link">Sample Deliverables</a>
+      <a href="intake.html" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
 </div>
 </header>
 
 <section class="hero">
 <div class="container">
+  <div class="hero-grid">
+    <div>
+      <span class="badge">
+        White-Label Fulfillment for B2B Agencies
+      </span>
 
-<div class="hero-grid">
+      <h1>
+        Scale Short-Form Video Delivery Without Hiring Editors
+      </h1>
 
-<div>
+      <p>
+        Turn podcasts, webinars, interviews, and long-form recordings into polished short-form content your clients can publish immediately. Increase client value without increasing headcount.
+      </p>
 
-<span class="badge">
-White-Label Fulfillment for B2B Agencies
-</span>
+      <br>
 
-<h1>
-Scale Short-Form Video Delivery Without Hiring Editors
-</h1>
+      <a href="intake.html" class="btn btn-primary">
+        Start Your Sprint
+      </a>
+    </div>
 
-<p>
-Turn podcasts, webinars, interviews, and long-form recordings into polished short-form content your clients can publish immediately.
-Increase client value without increasing headcount.
-</p>
+    <div>
+      <div class="hero-stat">
+        <h2>15 Videos</h2>
+        <p>Professional Short-Form Assets</p>
+      </div>
 
-<br>
+      <div class="hero-stat">
+        <h2>$1,500</h2>
+        <p>Flat Sprint Price</p>
+      </div>
 
-<a href="intake.html" class="btn btn-primary">
-Start Your Sprint
-</a>
-
-</div>
-
-<div>
-
-<div class="hero-stat">
-<h2>15 Videos</h2>
-<p>Professional Short-Form Assets</p>
-</div>
-
-<div class="hero-stat">
-<h2>$1,500</h2>
-<p>Flat Sprint Price</p>
-</div>
-
-<div class="hero-stat">
-<h2>30 Days</h2>
-<p>Target Delivery Timeline</p>
-</div>
-
-</div>
-
-</div>
-
+      <div class="hero-stat">
+        <h2>30 Days</h2>
+        <p>Target Delivery Timeline</p>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 
 <section id="samples">
 <div class="container">
+  <h2>Sample Deliverables</h2>
 
-<h2>Sample Deliverables</h2>
+  <div class="grid">
+    <div class="video-card">
+      <div class="video-wrapper">
+        <video controls playsinline preload="metadata">
+          <source src="assets/videos/Sample01.MP4" type="video/mp4">
+          <source src="assets/videos/Sample01.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
-<div class="grid">
+      <h3 style="margin-top:15px;">
+        Founder Thought Leadership
+      </h3>
 
-<div class="video-card">
+      <p>
+        Executive insights transformed into platform-ready content.
+      </p>
+    </div>
 
-<video controls playsinline width="100%">
-assets/videos/Sample01.MP4
-</video>
+    <div class="video-card">
+      <div class="video-wrapper">
+        <video controls playsinline preload="metadata">
+          <source src="assets/videos/Sample02.MP4" type="video/mp4">
+          <source src="assets/videos/Sample02.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
+      <h3 style="margin-top:15px;">
+        Raw-to-Edited Transformation
+      </h3>
 
-<h3 style="margin-top:15px;">
-Founder Thought Leadership
-</h3>
-
-<p>
-Executive insights transformed into platform-ready content.
-</p>
-
-</div>
-
-<div class="video-card">
-
-<video controls playsinline width="100%">
-assets/videos/Sample02.MP4
-</video>
-
-
-<h3 style="margin-top:15px;">
-Raw-to-Edited Transformation
-</h3>
-
-<p>
-See how raw footage is transformed into polished short-form content ready for client distribution.
-</p>
-
-</div>
-
-</div>
-
+      <p>
+        See how raw footage is transformed into polished short-form content ready for client distribution.
+      </p>
+    </div>
+  </div>
 </div>
 </section>
 
 <section>
 <div class="container">
+  <h2>How It Works</h2>
 
-<h2>How It Works</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>1. Submit Content</h3>
+      <p>Upload podcasts, webinars, interviews, or recordings.</p>
+    </div>
 
-<div class="grid">
-
-<div class="card">
-<h3>1. Submit Content</h3>
-<p>Upload podcasts, webinars, interviews, or recordings.</p>
-</div>
-
-<div class="card">
-<h3>2. Production & Delivery</h3>
-<p>We edit, optimize, and deliver 15 white-label assets.</p>
-</div>
-
-</div>
-
+    <div class="card">
+      <h3>2. Production & Delivery</h3>
+      <p>We edit, optimize, and deliver 15 white-label assets.</p>
+    </div>
+  </div>
 </div>
 </section>
 
 <section>
 <div class="container">
+  <h2>Reserve Your Pipeline Sprint</h2>
 
-<h2>Reserve Your Pipeline Sprint</h2>
+  <p>
+    Validate demand, increase client value, and expand fulfillment capacity without hiring editors.
+  </p>
 
-<p>
-Validate demand, increase client value, and expand fulfillment capacity without hiring editors.
-</p>
+  <br>
 
-<br>
-
-<a href="intake.html" class="btn btn-primary">
-Start Your Sprint
-</a>
-
+  <a href="intake.html" class="btn btn-primary">
+    Start Your Sprint
+  </a>
 </div>
 </section>
 
 <footer>
 <div class="container">
-
-<p>
-© 2026 E.G. Studio
-</p>
-
-<br>
-
-<a href="mailto:ops@egstudio.tech" class="btn btn-secondary">
-ops@egstudio.tech
-</a>
-
+  <p>© 2026 E.G. Studio</p>
+  <br>
+  <a href="mailto:ops@egstudio.tech" class="btn btn-secondary">
+    ops@egstudio.tech
+  </a>
 </div>
 </footer>
 
