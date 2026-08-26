@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="White-label short-form video fulfillment for B2B agencies.">
+
 <title>E.G. Studio | White-Label Short-Form Content Fulfillment</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +15,6 @@
 <style>
 :root{
 --bg:#07090f;
---panel:#0f1320;
 --border:#2a3248;
 --text:#f9fbff;
 --muted:#a7b3ce;
@@ -27,13 +28,9 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
-font-family:"Montserrat",sans-serif;
-background:radial-gradient(circle at top,#0c1120 0%,var(--bg) 46%);
+font-family:'Montserrat',sans-serif;
+background:#07090f;
 color:var(--text);
 line-height:1.7;
 }
@@ -47,47 +44,32 @@ padding:0 24px;
 header{
 position:sticky;
 top:0;
-z-index:100;
-backdrop-filter:blur(10px);
-background:rgba(7,9,15,.85);
+background:rgba(7,9,15,.9);
 border-bottom:1px solid var(--border);
 }
 
 .navbar{
-min-height:84px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-gap:20px;
+padding:20px 0;
 }
 
 .logo{
 height:56px;
 }
 
-.nav-actions{
-display:flex;
-gap:12px;
-}
-
 .btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
+display:inline-block;
 padding:14px 24px;
 border-radius:10px;
 font-weight:700;
 text-decoration:none;
-transition:.25s;
-}
-
-.btn:hover{
-transform:translateY(-2px);
 }
 
 .btn-primary{
 background:var(--brand);
-color:#101936;
+color:#111;
 }
 
 .btn-secondary{
@@ -95,203 +77,64 @@ border:1px solid var(--border);
 color:white;
 }
 
-.btn-accent{
-background:linear-gradient(120deg,#4f7dff,#7ca3ff);
-color:white;
-}
-
 .hero{
-padding:120px 0;
+padding:90px 0;
 }
 
 .hero-grid{
 display:grid;
 grid-template-columns:1.2fr .8fr;
-gap:50px;
+gap:40px;
 align-items:center;
 }
 
 .badge{
 display:inline-block;
 padding:8px 14px;
-border-radius:999px;
 border:1px solid var(--border);
-background:rgba(138,180,255,.08);
+border-radius:999px;
+margin-bottom:20px;
 color:#c9dcff;
-font-size:.8rem;
-font-weight:700;
-margin-bottom:22px;
-}
-
-h1{
-font-size:clamp(2.8rem,5vw,4.8rem);
-line-height:1.05;
-margin-bottom:20px;
-}
-
-h2{
-font-size:clamp(2rem,4vw,3rem);
-margin-bottom:20px;
-}
-
-h3{
-margin-bottom:10px;
-}
-
-p{
-color:var(--muted);
-}
-
-.hero-copy p{
-margin-bottom:30px;
-font-size:1.05rem;
-max-width:650px;
-}
-
-.btn-group{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-}
-
-.hero-panel{
-display:grid;
-gap:18px;
 }
 
 .hero-stat{
-padding:28px;
+padding:24px;
 border:1px solid var(--border);
-border-radius:16px;
-background:linear-gradient(
-180deg,
-rgba(19,24,39,.95),
-rgba(15,20,33,.95)
-);
-}
-
-.hero-stat span{
-display:block;
-font-size:2rem;
-font-weight:800;
-color:#dce8ff;
+border-radius:14px;
+margin-bottom:15px;
 }
 
 section{
-padding:90px 0;
+padding:80px 0;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card,
-.video-card,
-.step{
-background:linear-gradient(
-180deg,
-rgba(19,24,39,.95),
-rgba(15,20,33,.95)
-);
+.card{
+padding:24px;
 border:1px solid var(--border);
 border-radius:14px;
 }
 
-.card{
-padding:26px;
-}
-
-.video-grid{
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(3,1fr);
 gap:20px;
-}
-
-.video-card{
-overflow:hidden;
-}
-
-.video-card video{
-width:100%;
-display:block;
-}
-
-.video-content{
-padding:18px;
-}
-
-.steps{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-}
-
-.step{
-padding:22px;
-}
-
-.step-number{
-font-size:2rem;
-font-weight:800;
-color:var(--accent);
-}
-
-.founder{
-max-width:800px;
-margin:auto;
-text-align:center;
-}
-
-.faq-item{
-padding:20px 0;
-border-bottom:1px solid var(--border);
-}
-
-.cta{
-text-align:center;
-}
-
-footer{
-padding:40px 0;
-border-top:1px solid var(--border);
-text-align:center;
-}
-
-@media(max-width:900px){
-
-.steps{
-grid-template-columns:1fr 1fr;
-}
-
-.hero-grid{
-grid-template-columns:1fr;
-}
-
-.hero-copy{
-text-align:center;
-}
-
-.hero-copy p{
-margin-left:auto;
-margin-right:auto;
-}
 }
 
 @media(max-width:768px){
 
-.navbar{
-flex-direction:column;
-padding:15px 0;
-}
-
-.steps{
+.hero-grid,
+.grid{
 grid-template-columns:1fr;
 }
 
-.btn-group{
-justify-content:center;
+.btn{
+display:block;
+text-align:center;
+margin-bottom:10px;
+}
+
+.logo{
+height:42px;
 }
 }
 </style>
@@ -301,131 +144,145 @@ justify-content:center;
 
 <header>
 <div class="container">
+
 <div class="navbar">
 
-./IMG_1459.png
+IMG_1459.png
 
-<div class="nav-actions">
-intake.htmlGet Started</a>
-intake.htmlPay Now</a>
+<div>
+#samplesSamples</a>
+<a href="intake.html" class="btn btn-primary">Get Started</a>
 </div>
 
 </div>
+
 </div>
 </header>
-
 <section class="hero">
 <div class="container">
 
 <div class="hero-grid">
 
-<div class="hero-copy">
+<div>
 
-<span class="badge">White-Label Fulfillment for B2B Agencies</span>
+<span class="badge">
+White-Label Fulfillment for B2B Agencies
+</span>
 
 <h1>
 Scale Short-Form Video Delivery Without Hiring Editors
 </h1>
 
-<p>
+<p style="margin:20px 0;color:#a7b3ce;">
 Turn podcasts, webinars, interviews, and long-form recordings
 into polished short-form content your clients can publish immediately.
 Increase client value without increasing headcount.
 </p>
 
-<div class="btn-group">
-intake.html
-Get Started
+<a href="intake.html" class="btn btn-primary">
+Start Your Sprint
 </a>
 
 #samples
 View Samples
 </a>
-</div>
 
 </div>
 
-<div class="hero-panel">
+<div>
 
 <div class="hero-stat">
-<span>15 Videos</span>
-<p>Professionally Produced Assets</p>
+<h2>15 Videos</h2>
+<p>Professionally Produced Short-Form Assets</p>
 </div>
 
 <div class="hero-stat">
-<span>$1,500</span>
+<h2>$1,500</h2>
 <p>Flat One-Time Sprint</p>
 </div>
 
 <div class="hero-stat">
-<span>30 Days</span>
-<p>Delivery Timeline</p>
+<h2>30 Days</h2>
+<p>Target Delivery Timeline</p>
 </div>
 
 </div>
 
 </div>
+
 </div>
 </section>
 
 <section>
 <div class="container">
 
-<h2>Add Short-Form Video Services Without Hiring Editors</h2>
+<h2>
+Add Short-Form Video Services Without Hiring Editors
+</h2>
+
+<br>
 
 <div class="grid">
 
 <div class="card">
 <h3>White-Label Fulfillment</h3>
-<p>Everything delivered behind your brand.</p>
+<p>Everything is delivered behind your agency brand.</p>
 </div>
 
 <div class="card">
 <h3>Operational Simplicity</h3>
-<p>No hiring, training, or freelancer management.</p>
+<p>No recruiting, training, or freelancer management.</p>
 </div>
 
 <div class="card">
 <h3>Platform Ready</h3>
-<p>Optimized for LinkedIn, TikTok, Reels, Shorts, and X.</p>
+<p>Optimized for LinkedIn, Reels, Shorts, TikTok, and X.</p>
 </div>
 
 </div>
 
 </div>
 </section>
-
 <section id="samples">
 <div class="container">
 
 <h2>Sample Deliverables</h2>
-<p>Examples of editing standards and repurposed content.</p>
 
-<div class="video-grid">
+<p style="margin-bottom:30px;color:#a7b3ce;">
+Examples of editing quality and content repurposing.
+</p>
 
-<div class="video-card">
+<div class="grid">
 
-<video controls preload="metadata">
+<div class="card">
+
+<video controls width="100%">
 assets/videos/Sample01.MP4
 </video>
 
-<div class="video-content">
-<h3>Founder Thought Leadership</h3>
-<p>Executive insight built for engagement.</p>
-</div>
+<h3 style="margin-top:15px;">
+Founder Thought Leadership
+</h3>
+
+<p>
+Executive insights transformed into platform-ready content.
+</p>
 
 </div>
 
-<div class="video-card">
+<div class="card">
 
-<video controls preload="metadata">
+<video controls width="100%">
 assets/videos/Sample03.MP4
 </video>
 
-<div class="video-content">
-<h3>Podcast Repurposing</h3>
-<p>Long-form content transformed into vertical clips.</p>
-</div>
+<h3 style="margin-top:15px;">
+Podcast Repurposing
+</h3>
+
+<p>
+Long-form interviews converted into short-form clips.
+</p>
 
 </div>
 
@@ -439,30 +296,23 @@ assets/videos/Sample03.MP4
 
 <h2>How It Works</h2>
 
-<div class="steps">
+<br>
 
-<div class="step">
-<div class="step-number">1</div>
-<h3>Submit Content</h3>
-<p>Upload podcasts, webinars, interviews, and recordings.</p>
+<div class="grid">
+
+<div class="card">
+<h3>1. Submit Content</h3>
+<p>Upload podcasts, webinars, interviews, or recordings.</p>
 </div>
 
-<div class="step">
-<div class="step-number">2</div>
-<h3>Clip Selection</h3>
+<div class="card">
+<h3>2. Clip Selection</h3>
 <p>We identify the strongest moments and insights.</p>
 </div>
 
-<div class="step">
-<div class="step-number">3</div>
-<h3>Production</h3>
-<p>Editing, captions, formatting, and visual optimization.</p>
-</div>
-
-<div class="step">
-<div class="step-number">4</div>
-<h3>Delivery</h3>
-<p>White-label assets delivered to your agency.</p>
+<div class="card">
+<h3>3. Production & Delivery</h3>
+<p>We edit, caption, optimize, and deliver 15 assets.</p>
 </div>
 
 </div>
@@ -470,31 +320,45 @@ assets/videos/Sample03.MP4
 </div>
 </section>
 
-<section class="cta">
+<section>
+<div class="container">
 
+<h2>Frequently Asked Questions</h2>
+
+<br>
+
+<div class="card" style="margin-bottom:15px;">
+<h3>Who owns the client relationship?</h3>
+<p>Your agency does. E.G. Studio operates as a white-label fulfillment partner.</p>
+</div>
+
+<div class="card" style="margin-bottom:15px;">
+<h3>What is included?</h3>
+<p>15 short-form videos produced from the content you provide.</p>
+</div>
+
+<div class="card">
+<h3>What content can I submit?</h3>
+<p>Podcasts, webinars, interviews, presentations, and long-form videos.</p>
+</div>
+
+</div>
+</section>
+
+<section>
 <div class="container">
 
 <h2>Reserve Your Pipeline Sprint</h2>
 
-<p>
-Receive 15 professional short-form videos delivered through a
-streamlined white-label workflow.
+<p style="margin:20px 0;color:#a7b3ce;">
+Start with one sprint. Validate demand. Deliver more value to clients without expanding headcount.
 </p>
 
-<div class="btn-group">
-
-intake.html
-Get Started
-</a>
-
-intake.html
-Pay Now
+<a href="intake.html" class="btn btn-primary">
+Start Your Sprint
 </a>
 
 </div>
-
-</div>
-
 </section>
 
 <footer>
@@ -507,12 +371,11 @@ Pay Now
 
 <br>
 
-<a class="btn btn-secondary" href="mailto:ops@egstudio.tech">
+<a href="mailto:ops@egstudio.tech" class="btn btn-secondary">
 ops@egstudio.tech
 </a>
 
 </div>
-
 </footer>
 
 </body>
