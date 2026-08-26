@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="White-label short-form video fulfillment for B2B agencies.">
 
 <title>E.G. Studio | White-Label Short-Form Content Fulfillment</title>
 
@@ -15,11 +14,10 @@
 <style>
 :root{
 --bg:#07090f;
---border:#2a3248;
 --text:#f9fbff;
 --muted:#a7b3ce;
+--border:#2a3248;
 --brand:#e8ecff;
---accent:#8ab4ff;
 }
 
 *{
@@ -36,23 +34,21 @@ line-height:1.7;
 }
 
 .container{
-max-width:1120px;
+max-width:1100px;
 margin:auto;
 padding:0 24px;
 }
 
 header{
-position:sticky;
-top:0;
-background:rgba(7,9,15,.9);
 border-bottom:1px solid var(--border);
+padding:20px 0;
 }
 
 .navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 0;
+gap:20px;
 }
 
 .logo{
@@ -78,7 +74,7 @@ color:white;
 }
 
 .hero{
-padding:90px 0;
+padding:80px 0;
 }
 
 .hero-grid{
@@ -105,7 +101,7 @@ margin-bottom:15px;
 }
 
 section{
-padding:80px 0;
+padding:70px 0;
 }
 
 .card{
@@ -116,8 +112,33 @@ border-radius:14px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(2,1fr);
 gap:20px;
+}
+
+.video-card{
+padding:24px;
+border:1px solid var(--border);
+border-radius:14px;
+}
+
+video{
+width:100%;
+border-radius:10px;
+}
+
+h1{
+font-size:clamp(2.5rem,5vw,4.5rem);
+line-height:1.1;
+margin-bottom:20px;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+p{
+color:var(--muted);
 }
 
 @media(max-width:768px){
@@ -125,6 +146,10 @@ gap:20px;
 .hero-grid,
 .grid{
 grid-template-columns:1fr;
+}
+
+.navbar{
+flex-direction:column;
 }
 
 .btn{
@@ -147,7 +172,9 @@ height:42px;
 
 <div class="navbar">
 
+/
 IMG_1459.png
+</a>
 
 <div>
 #samplesSamples</a>
@@ -158,6 +185,7 @@ IMG_1459.png
 
 </div>
 </header>
+
 <section class="hero">
 <div class="container">
 
@@ -173,18 +201,15 @@ White-Label Fulfillment for B2B Agencies
 Scale Short-Form Video Delivery Without Hiring Editors
 </h1>
 
-<p style="margin:20px 0;color:#a7b3ce;">
-Turn podcasts, webinars, interviews, and long-form recordings
-into polished short-form content your clients can publish immediately.
+<p>
+Turn podcasts, webinars, interviews, and long-form recordings into polished short-form content your clients can publish immediately.
 Increase client value without increasing headcount.
 </p>
 
+<br>
+
 <a href="intake.html" class="btn btn-primary">
 Start Your Sprint
-</a>
-
-#samples
-View Samples
 </a>
 
 </div>
@@ -193,12 +218,12 @@ View Samples
 
 <div class="hero-stat">
 <h2>15 Videos</h2>
-<p>Professionally Produced Short-Form Assets</p>
+<p>Professional Short-Form Assets</p>
 </div>
 
 <div class="hero-stat">
 <h2>$1,500</h2>
-<p>Flat One-Time Sprint</p>
+<p>Flat Sprint Price</p>
 </div>
 
 <div class="hero-stat">
@@ -213,50 +238,16 @@ View Samples
 </div>
 </section>
 
-<section>
-<div class="container">
-
-<h2>
-Add Short-Form Video Services Without Hiring Editors
-</h2>
-
-<br>
-
-<div class="grid">
-
-<div class="card">
-<h3>White-Label Fulfillment</h3>
-<p>Everything is delivered behind your agency brand.</p>
-</div>
-
-<div class="card">
-<h3>Operational Simplicity</h3>
-<p>No recruiting, training, or freelancer management.</p>
-</div>
-
-<div class="card">
-<h3>Platform Ready</h3>
-<p>Optimized for LinkedIn, Reels, Shorts, TikTok, and X.</p>
-</div>
-
-</div>
-
-</div>
-</section>
 <section id="samples">
 <div class="container">
 
 <h2>Sample Deliverables</h2>
 
-<p style="margin-bottom:30px;color:#a7b3ce;">
-Examples of editing quality and content repurposing.
-</p>
-
 <div class="grid">
 
-<div class="card">
+<div class="video-card">
 
-<video controls width="100%">
+<video controls playsinline>
 assets/videos/Sample01.MP4
 </video>
 
@@ -270,18 +261,18 @@ Executive insights transformed into platform-ready content.
 
 </div>
 
-<div class="card">
+<div class="video-card">
 
-<video controls width="100%">
-assets/videos/Sample03.MP4
+<video controls playsinline>
+assets/videos/Sample02.MP4
 </video>
 
 <h3 style="margin-top:15px;">
-Podcast Repurposing
+Raw-to-Edited Transformation
 </h3>
 
 <p>
-Long-form interviews converted into short-form clips.
+See how raw footage is transformed into polished short-form content ready for client distribution.
 </p>
 
 </div>
@@ -296,8 +287,6 @@ Long-form interviews converted into short-form clips.
 
 <h2>How It Works</h2>
 
-<br>
-
 <div class="grid">
 
 <div class="card">
@@ -306,40 +295,10 @@ Long-form interviews converted into short-form clips.
 </div>
 
 <div class="card">
-<h3>2. Clip Selection</h3>
-<p>We identify the strongest moments and insights.</p>
+<h3>2. Production & Delivery</h3>
+<p>We edit, optimize, and deliver 15 white-label assets.</p>
 </div>
 
-<div class="card">
-<h3>3. Production & Delivery</h3>
-<p>We edit, caption, optimize, and deliver 15 assets.</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Frequently Asked Questions</h2>
-
-<br>
-
-<div class="card" style="margin-bottom:15px;">
-<h3>Who owns the client relationship?</h3>
-<p>Your agency does. E.G. Studio operates as a white-label fulfillment partner.</p>
-</div>
-
-<div class="card" style="margin-bottom:15px;">
-<h3>What is included?</h3>
-<p>15 short-form videos produced from the content you provide.</p>
-</div>
-
-<div class="card">
-<h3>What content can I submit?</h3>
-<p>Podcasts, webinars, interviews, presentations, and long-form videos.</p>
 </div>
 
 </div>
@@ -350,9 +309,11 @@ Long-form interviews converted into short-form clips.
 
 <h2>Reserve Your Pipeline Sprint</h2>
 
-<p style="margin:20px 0;color:#a7b3ce;">
-Start with one sprint. Validate demand. Deliver more value to clients without expanding headcount.
+<p>
+Validate demand, increase client value, and expand fulfillment capacity without hiring editors.
 </p>
+
+<br>
 
 <a href="intake.html" class="btn btn-primary">
 Start Your Sprint
@@ -362,11 +323,10 @@ Start Your Sprint
 </section>
 
 <footer>
-
 <div class="container">
 
 <p>
-© 2026 E.G. Studio • White-Label Short-Form Content Fulfillment
+© 2026 E.G. Studio
 </p>
 
 <br>
