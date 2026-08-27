@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capacity Provisioning Intake | EG Studio</title>
+  <title>Sprint Intake & Provisioning | E.G. Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,15 +29,15 @@
 </head>
 <body class="bg-brandBlack text-[#FFFFFF] min-h-screen flex flex-col justify-between font-sans selection:bg-brandAccent selection:text-black">
 
-  <!-- Navigation -->
+  <!-- Header -->
   <header class="w-full border-b border-brandBorder px-6 py-4">
     <div class="max-w-3xl mx-auto flex items-center justify-between">
       <a href="/" class="text-lg font-bold tracking-tight text-white hover:text-brandAccent transition-colors">
-        EG STUDIO
+        E.G. STUDIO
       </a>
       <div class="flex items-center gap-2 text-xs font-mono text-brandMuted bg-brandMatte border border-brandBorder px-3 py-1.5 rounded-full">
         <span class="w-2 h-2 rounded-full bg-brandAccent animate-pulse"></span>
-        <span>SECURE INTAKE TERMINAL</span>
+        <span>INTAKE TERMINAL</span>
       </div>
     </div>
   </header>
@@ -48,13 +48,13 @@
     <!-- Title Block -->
     <div class="mb-8">
       <p class="text-xs font-mono text-brandAccent tracking-widest uppercase mb-2 font-semibold">
-        Capacity Provisioning Protocol
+        Short-Form Video Production Sprint
       </p>
       <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight mb-3">
-        30-Day Video Pipeline Sprint Intake
+        Standard Sprint Intake ($1,500)
       </h1>
       <p class="text-sm text-brandMuted leading-relaxed">
-        Submit operational parameters for your 15-asset short-form sprint. Once submitted, you will be directed straight to Stripe Checkout ($1,500 flat) to reserve your queue slot.
+        Provide details regarding your agency and your content source archive. Upon submission, you will be redirected immediately to secure Stripe checkout to confirm your fulfillment slot.
       </p>
     </div>
 
@@ -64,7 +64,7 @@
       <!-- Field 1: Name -->
       <div class="space-y-2">
         <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-brandMuted">
-          Authorized Operator / Founder Name <span class="text-brandAccent">*</span>
+          Your Name <span class="text-brandAccent">*</span>
         </label>
         <input 
           type="text" 
@@ -79,14 +79,14 @@
       <!-- Field 2: Work Email -->
       <div class="space-y-2">
         <label for="workEmail" class="block text-xs font-semibold uppercase tracking-wider text-brandMuted">
-          Corporate Business Email <span class="text-brandAccent">*</span>
+          Work Email <span class="text-brandAccent">*</span>
         </label>
         <input 
           type="email" 
           id="workEmail" 
           name="workEmail" 
           required 
-          placeholder="operator@agency.com"
+          placeholder="alex@agency.com"
           class="w-full bg-[#000000] border border-brandBorder focus:border-brandAccent text-white text-sm px-4 py-3 rounded-md outline-none transition-colors"
         >
       </div>
@@ -109,7 +109,7 @@
       <!-- Field 4: Raw Footage Source -->
       <div class="space-y-2">
         <label for="mediaSource" class="block text-xs font-semibold uppercase tracking-wider text-brandMuted">
-          Raw Media Archive Source (YouTube / Podcast / Drive link) <span class="text-brandAccent">*</span>
+          Content Source Link (Podcast / YouTube / Drive Folder) <span class="text-brandAccent">*</span>
         </label>
         <input 
           type="text" 
@@ -121,34 +121,18 @@
         >
       </div>
 
-      <!-- Field 5: Target Launch Window -->
-      <div class="space-y-2">
-        <label for="launchWindow" class="block text-xs font-semibold uppercase tracking-wider text-brandMuted">
-          Target Launch Window <span class="text-brandAccent">*</span>
-        </label>
-        <select 
-          id="launchWindow" 
-          name="launchWindow" 
-          required
-          class="w-full bg-[#000000] border border-brandBorder focus:border-brandAccent text-white text-sm px-4 py-3 rounded-md outline-none transition-colors"
-        >
-          <option value="immediate">Immediate Deployment [Within 48 Hours]</option>
-          <option value="scheduled">Scheduled Integration [Within 14 Days]</option>
-        </select>
-      </div>
-
       <!-- Specifications Summary Box -->
-      <div class="p-4 bg-[#000000] border border-brandBorder rounded text-xs space-y-2 text-brandMuted">
+      <div class="p-4 bg-[#000000] border border-brandBorder rounded text-xs space-y-2 text-brandMuted font-mono">
         <div class="flex justify-between text-white font-medium">
-          <span>Deliverable Scope:</span>
-          <span>15 Vertical Assets (9:16)</span>
+          <span>Sprint Scope:</span>
+          <span>15 Short-Form Videos (9:16)</span>
         </div>
         <div class="flex justify-between text-white font-medium">
-          <span>Turnaround SLA:</span>
-          <span>Rolling 48-Hour Sequential Queue</span>
+          <span>Turnaround:</span>
+          <span>Sequential 48-Hour Delivery</span>
         </div>
         <div class="flex justify-between text-white font-medium">
-          <span>Sprint Investment:</span>
+          <span>Investment:</span>
           <span class="text-brandAccent font-bold">$1,500.00 USD</span>
         </div>
       </div>
@@ -159,21 +143,21 @@
         id="submit-btn"
         class="w-full bg-brandAccent hover:bg-emerald-400 text-black font-bold py-4 px-6 rounded-md text-sm tracking-wide uppercase transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
       >
-        <span>Authorize Integration & Proceed to Stripe</span>
+        <span>Submit & Proceed to Stripe Payment</span>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
         </svg>
       </button>
 
       <p class="text-[11px] text-center text-brandMuted font-mono">
-        SSL Encrypted • Direct Stripe Checkout Redirection
+        Encrypted Checkout • Redirects to buy.stripe.com
       </p>
     </form>
   </main>
 
   <!-- Footer -->
   <footer class="w-full border-t border-brandBorder px-6 py-6 text-center text-xs text-brandMuted">
-    <p>© 2026 EG Studio. Institutional Backend Video Fulfillment Engine.</p>
+    <p>© 2026 E.G. Studio. White-label content fulfillment partner.</p>
   </footer>
 
   <!-- Submission Handler -->
@@ -187,7 +171,7 @@
       e.preventDefault();
       
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `<span>Redirecting to Secure Checkout...</span>`;
+      submitBtn.innerHTML = `<span>Redirecting to Stripe...</span>`;
       submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
 
       const payload = {
@@ -195,7 +179,6 @@
         workEmail: document.getElementById('workEmail').value,
         agencyUrl: document.getElementById('agencyUrl').value,
         mediaSource: document.getElementById('mediaSource').value,
-        launchWindow: document.getElementById('launchWindow').value,
         timestamp: new Date().toISOString()
       };
       
