@@ -1,376 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-[#000000] text-[#FFFFFF] antialiased">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>E.G. Studio | White-Label Short-Form Content Fulfillment</title>
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="assets/img/logo.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#07090f;
-  --text:#f9fbff;
-  --muted:#a7b3ce;
-  --border:#2a3248;
-  --brand:#e8ecff;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:'Montserrat',sans-serif;
-  background:#07090f;
-  color:var(--text);
-  line-height:1.7;
-}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:0 24px;
-}
-
-header{
-  border-bottom:1px solid var(--border);
-  padding:20px 0;
-}
-
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-
-.brand-link{
-  display:flex;
-  align-items:center;
-  text-decoration:none;
-  color:var(--text);
-  font-weight:800;
-  font-size:1.4rem;
-}
-
-.logo{
-  height:46px;
-  width:auto;
-  display:block;
-  object-fit:contain;
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
-
-.nav-link{
-  color:var(--muted);
-  text-decoration:none;
-  font-weight:600;
-  transition:color 0.2s;
-}
-
-.nav-link:hover{
-  color:var(--text);
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 24px;
-  border-radius:10px;
-  font-weight:700;
-  text-decoration:none;
-  transition:opacity 0.2s ease;
-}
-
-.btn:hover{
-  opacity:0.9;
-}
-
-.btn-primary{
-  background:var(--brand);
-  color:#111;
-}
-
-.btn-secondary{
-  border:1px solid var(--border);
-  color:white;
-}
-
-.hero{
-  padding:80px 0;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:40px;
-  align-items:center;
-}
-
-.badge{
-  display:inline-block;
-  padding:8px 14px;
-  border:1px solid var(--border);
-  border-radius:999px;
-  margin-bottom:20px;
-  color:#c9dcff;
-}
-
-.hero-stat{
-  padding:24px;
-  border:1px solid var(--border);
-  border-radius:14px;
-  margin-bottom:15px;
-}
-
-section{
-  padding:70px 0;
-}
-
-.card{
-  padding:24px;
-  border:1px solid var(--border);
-  border-radius:14px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-}
-
-.video-card{
-  padding:24px;
-  border:1px solid var(--border);
-  border-radius:14px;
-  background:#0c101c;
-}
-
-.video-wrapper{
-  width:100%;
-  border-radius:10px;
-  overflow:hidden;
-  background:#000;
-}
-
-video{
-  width:100%;
-  max-height:540px;
-  border-radius:10px;
-  display:block;
-  object-fit:cover;
-}
-
-h1{
-  font-size:clamp(2.2rem,5vw,4.2rem);
-  line-height:1.15;
-  margin-bottom:20px;
-}
-
-h2{
-  font-size:1.8rem;
-  margin-bottom:20px;
-}
-
-p{
-  color:var(--muted);
-}
-
-footer{
-  border-top:1px solid var(--border);
-  padding:40px 0 60px;
-  text-align:center;
-}
-
-@media(max-width:768px){
-  .hero-grid,
-  .grid{
-    grid-template-columns:1fr;
-  }
-
-  .navbar{
-    flex-direction:column;
-    gap:15px;
-  }
-
-  .nav-links{
-    width:100%;
-    justify-content:center;
-  }
-
-  .btn{
-    display:block;
-    text-align:center;
-  }
-
-  .logo{
-    height:38px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EG Studio | Institutional Backend Fulfillment Engine</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            brandBlack: '#000000',
+            brandMatte: '#0A0A0A',
+            brandBorder: '#262626',
+            brandMuted: '#A3A3A3',
+            brandAccent: '#10B981',
+          }
+        }
+      }
+    }
+  </script>
 </head>
+<body class="bg-brandBlack text-[#FFFFFF] min-h-screen font-sans selection:bg-brandAccent selection:text-black">
 
-<body>
-
-<header>
-<div class="container">
-  <div class="navbar">
-    <a href="/" class="brand-link">
-      <img src="assets/img/logo.png" alt="E.G. Studio" class="logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-      <span style="display:none;">E.G. Studio</span>
-    </a>
-
-    <div class="nav-links">
-      <a href="#samples" class="nav-link">Sample Deliverables</a>
-      <a href="intake.html" class="btn btn-primary">Get Started</a>
+  <!-- Header / Navigation -->
+  <header class="w-full border-b border-brandBorder px-6 py-4 sticky top-0 bg-[#000000]/90 backdrop-blur-md z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-xl font-extrabold tracking-tight text-white hover:text-brandAccent transition-colors">
+        EG STUDIO
+      </a>
+      
+      <div class="flex items-center gap-4">
+        <div class="hidden sm:flex items-center gap-2 text-xs font-mono text-brandMuted bg-brandMatte border border-brandBorder px-3 py-1.5 rounded-full">
+          <span class="w-2 h-2 rounded-full bg-brandAccent animate-pulse"></span>
+          <span>Capacity Available: Q3/Q4 Sprints</span>
+        </div>
+        <a href="/intake.html" class="border border-brandBorder hover:border-brandAccent text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-md transition-colors">
+          Provision Capacity
+        </a>
+      </div>
     </div>
-  </div>
-</div>
-</header>
+  </header>
 
-<section class="hero">
-<div class="container">
-  <div class="hero-grid">
-    <div>
-      <span class="badge">
-        White-Label Fulfillment for B2B Agencies
-      </span>
-
-      <h1>
-        Scale Short-Form Video Delivery Without Hiring Editors
-      </h1>
-
-      <p>
-        Turn podcasts, webinars, interviews, and long-form recordings into polished short-form content your clients can publish immediately. Increase client value without increasing headcount.
-      </p>
-
-      <br>
-
-      <a href="intake.html" class="btn btn-primary">
-        Start Your Sprint
+  <!-- Hero Section -->
+  <section class="max-w-4xl mx-auto px-6 pt-20 pb-16 text-center">
+    <p class="text-xs font-mono text-brandAccent tracking-widest uppercase mb-4 font-semibold">
+      INSTITUTIONAL BACKEND OPERATIONS
+    </p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+      Turn Client Video Archives Into Turn-Key Short-Form Revenue.
+    </h1>
+    <p class="text-base sm:text-lg text-brandMuted leading-relaxed max-w-2xl mx-auto mb-8">
+      We provide asynchronous, white-label vertical video fulfillment for boutique digital marketing agencies. Offer enterprise-grade short-form pipelines to your clients with zero payroll liabilities or editing management.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="/intake.html" class="w-full sm:w-auto bg-brandAccent hover:bg-emerald-400 text-black font-bold px-8 py-4 rounded-md text-sm uppercase tracking-wider transition-all duration-200 shadow-lg shadow-emerald-500/10">
+        Initialize White-Label Onboarding
       </a>
     </div>
+    <p class="text-xs font-mono text-brandMuted mt-4">
+      Fixed 30-Day Sprint Fulfillment • 100% Asynchronous • 48-Hour Delivery SLA
+    </p>
+  </section>
 
-    <div>
-      <div class="hero-stat">
-        <h2>15 Videos</h2>
-        <p>Professional Short-Form Assets</p>
+  <!-- Economic Value Grid (Arbitrage) -->
+  <section class="max-w-6xl mx-auto px-6 py-12 border-t border-brandBorder">
+    <div class="mb-8">
+      <p class="text-xs font-mono text-brandAccent tracking-widest uppercase mb-1">Commercial Mechanics</p>
+      <h2 class="text-2xl font-bold tracking-tight">Wholesale Agency Margin Expansion</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-brandMatte border border-brandBorder p-6 rounded-lg">
+        <div class="text-brandAccent font-mono text-xs uppercase tracking-wider mb-2">01 / Commercial Capture</div>
+        <h3 class="text-lg font-bold mb-2">Direct Margin Expansion</h3>
+        <p class="text-sm text-brandMuted leading-relaxed">
+          Access wholesale fulfillment capacity at $1,500 per sprint slot and retail turnkey short-form packages to your existing client roster for $2,500–$3,500. Capture predictable gross profit on autopilot.
+        </p>
       </div>
 
-      <div class="hero-stat">
-        <h2>$1,500</h2>
-        <p>Flat Sprint Price</p>
+      <!-- Card 2 -->
+      <div class="bg-brandMatte border border-brandBorder p-6 rounded-lg">
+        <div class="text-brandAccent font-mono text-xs uppercase tracking-wider mb-2">02 / Risk Mitigation</div>
+        <h3 class="text-lg font-bold mb-2">Zero Payroll Overhead</h3>
+        <p class="text-sm text-brandMuted leading-relaxed">
+          Eliminate full-time hiring, editor vetting, onboarding friction, and production management. We operate invisibly behind the scenes as your dedicated fulfillment utility.
+        </p>
       </div>
 
-      <div class="hero-stat">
-        <h2>30 Days</h2>
-        <p>Target Delivery Timeline</p>
+      <!-- Card 3 -->
+      <div class="bg-brandMatte border border-brandBorder p-6 rounded-lg">
+        <div class="text-brandAccent font-mono text-xs uppercase tracking-wider mb-2">03 / Production Standards</div>
+        <h3 class="text-lg font-bold mb-2">Retention-First Architecture</h3>
+        <p class="text-sm text-brandMuted leading-relaxed">
+          Single-speaker hook-to-payoff formatting, clinical typographic auto-captions, precise horizontal-to-vertical reframing, and zero amateur meme b-roll or cartoon graphics.
+        </p>
       </div>
     </div>
-  </div>
-</div>
-</section>
+  </section>
 
-<section id="samples">
-<div class="container">
-  <h2>Sample Deliverables</h2>
+  <!-- Specifications Grid -->
+  <section class="max-w-6xl mx-auto px-6 py-12 border-t border-brandBorder">
+    <div class="mb-8">
+      <p class="text-xs font-mono text-brandAccent tracking-widest uppercase mb-1">Technical Architecture</p>
+      <h2 class="text-2xl font-bold tracking-tight">30-Day Pipeline Sprint Scope</h2>
+    </div>
 
-  <div class="grid">
-    <div class="video-card">
-      <div class="video-wrapper">
-        <video controls playsinline preload="metadata">
-          <source src="assets/videos/Sample01.MP4" type="video/mp4">
-          <source src="assets/videos/Sample01.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-brandMatte border border-brandBorder p-5 rounded-lg">
+        <div class="text-xs font-mono text-brandMuted uppercase mb-1">Deliverable Volume</div>
+        <div class="text-base font-bold text-white">15 Vertical Assets</div>
+        <div class="text-xs text-brandMuted mt-1">9:16 Aspect Ratio</div>
+      </div>
+      <div class="bg-brandMatte border border-brandBorder p-5 rounded-lg">
+        <div class="text-xs font-mono text-brandMuted uppercase mb-1">Fulfillment Turnaround</div>
+        <div class="text-base font-bold text-white">Rolling 48-Hour SLA</div>
+        <div class="text-xs text-brandMuted mt-1">Sequential Batch Queue</div>
+      </div>
+      <div class="bg-brandMatte border border-brandBorder p-5 rounded-lg">
+        <div class="text-xs font-mono text-brandMuted uppercase mb-1">Render Standard</div>
+        <div class="text-base font-bold text-white">1080p, 30fps Output</div>
+        <div class="text-xs text-brandMuted mt-1">Watermark-Free Master</div>
+      </div>
+      <div class="bg-brandMatte border border-brandBorder p-5 rounded-lg">
+        <div class="text-xs font-mono text-brandMuted uppercase mb-1">Cloud Infrastructure</div>
+        <div class="text-base font-bold text-white">Private Drive Vault</div>
+        <div class="text-xs text-brandMuted mt-1">Direct Asynchronous Sync</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Step Asynchronous Workflow -->
+  <section class="max-w-6xl mx-auto px-6 py-12 border-t border-brandBorder">
+    <div class="mb-8">
+      <p class="text-xs font-mono text-brandAccent tracking-widest uppercase mb-1">Operational Protocol</p>
+      <h2 class="text-2xl font-bold tracking-tight">Three-Step Asynchronous Workflow</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="border-l-2 border-brandBorder pl-6 py-2">
+        <span class="text-xs font-mono text-brandAccent uppercase tracking-wider block mb-1">Step 01</span>
+        <h3 class="text-lg font-bold mb-2">Ingestion</h3>
+        <p class="text-sm text-brandMuted leading-relaxed">
+          Deposit raw horizontal podcast, webinar, or keynote footage into your dedicated client vault.
+        </p>
       </div>
 
-      <h3 style="margin-top:15px;">
-        Founder Thought Leadership
-      </h3>
+      <div class="border-l-2 border-brandBorder pl-6 py-2">
+        <span class="text-xs font-mono text-brandAccent uppercase tracking-wider block mb-1">Step 02</span>
+        <h3 class="text-lg font-bold mb-2">Extraction & Reframing</h3>
+        <p class="text-sm text-brandMuted leading-relaxed">
+          We extract high-yield insights, reframe to 9:16 vertical, apply executive captions, and highlight commercial terms.
+        </p>
+      </div>
 
-      <p>
-        Executive insights transformed into platform-ready content.
+      <div class="border-l-2 border-brandBorder pl-6 py-2">
+        <span class="text-xs font-mono text-brandAccent uppercase tracking-wider block mb-1">Step 03</span>
+        <h3 class="text-lg font-bold mb-2">Delivery & Deployment</h3>
+        <p class="text-sm text-brandMuted leading-relaxed">
+          Receive finished, broadcast-ready vertical assets staged directly in your drive for seamless client deployment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Terminal -->
+  <section class="max-w-3xl mx-auto px-6 py-16 border-t border-brandBorder">
+    <div class="bg-brandMatte border border-brandBorder p-8 rounded-xl text-center shadow-2xl relative overflow-hidden">
+      <div class="inline-block text-xs font-mono text-brandAccent bg-black border border-brandBorder px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+        Whitelabel Capacity Sprint
+      </div>
+      
+      <div class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-2 text-white">
+        $1,500 <span class="text-sm font-normal text-brandMuted font-mono">/ flat one-time sprint</span>
+      </div>
+
+      <p class="text-xs text-brandMuted max-w-md mx-auto mb-8">
+        Fixed capacity allocation for 1 client account. 100% white-label fulfillment.
       </p>
-    </div>
 
-    <div class="video-card">
-      <div class="video-wrapper">
-        <video controls playsinline preload="metadata">
-          <source src="assets/videos/Sample02.MP4" type="video/mp4">
-          <source src="assets/videos/Sample02.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+      <ul class="text-left max-w-md mx-auto space-y-3 mb-8 text-sm text-brandMuted border-y border-brandBorder py-6 font-mono">
+        <li class="flex items-center gap-3">
+          <span class="text-brandAccent">✓</span> 15 Systemized 9:16 Vertical Video Assets
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-brandAccent">✓</span> Full 30-Day Dedicated Queue Window
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-brandAccent">✓</span> Rolling 48-Hour Sequential Turnaround
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-brandAccent">✓</span> Direct-to-Vault Media Synchronization
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="text-brandAccent">✓</span> Complete White-Label Anonymity
+        </li>
+      </ul>
+
+      <a href="/intake.html" class="block w-full max-w-md mx-auto bg-brandAccent hover:bg-emerald-400 text-black font-bold py-4 rounded-md text-sm uppercase tracking-wider transition-colors">
+        Reserve Fulfillment Slot
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full border-t border-brandBorder px-6 py-8">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brandMuted">
+      <div>
+        <span class="font-bold text-white">EG STUDIO</span> • Asynchronous Short-Form Video Fulfillment Engine
       </div>
-
-      <h3 style="margin-top:15px;">
-        Raw-to-Edited Transformation
-      </h3>
-
-      <p>
-        See how raw footage is transformed into polished short-form content ready for client distribution.
-      </p>
+      <div>
+        <a href="mailto:ops@egstudio.tech" class="hover:text-brandAccent transition-colors">ops@egstudio.tech</a>
+      </div>
+      <div>
+        © 2026 EG Studio. All rights reserved.
+      </div>
     </div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <h2>How It Works</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>1. Submit Content</h3>
-      <p>Upload podcasts, webinars, interviews, or recordings.</p>
-    </div>
-
-    <div class="card">
-      <h3>2. Production & Delivery</h3>
-      <p>We edit, optimize, and deliver 15 white-label assets.</p>
-    </div>
-  </div>
-</div>
-</section>
-
-<section>
-<div class="container">
-  <h2>Reserve Your Pipeline Sprint</h2>
-
-  <p>
-    Validate demand, increase client value, and expand fulfillment capacity without hiring editors.
-  </p>
-
-  <br>
-
-  <a href="intake.html" class="btn btn-primary">
-    Start Your Sprint
-  </a>
-</div>
-</section>
-
-<footer>
-<div class="container">
-  <p>© 2026 E.G. Studio</p>
-  <br>
-  <a href="mailto:ops@egstudio.tech" class="btn btn-secondary">
-    ops@egstudio.tech
-  </a>
-</div>
-</footer>
+  </footer>
 
 </body>
 </html>
