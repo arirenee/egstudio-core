@@ -7,13 +7,14 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Montserrat', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
             brandBlack: '#000000',
@@ -80,9 +81,9 @@
       <p class="text-sm text-brandMuted mt-2">See how raw horizontal footage converts into finished, platform-ready vertical assets.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
       
-      <!-- Example 01 -->
+      <!-- Example 01 (With Video Player 1) -->
       <div class="bg-brandMatte border border-brandBorder p-6 sm:p-8 rounded-lg">
         <div class="text-xs font-mono text-brandAccent uppercase tracking-wider mb-2">Example 01</div>
         <h3 class="text-xl font-bold mb-6 text-white">Raw Business Podcast → Finished Short-Form Asset</h3>
@@ -107,10 +108,37 @@
               <li>• Platform-ready formatting (Reels, Shorts, TikTok, LinkedIn)</li>
             </ul>
           </div>
+
+          <!-- Video Player Container 1 -->
+          <div class="pt-4 border-t border-brandBorder">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono text-brandMuted uppercase tracking-wider">Deliverable Video Sample</span>
+              <span class="text-[11px] font-mono text-brandAccent bg-brandAccent/10 border border-brandAccent/20 px-2 py-0.5 rounded">
+                9:16 Vertical Export
+              </span>
+            </div>
+
+            <div class="relative w-full max-w-[280px] mx-auto aspect-[9/16] bg-black rounded-lg overflow-hidden border border-brandBorder shadow-xl">
+              <!-- Point to sample.mp4 in your repository or a CDN link -->
+              <video 
+                controls 
+                playsinline 
+                preload="metadata"
+                class="w-full h-full object-cover rounded-lg"
+              >
+                <source src="sample.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p class="text-[11px] text-center text-brandMuted font-mono mt-2">
+              Tap to preview framing, caption pacing, and hook-to-payoff flow.
+            </p>
+          </div>
+
         </div>
       </div>
 
-      <!-- Example 02 -->
+      <!-- Example 02 (With Video Player 2) -->
       <div class="bg-brandMatte border border-brandBorder p-6 sm:p-8 rounded-lg">
         <div class="text-xs font-mono text-brandAccent uppercase tracking-wider mb-2">Example 02</div>
         <h3 class="text-xl font-bold mb-6 text-white">Raw Interview Recording → Client-Ready Social Clip</h3>
@@ -134,6 +162,33 @@
               <li>• Ready for immediate distribution</li>
             </ul>
           </div>
+
+          <!-- Video Player Container 2 -->
+          <div class="pt-4 border-t border-brandBorder">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono text-brandMuted uppercase tracking-wider">Deliverable Video Sample</span>
+              <span class="text-[11px] font-mono text-brandAccent bg-brandAccent/10 border border-brandAccent/20 px-2 py-0.5 rounded">
+                9:16 Vertical Export
+              </span>
+            </div>
+
+            <div class="relative w-full max-w-[280px] mx-auto aspect-[9/16] bg-black rounded-lg overflow-hidden border border-brandBorder shadow-xl">
+              <!-- Point to sample2.mp4 in your repository or a CDN link -->
+              <video 
+                controls 
+                playsinline 
+                preload="metadata"
+                class="w-full h-full object-cover rounded-lg"
+              >
+                <source src="sample2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p class="text-[11px] text-center text-brandMuted font-mono mt-2">
+              Tap to preview single-speaker retention reframing and pacing.
+            </p>
+          </div>
+
         </div>
       </div>
 
@@ -200,7 +255,6 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Who This Is For -->
       <div class="bg-brandMatte border border-brandBorder p-6 sm:p-8 rounded-lg">
         <div class="text-xs font-mono text-brandAccent uppercase tracking-wider mb-2">Who This Is For</div>
         <h3 class="text-xl font-bold mb-4 text-white">Built For:</h3>
@@ -229,7 +283,6 @@
         </ul>
       </div>
 
-      <!-- Who This Is NOT For -->
       <div class="bg-brandMatte border border-brandBorder p-6 sm:p-8 rounded-lg">
         <div class="text-xs font-mono text-red-400 uppercase tracking-wider mb-2">Who This Is NOT For</div>
         <h3 class="text-xl font-bold mb-4 text-white">Not A Good Fit For:</h3>
@@ -352,7 +405,7 @@
         </p>
       </div>
       <div class="mt-6 pt-4 border-t border-brandBorder/60 flex items-center justify-between text-xs text-brandMuted font-mono">
-        <span>Edward G.</span>
+        <span>Eduardo G.</span>
         <span>Founder, E.G. Studio</span>
       </div>
     </div>
@@ -361,7 +414,6 @@
   <!-- 8 & 9. Standard Sprint Package & Trust Statement CTA -->
   <section class="max-w-3xl mx-auto px-6 py-16 border-t border-brandBorder text-center">
     
-    <!-- Trust Statement -->
     <div class="mb-8 max-w-xl mx-auto">
       <p class="text-xs font-mono text-brandAccent uppercase tracking-wider mb-2 font-semibold">Risk-Free Evaluation</p>
       <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3">Start With One Sprint</h2>
@@ -370,7 +422,6 @@
       </p>
     </div>
 
-    <!-- Package Card -->
     <div class="bg-brandMatte border border-brandBorder p-8 rounded-xl max-w-lg mx-auto shadow-2xl">
       <div class="text-xs font-mono text-brandAccent uppercase tracking-wider mb-2">Fixed-Price Sprint</div>
       <div class="text-4xl sm:text-5xl font-extrabold text-white mb-2">
