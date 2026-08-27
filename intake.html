@@ -1,353 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-[#000000] text-[#FFFFFF] antialiased">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>E.G. Studio | Pipeline Sprint Intake & Agreement</title>
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="assets/img/logo.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#07090f;
-  --card-bg:#0d111c;
-  --text:#f9fbff;
-  --muted:#9eabc0;
-  --border:#222a3d;
-  --brand:#e8ecff;
-  --accent:#3b82f6;
-  --input-bg:#131826;
-  --success:#10b981;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:'Montserrat',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  padding:40px 20px 80px;
-  line-height:1.6;
-}
-
-.container{
-  max-width:680px;
-  margin:auto;
-}
-
-.brand-header{
-  text-align:center;
-  margin-bottom:32px;
-}
-
-.brand-link{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  color:var(--text);
-  font-weight:800;
-  font-size:1.4rem;
-  transition:opacity 0.2s;
-}
-
-.brand-link:hover{
-  opacity:0.85;
-}
-
-.logo{
-  height:44px;
-  width:auto;
-  display:block;
-  object-fit:contain;
-}
-
-.card{
-  background:var(--card-bg);
-  padding:44px;
-  border-radius:18px;
-  border:1px solid var(--border);
-  box-shadow:0 12px 36px rgba(0,0,0,0.35);
-}
-
-.badge-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:20px;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:6px 12px;
-  border:1px solid var(--border);
-  border-radius:999px;
-  color:#93c5fd;
-  font-size:0.8rem;
-  font-weight:600;
-  background:rgba(59,130,246,0.08);
-}
-
-.security-badge{
-  color:var(--success);
-  font-size:0.8rem;
-  font-weight:600;
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-}
-
-h1{
-  font-size:1.85rem;
-  font-weight:800;
-  margin-bottom:8px;
-  color:var(--text);
-  line-height:1.2;
-}
-
-.subtitle{
-  color:var(--muted);
-  font-size:0.95rem;
-  margin-bottom:28px;
-}
-
-.order-summary{
-  background:#131826;
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:18px 20px;
-  margin-bottom:30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.order-title{
-  font-weight:700;
-  font-size:0.95rem;
-}
-
-.order-desc{
-  font-size:0.82rem;
-  color:var(--muted);
-}
-
-.order-price{
-  font-size:1.35rem;
-  font-weight:800;
-  color:var(--brand);
-}
-
-.field{
-  margin-bottom:22px;
-}
-
-label{
-  display:block;
-  margin-bottom:8px;
-  font-weight:600;
-  font-size:0.9rem;
-  color:#e2e8f0;
-}
-
-.hint{
-  font-size:0.8rem;
-  color:var(--muted);
-  margin-top:4px;
-}
-
-input,
-select,
-textarea{
-  width:100%;
-  padding:14px 16px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:var(--input-bg);
-  color:white;
-  font-family:inherit;
-  font-size:0.95rem;
-  transition:border-color 0.2s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-  outline:none;
-  border-color:var(--accent);
-}
-
-.grid-2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-
-button{
-  width:100%;
-  padding:17px;
-  border:none;
-  border-radius:10px;
-  font-weight:800;
-  font-size:1rem;
-  cursor:pointer;
-  background:linear-gradient(135deg, #4f7dff, #3b82f6);
-  color:white;
-  transition:all 0.2s ease;
-  margin-top:10px;
-}
-
-button:hover{
-  opacity:0.92;
-  transform:translateY(-1px);
-}
-
-.footer-guarantee{
-  margin-top:20px;
-  text-align:center;
-  font-size:0.8rem;
-  color:var(--muted);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:6px;
-}
-
-@media(max-width:600px){
-  .card{
-    padding:28px 20px;
-  }
-  .grid-2{
-    grid-template-columns:1fr;
-    gap:0;
-  }
-  .order-summary{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:10px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capacity Provisioning Intake | EG Studio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            brandBlack: '#000000',
+            brandMatte: '#0A0A0A',
+            brandBorder: '#262626',
+            brandMuted: '#A3A3A3',
+            brandAccent: '#10B981',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-brandBlack text-[#FFFFFF] min-h-screen flex flex-col justify-between font-sans selection:bg-brandAccent selection:text-black">
 
-<div class="container">
+  <!-- Navigation -->
+  <header class="w-full border-b border-brandBorder px-6 py-4">
+    <div class="max-w-3xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-lg font-bold tracking-tight text-white hover:text-brandAccent transition-colors">
+        EG STUDIO
+      </a>
+      <div class="flex items-center gap-2 text-xs font-mono text-brandMuted bg-brandMatte border border-brandBorder px-3 py-1.5 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-brandAccent animate-pulse"></span>
+        <span>SECURE INTAKE TERMINAL</span>
+      </div>
+    </div>
+  </header>
 
-  <!-- Clickable Logo leading to Home -->
-  <div class="brand-header">
-    <a href="index.html" class="brand-link" title="Return to E.G. Studio Home">
-      <img src="assets/img/logo.png" alt="E.G. Studio Logo" class="logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-      <span style="display:none;">E.G. Studio</span>
-    </a>
-  </div>
-
-  <div class="card">
-    <div class="badge-row">
-      <span class="badge">Institutional Fulfillment Sprint</span>
-      <span class="security-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-        256-Bit SSL Encrypted
-      </span>
+  <!-- Main Container -->
+  <main class="w-full max-w-2xl mx-auto px-6 py-12">
+    
+    <!-- Title Block -->
+    <div class="mb-8">
+      <p class="text-xs font-mono text-brandAccent tracking-widest uppercase mb-2 font-semibold">
+        Capacity Provisioning Protocol
+      </p>
+      <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight mb-3">
+        30-Day Video Pipeline Sprint Intake
+      </h1>
+      <p class="text-sm text-brandMuted leading-relaxed">
+        Submit operational parameters for your 15-asset short-form sprint. Once submitted, you will be directed straight to Stripe Checkout ($1,500 flat) to reserve your queue slot.
+      </p>
     </div>
 
-    <h1>Production Intake & Agreement</h1>
-    <p class="subtitle">
-      Confirm your agency specifications below. You will be redirected to the secure Stripe portal to finalize your sprint reservation.
-    </p>
-
-    <div class="order-summary">
-      <div>
-        <div class="order-title">30-Day Vertical Video Pipeline Sprint</div>
-        <div class="order-desc">15 Bespoke 9:16 White-Label Assets • Dedicated Asynchronous Queue</div>
-      </div>
-      <div class="order-price">$1,500</div>
-    </div>
-
-    <form id="intakeForm">
-
-      <div class="grid-2">
-        <div class="field">
-          <label>Agency / Entity Name *</label>
-          <input type="text" name="agency" required placeholder="e.g., Apex Marketing Group">
-        </div>
-
-        <div class="field">
-          <label>Lead Executive Name *</label>
-          <input type="text" name="contact_name" required placeholder="e.g., Sarah Jenkins">
-        </div>
+    <!-- Intake Form -->
+    <form id="intake-form" class="space-y-6 bg-brandMatte border border-brandBorder p-6 md:p-8 rounded-lg shadow-2xl">
+      
+      <!-- Field 1: Name -->
+      <div class="space-y-2">
+        <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-brandMuted">
+          Authorized Operator / Founder Name <span class="text-brandAccent">*</span>
+        </label>
+        <input 
+          type="text" 
+          id="fullName" 
+          name="fullName" 
+          required 
+          placeholder="e.g. Alex Morgan"
+          class="w-full bg-[#000000] border border-brandBorder focus:border-brandAccent text-white text-sm px-4 py-3 rounded-md outline-none transition-colors"
+        >
       </div>
 
-      <div class="grid-2">
-        <div class="field">
-          <label>Work Email Address *</label>
-          <input type="email" name="email" required placeholder="name@agency.com">
-          <div class="hint">Sprint deliverables & review files will be sent here.</div>
-        </div>
-
-        <div class="field">
-          <label>Agency Website *</label>
-          <input type="url" name="website" required placeholder="https://agency.com">
-        </div>
+      <!-- Field 2: Work Email -->
+      <div class="space-y-2">
+        <label for="workEmail" class="block text-xs font-semibold uppercase tracking-wider text-brandMuted">
+          Corporate Business Email <span class="text-brandAccent">*</span>
+        </label>
+        <input 
+          type="email" 
+          id="workEmail" 
+          name="workEmail" 
+          required 
+          placeholder="operator@agency.com"
+          class="w-full bg-[#000000] border border-brandBorder focus:border-brandAccent text-white text-sm px-4 py-3 rounded-md outline-none transition-colors"
+        >
       </div>
 
-      <div class="field">
-        <label>Primary Content Archive / Media Hub *</label>
-        <input type="url" name="media_link" required placeholder="YouTube Channel, Google Drive folder, Podcast RSS, or Dropbox link">
-        <div class="hint">Link to the raw long-form interviews, podcasts, or webinars to be processed.</div>
+      <!-- Field 3: Agency Domain -->
+      <div class="space-y-2">
+        <label for="agencyUrl" class="block text-xs font-semibold uppercase tracking-wider text-brandMuted">
+          Agency Website / Domain <span class="text-brandAccent">*</span>
+        </label>
+        <input 
+          type="url" 
+          id="agencyUrl" 
+          name="agencyUrl" 
+          required 
+          placeholder="https://agency.com"
+          class="w-full bg-[#000000] border border-brandBorder focus:border-brandAccent text-white text-sm px-4 py-3 rounded-md outline-none transition-colors"
+        >
       </div>
 
-      <div class="field">
-        <label>Target Audience / Client Focus *</label>
-        <select name="audience_focus" required>
-          <option value="">Select Primary Audience</option>
-          <option value="B2B Founders & Executives">B2B Founders & SaaS Executives</option>
-          <option value="Enterprise Marketing / Demand Gen">Enterprise Marketing & Demand Gen</option>
-          <option value="Professional Services / Consulting">Professional Services & Consulting</option>
-          <option value="Other">Other B2B / Specialized Domain</option>
+      <!-- Field 4: Raw Footage Source -->
+      <div class="space-y-2">
+        <label for="mediaSource" class="block text-xs font-semibold uppercase tracking-wider text-brandMuted">
+          Raw Media Archive Source (YouTube / Podcast / Drive link) <span class="text-brandAccent">*</span>
+        </label>
+        <input 
+          type="text" 
+          id="mediaSource" 
+          name="mediaSource" 
+          required 
+          placeholder="Link to podcast channel, webinar archive, or drive"
+          class="w-full bg-[#000000] border border-brandBorder focus:border-brandAccent text-white text-sm px-4 py-3 rounded-md outline-none transition-colors"
+        >
+      </div>
+
+      <!-- Field 5: Target Launch Window -->
+      <div class="space-y-2">
+        <label for="launchWindow" class="block text-xs font-semibold uppercase tracking-wider text-brandMuted">
+          Target Launch Window <span class="text-brandAccent">*</span>
+        </label>
+        <select 
+          id="launchWindow" 
+          name="launchWindow" 
+          required
+          class="w-full bg-[#000000] border border-brandBorder focus:border-brandAccent text-white text-sm px-4 py-3 rounded-md outline-none transition-colors"
+        >
+          <option value="immediate">Immediate Deployment [Within 48 Hours]</option>
+          <option value="scheduled">Scheduled Integration [Within 14 Days]</option>
         </select>
       </div>
 
-      <div class="field">
-        <label>Brand Guidelines & Visual Directives (Optional)</label>
-        <textarea name="notes" rows="4" placeholder="Mention preferred caption styling, brand colors, target hook angles, or client-specific exclusions..."></textarea>
+      <!-- Specifications Summary Box -->
+      <div class="p-4 bg-[#000000] border border-brandBorder rounded text-xs space-y-2 text-brandMuted">
+        <div class="flex justify-between text-white font-medium">
+          <span>Deliverable Scope:</span>
+          <span>15 Vertical Assets (9:16)</span>
+        </div>
+        <div class="flex justify-between text-white font-medium">
+          <span>Turnaround SLA:</span>
+          <span>Rolling 48-Hour Sequential Queue</span>
+        </div>
+        <div class="flex justify-between text-white font-medium">
+          <span>Sprint Investment:</span>
+          <span class="text-brandAccent font-bold">$1,500.00 USD</span>
+        </div>
       </div>
 
-      <button type="submit">
-        Lock In Sprint & Proceed to Secure Checkout ($1,500)
+      <!-- Submit Action Button -->
+      <button 
+        type="submit" 
+        id="submit-btn"
+        class="w-full bg-brandAccent hover:bg-emerald-400 text-black font-bold py-4 px-6 rounded-md text-sm tracking-wide uppercase transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
+      >
+        <span>Authorize Integration & Proceed to Stripe</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
       </button>
 
-      <div class="footer-guarantee">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        Protected by Stripe Enterprise Security • White-Label Asynchronous Fulfillment
-      </div>
-
+      <p class="text-[11px] text-center text-brandMuted font-mono">
+        SSL Encrypted • Direct Stripe Checkout Redirection
+      </p>
     </form>
-  </div>
+  </main>
 
-</div>
+  <!-- Footer -->
+  <footer class="w-full border-t border-brandBorder px-6 py-6 text-center text-xs text-brandMuted">
+    <p>© 2026 EG Studio. Institutional Backend Video Fulfillment Engine.</p>
+  </footer>
 
-<script>
-document.getElementById("intakeForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  
-  // Directly redirects to your verified $1,500 Stripe Sprint checkout
-  window.location.href = "https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06";
-});
-</script>
+  <!-- Submission Handler -->
+  <script>
+    const STRIPE_CHECKOUT_URL = "https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06";
 
+    const form = document.getElementById('intake-form');
+    const submitBtn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Redirecting to Secure Checkout...</span>`;
+      submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+      const payload = {
+        fullName: document.getElementById('fullName').value,
+        workEmail: document.getElementById('workEmail').value,
+        agencyUrl: document.getElementById('agencyUrl').value,
+        mediaSource: document.getElementById('mediaSource').value,
+        launchWindow: document.getElementById('launchWindow').value,
+        timestamp: new Date().toISOString()
+      };
+      
+      try {
+        localStorage.setItem('eg_studio_intake_payload', JSON.stringify(payload));
+      } catch (err) {}
+
+      window.location.href = STRIPE_CHECKOUT_URL;
+    });
+  </script>
 </body>
 </html>
