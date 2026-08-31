@@ -50,7 +50,7 @@
     }
 
     .section-container {
-      padding: 6rem 0;
+      padding: 5.5rem 0;
       border-bottom: 1px solid var(--border-color);
       position: relative;
     }
@@ -102,6 +102,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 0.5rem;
       padding: 0.85rem 1.75rem;
       font-weight: 700;
       font-size: 0.9rem;
@@ -121,7 +122,7 @@
     .btn-primary:hover {
       background-color: #e4e4e7;
       transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.18);
     }
 
     .btn-secondary {
@@ -134,10 +135,20 @@
       background-color: rgba(255, 255, 255, 0.08);
     }
 
+    .btn-outline-green {
+      background: var(--accent-green-bg);
+      color: var(--accent-green);
+      border-color: var(--accent-green-border);
+    }
+    .btn-outline-green:hover {
+      background: rgba(34, 197, 94, 0.2);
+      border-color: var(--accent-green);
+    }
+
     .btn-block {
       width: 100%;
-      padding: 1.05rem;
-      font-size: 1rem;
+      padding: 1.1rem;
+      font-size: 1.05rem;
     }
 
     /* 1. Global Navigation */
@@ -145,7 +156,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: rgba(8, 8, 8, 0.85);
+      background-color: rgba(8, 8, 8, 0.88);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-color);
@@ -230,7 +241,7 @@
       .mobile-drawer { display: none !important; }
     }
 
-    /* 2. Above-the-Fold Hero Section */
+    /* 2. Hero Section */
     .hero-section {
       padding: 6.5rem 0 5rem;
       text-align: center;
@@ -276,7 +287,7 @@
       font-weight: bold;
     }
 
-    /* 3. Agency Economic Arbitrage & Margin Engine */
+    /* 3. Agency Economic Arbitrage */
     .arbitrage-table-container {
       overflow-x: auto;
       border: 1px solid var(--border-color);
@@ -323,7 +334,7 @@
       margin-left: 0.4rem;
     }
 
-    /* Margin Calculator */
+    /* Margin Simulator */
     .calc-container {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -388,9 +399,7 @@
       transition: border-color 0.15s;
     }
     .input-field:focus { border-color: var(--text-white); }
-    .input-field-num {
-      padding-left: 1rem;
-    }
+    .input-field-num { padding-left: 1rem; }
     .calc-presets {
       display: flex;
       gap: 0.5rem;
@@ -467,62 +476,54 @@
       position: relative;
       width: 100%;
       aspect-ratio: 9 / 16;
-      background: #020202;
+      background: #000;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .mock-video-canvas {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 1.25rem;
-      background: radial-gradient(circle at 50% 30%, #1f1f1f 0%, #080808 100%);
+    .sample-video-elem {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #000;
+      display: block;
     }
-    .video-tag {
-      align-self: flex-start;
-      font-size: 0.65rem;
+    .video-overlay-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 0.68rem;
       font-weight: 800;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.55rem;
       border-radius: 4px;
       text-transform: uppercase;
+      color: #fff;
+      pointer-events: none;
+      z-index: 5;
     }
-    .mock-captions-container {
-      margin-top: auto;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .mock-caption-pill {
-      display: inline-block;
-      background: #ffde59;
-      color: #000;
-      font-weight: 900;
-      font-size: 0.85rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    .mock-play-btn {
+    .video-custom-play-btn {
       position: absolute;
-      width: 52px;
-      height: 52px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       color: #000;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-      transition: transform 0.15s ease;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+      transition: transform 0.15s ease, opacity 0.2s ease;
+      z-index: 6;
     }
-    .mock-play-btn:hover { transform: scale(1.08); }
+    .video-custom-play-btn.playing {
+      opacity: 0;
+      pointer-events: none;
+    }
     .archetype-info {
       padding: 1.25rem;
       flex-grow: 1;
@@ -544,7 +545,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 1rem;
+      margin: 1rem 0;
     }
     .spec-pill {
       font-size: 0.68rem;
@@ -555,8 +556,25 @@
       padding: 0.15rem 0.45rem;
       border-radius: 3px;
     }
+    .sample-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .drive-banner-box {
+      margin-top: 3rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
 
-    /* 5. The 30-Day Sprint SLA Matrix */
+    /* 5. SLA Matrix */
     .sla-matrix-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -612,7 +630,7 @@
       width: fit-content;
     }
 
-    /* 6. White-Label Operating Infrastructure */
+    /* 6. Infrastructure */
     .infra-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -647,9 +665,9 @@
       line-height: 1.6;
     }
 
-    /* 7. Transparent Wholesale Pricing Container */
+    /* 7. Pricing */
     .pricing-wrap {
-      max-width: 600px;
+      max-width: 620px;
       margin: 0 auto;
     }
     .pricing-card-main {
@@ -733,7 +751,7 @@
       box-shadow: 0 0 8px var(--accent-green);
     }
 
-    /* 8. Institutional FAQ & Risk Reversal */
+    /* 8. FAQ */
     .faq-container {
       max-width: 800px;
       margin: 0 auto;
@@ -783,7 +801,7 @@
     }
     .faq-item.active .faq-answer { display: block; }
 
-    /* 9. Terminal Call-to-Action Bar */
+    /* 9. Terminal CTA */
     .terminal-cta-section {
       padding: 6.5rem 0;
       background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #080808 85%);
@@ -833,7 +851,6 @@
       gap: 1rem;
     }
 
-    /* Responsive tweaks */
     @media (max-width: 640px) {
       .section-container { padding: 4.5rem 0; }
       .calc-container { padding: 1.5rem; }
@@ -856,7 +873,7 @@
         <a href="#faq">FAQ</a>
       </nav>
       <div style="display: flex; align-items: center; gap: 0.75rem;">
-        <a href="#pricing" class="btn btn-primary-nav">Reserve Sprint</a>
+        <a href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" target="_blank" rel="noopener noreferrer" class="btn btn-primary-nav">Reserve Sprint</a>
         <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation">
           <span></span>
           <span></span>
@@ -872,6 +889,7 @@
       <a href="#infrastructure" class="mobile-nav-link">Infrastructure</a>
       <a href="#pricing" class="mobile-nav-link">Pricing</a>
       <a href="#faq" class="mobile-nav-link">FAQ</a>
+      <a href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">Reserve Sprint ($1,500)</a>
     </div>
   </header>
 
@@ -883,7 +901,7 @@
         <h1 class="hero-title">15 Strategic Vertical Videos.<br>Delivered in 30 Days. $1,500 Flat.</h1>
         <p class="hero-subtitle">Wholesale short-form fulfillment engineered for 5–20 person agencies. Expand your service offerings, eliminate in-house editing overhead, and capture recurring social retainer margins with zero operational drag.</p>
         <div class="hero-actions">
-          <a href="#pricing" class="btn btn-primary">Claim Your Agency Sprint - $1,500</a>
+          <a href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Claim Your Agency Sprint - $1,500</a>
           <a href="#samples" class="btn btn-secondary">Inspect Sample Work</a>
         </div>
         <div class="hero-proof-bar">
@@ -905,7 +923,7 @@
           <p class="section-subtitle">Compare true agency delivery costs and calculate your retained gross profit per client retainer.</p>
         </div>
 
-        <!-- Comparative Economics Table -->
+        <!-- Comparative Table -->
         <div class="arbitrage-table-container">
           <table class="arbitrage-table">
             <thead>
@@ -943,7 +961,7 @@
           </table>
         </div>
 
-        <!-- Interactive Calculator -->
+        <!-- Interactive Margin Simulator -->
         <div class="calc-container">
           <div class="calc-header">
             <h3>Interactive Retainer Profit Simulator</h3>
@@ -999,113 +1017,140 @@
         <div class="section-header text-center">
           <div class="eyebrow-tag">EXECUTION EXCELLENCE</div>
           <h2 class="section-title">Interactive Proof Sandbox</h2>
-          <p class="section-subtitle">Four distinct B2B high-retention vertical formats built for authority, distribution, and client conversion.</p>
+          <p class="section-subtitle">Four distinct B2B vertical archetypes engineered for conversion velocity. Click any video to play directly.</p>
         </div>
 
         <div class="sandbox-grid">
           <!-- Archetype 1 -->
           <div class="archetype-card">
-            <div class="archetype-video-viewport">
-              <div class="mock-video-canvas">
-                <span class="video-tag">Archetype 01</span>
-                <div class="mock-captions-container">
-                  <span class="mock-caption-pill">CAC IS UP 42%</span>
-                </div>
-              </div>
-              <div class="mock-play-btn" onclick="simulatePlay(this)">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <div class="archetype-video-viewport" onclick="togglePlayVideo('video1', 'playBtn1')">
+              <span class="video-overlay-badge">01. Executive Thought Leadership</span>
+              <video id="video1" class="sample-video-elem" playsinline webkit-playsinline loop preload="metadata" poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-man-giving-a-speech-at-a-business-meeting-41170-large.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+              <div class="video-custom-play-btn" id="playBtn1">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
             <div class="archetype-info">
               <div>
                 <h4>Executive Thought Leadership</h4>
-                <p>Dynamic kinetic typography, automated voice isolation, and contextual pacing calibrated for LinkedIn/Reels.</p>
+                <p>Dynamic kinetic typography, voice isolation, and contextual narrative pacing built for LinkedIn.</p>
               </div>
               <div class="archetype-specs">
                 <span class="spec-pill">Voice Isolation</span>
                 <span class="spec-pill">Punch Zooms</span>
-                <span class="spec-pill">Subtitles</span>
+                <span class="spec-pill">SRT Subtitles</span>
+              </div>
+              <div class="sample-actions">
+                <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.75rem; padding: 0.5rem;">
+                  Inspect Master Files ↗
+                </a>
               </div>
             </div>
           </div>
 
           <!-- Archetype 2 -->
           <div class="archetype-card">
-            <div class="archetype-video-viewport">
-              <div class="mock-video-canvas" style="background: radial-gradient(circle at 50% 30%, #172554 0%, #080808 100%);">
-                <span class="video-tag">Archetype 02</span>
-                <div class="mock-captions-container">
-                  <span class="mock-caption-pill" style="background: #60a5fa;">1-CLICK PIPELINE SYNC</span>
-                </div>
-              </div>
-              <div class="mock-play-btn" onclick="simulatePlay(this)">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <div class="archetype-video-viewport" onclick="togglePlayVideo('video2', 'playBtn2')">
+              <span class="video-overlay-badge">02. B2B SaaS Feature Cutdown</span>
+              <video id="video2" class="sample-video-elem" playsinline webkit-playsinline loop preload="metadata" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-screen-close-up-41362-large.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+              <div class="video-custom-play-btn" id="playBtn2">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
             <div class="archetype-info">
               <div>
                 <h4>B2B SaaS Feature Cutdown</h4>
-                <p>High-resolution UI motion tracking, callout badges, and clean feature walkthroughs optimized for top-of-funnel.</p>
+                <p>High-resolution UI motion tracking, callout badges, and clean feature walkthroughs.</p>
               </div>
               <div class="archetype-specs">
                 <span class="spec-pill">UI Framing</span>
                 <span class="spec-pill">Motion Graphics</span>
                 <span class="spec-pill">Sound FX</span>
               </div>
+              <div class="sample-actions">
+                <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.75rem; padding: 0.5rem;">
+                  Inspect Master Files ↗
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Archetype 3 -->
           <div class="archetype-card">
-            <div class="archetype-video-viewport">
-              <div class="mock-video-canvas" style="background: radial-gradient(circle at 50% 30%, #14532d 0%, #080808 100%);">
-                <span class="video-tag">Archetype 03</span>
-                <div class="mock-captions-container">
-                  <span class="mock-caption-pill" style="background: #4ade80;">+$3.2M ARR ADDED</span>
-                </div>
-              </div>
-              <div class="mock-play-btn" onclick="simulatePlay(this)">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <div class="archetype-video-viewport" onclick="togglePlayVideo('video3', 'playBtn3')">
+              <span class="video-overlay-badge">03. Case Study & Social Proof</span>
+              <video id="video3" class="sample-video-elem" playsinline webkit-playsinline loop preload="metadata" poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-businesswoman-talking-on-a-video-call-with-a-laptop-42998-large.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+              <div class="video-custom-play-btn" id="playBtn3">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
             <div class="archetype-info">
               <div>
-                <h4>Case Study & Social Proof</h4>
-                <p>Client testimonial cutdown highlighting verified metrics, verified quotes, and high-trust narrative arcs.</p>
+                <h4>Case Study & Testimonial</h4>
+                <p>Client testimonial cutdown highlighting verified metrics, proof badges, and narrative hooks.</p>
               </div>
               <div class="archetype-specs">
                 <span class="spec-pill">Metric Badges</span>
                 <span class="spec-pill">B-Roll Sync</span>
                 <span class="spec-pill">Emotional Arc</span>
               </div>
+              <div class="sample-actions">
+                <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.75rem; padding: 0.5rem;">
+                  Inspect Master Files ↗
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Archetype 4 -->
           <div class="archetype-card">
-            <div class="archetype-video-viewport">
-              <div class="mock-video-canvas" style="background: radial-gradient(circle at 50% 30%, #581c87 0%, #080808 100%);">
-                <span class="video-tag">Archetype 04</span>
-                <div class="mock-captions-container">
-                  <span class="mock-caption-pill" style="background: #c084fc;">EPISODE #142 HIGHLIGHT</span>
-                </div>
-              </div>
-              <div class="mock-play-btn" onclick="simulatePlay(this)">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <div class="archetype-video-viewport" onclick="togglePlayVideo('video4', 'playBtn4')">
+              <span class="video-overlay-badge">04. Webinar / Podcast Repurpose</span>
+              <video id="video4" class="sample-video-elem" playsinline webkit-playsinline loop preload="metadata" poster="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=600&q=80">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-podcaster-talking-into-a-microphone-in-a-studio-43180-large.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+              <div class="video-custom-play-btn" id="playBtn4">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
             <div class="archetype-info">
               <div>
                 <h4>Podcast / Webinar Repurpose</h4>
-                <p>Extraction of 45–60s viral hooks from 60-minute raw footage, with 9:16 re-framing and multi-speaker layout.</p>
+                <p>Extraction of 45–60s viral hooks from long-form footage with 9:16 vertical re-framing.</p>
               </div>
               <div class="archetype-specs">
-                <span class="spec-pill">Hook Extraction</span>
+                <span class="spec-pill">Hook Mining</span>
                 <span class="spec-pill">Multi-Speaker</span>
                 <span class="spec-pill">Color Match</span>
               </div>
+              <div class="sample-actions">
+                <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.75rem; padding: 0.5rem;">
+                  Inspect Master Files ↗
+                </a>
+              </div>
             </div>
           </div>
+        </div>
+
+        <!-- Google Drive Direct Access Box -->
+        <div class="drive-banner-box">
+          <div>
+            <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Want to audit raw agency project deliverables?</h4>
+            <p style="font-size: 0.825rem; color: var(--text-gray);">Inspect our master client handoff folder containing full-resolution MP4s, project assets, and .SRT files.</p>
+          </div>
+          <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-outline-green">
+            <span>Open Google Drive Samples</span> ↗
+          </a>
         </div>
       </div>
     </section>
@@ -1229,13 +1274,15 @@
               <li><span class="check-icon">✓</span> <span><strong>15 Strategic Vertical Videos</strong> (Up to 60s each, 9:16 format)</span></li>
               <li><span class="check-icon">✓</span> <span><strong>Up to 90 minutes</strong> of raw footage ingestion & hook mining</span></li>
               <li><span class="check-icon">✓</span> <span><strong>2 Revision Rounds per asset</strong> with guaranteed 48h turnaround</span></li>
-              <li><span class="check-icon">✓</span> <span><strong>100% White-Label Delivery</strong> via unbranded Frame.io review links</span></li>
+              <li><span class="check-icon">✓</span> <span><strong>100% White-Label Delivery</strong> via unbranded review portals</span></li>
               <li><span class="check-icon">✓</span> <span><strong>Burned-in Subtitles + Standalone .SRT Files</strong> for every asset</span></li>
               <li><span class="check-icon">✓</span> <span><strong>Full Commercial Licensing</strong> for all audio, SFX, and motion assets</span></li>
-              <li><span class="check-icon">✓</span> <span><strong>Calibration Guarantee:</strong> Initial pilot asset approved before batch scaling</span></li>
+              <li><span class="check-icon">✓</span> <span><strong>Calibration Guarantee:</strong> Pilot asset approved before batch scaling</span></li>
             </ul>
 
-            <a href="https://buy.stripe.com/example_checkout_id" class="btn btn-primary btn-block">Claim Your Agency Sprint - $1,500</a>
+            <a href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
+              Secure Your Sprint Slot ($1,500)
+            </a>
             
             <div class="scarcity-notice">
               <span class="status-dot"></span>
@@ -1325,7 +1372,9 @@
         <h2 class="terminal-title">Scale Your Agency's Video Delivery Capacity Today.</h2>
         <p class="terminal-sub">Zero payroll commitment. Fixed $1,500 sprint pricing. Guaranteed 30-day turnaround.</p>
         <div class="terminal-actions">
-          <a href="#pricing" class="btn btn-primary" style="padding: 1.1rem 2.5rem; font-size: 1.05rem;">Reserve Your Agency Sprint Slot</a>
+          <a href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 1.1rem 2.5rem; font-size: 1.05rem;">
+            Reserve Your Agency Sprint Slot ($1,500)
+          </a>
           <a href="mailto:ops@egstudio.tech" class="contact-ops-link">
             Have bespoke requirements? <span>Email operators: ops@egstudio.tech</span>
           </a>
@@ -1340,10 +1389,11 @@
       <div>
         <strong>EG STUDIO</strong> &copy; <span id="currentYear"></span>. White-Label Video Infrastructure for Agencies.
       </div>
-      <div style="display: flex; gap: 1.5rem;">
+      <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
         <a href="#economics" style="color: inherit; text-decoration: none;">Economics</a>
         <a href="#samples" style="color: inherit; text-decoration: none;">Samples</a>
-        <a href="#pricing" style="color: inherit; text-decoration: none;">Pricing</a>
+        <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Drive Folder</a>
+        <a href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Stripe Checkout</a>
         <a href="mailto:ops@egstudio.tech" style="color: inherit; text-decoration: none;">ops@egstudio.tech</a>
       </div>
     </div>
@@ -1352,10 +1402,11 @@
   <!-- JAVASCRIPT LOGIC -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Set current footer year
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      // 1. Current year
+      const yearEl = document.getElementById('currentYear');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // 2. Mobile menu toggle
+      // 2. Mobile drawer navigation
       const mobileToggle = document.getElementById('mobileMenuToggle');
       const mobileDrawer = document.getElementById('mobileDrawer');
       const mobileLinks = document.querySelectorAll('.mobile-nav-link');
@@ -1372,7 +1423,7 @@
         });
       }
 
-      // 3. Margin Engine Calculator
+      // 3. Margin Engine Simulator
       const retainerInput = document.getElementById('retainerInput');
       const clientCountInput = document.getElementById('clientCountInput');
       const displayWholesale = document.getElementById('displayWholesale');
@@ -1396,13 +1447,17 @@
         displayMarginPercent.textContent = `${marginPercent}%`;
       }
 
-      retainerInput.addEventListener('input', updateCalculator);
-      clientCountInput.addEventListener('input', updateCalculator);
-      updateCalculator();
+      if (retainerInput && clientCountInput) {
+        retainerInput.addEventListener('input', updateCalculator);
+        clientCountInput.addEventListener('input', updateCalculator);
+        updateCalculator();
+      }
 
       window.setRetainer = function(amount) {
-        retainerInput.value = amount;
-        updateCalculator();
+        if (retainerInput) {
+          retainerInput.value = amount;
+          updateCalculator();
+        }
       };
 
       // 4. FAQ Accordion Logic
@@ -1411,30 +1466,38 @@
         const btn = item.querySelector('.faq-question');
         btn.addEventListener('click', () => {
           const isOpen = item.classList.contains('active');
-          // Close all
           faqItems.forEach(i => i.classList.remove('active'));
-          // If was closed, open it
           if (!isOpen) {
             item.classList.add('active');
           }
         });
       });
 
-      // 5. Video Preview Simulation Interaction
-      window.simulatePlay = function(buttonElement) {
-        const card = buttonElement.closest('.archetype-card');
-        const pill = card.querySelector('.mock-caption-pill');
-        
-        buttonElement.style.transform = 'scale(0.85)';
-        setTimeout(() => {
-          buttonElement.style.transform = 'scale(1)';
-        }, 150);
+      // 5. Video Playback Controls
+      window.togglePlayVideo = function(videoId, buttonId) {
+        const video = document.getElementById(videoId);
+        const playBtn = document.getElementById(buttonId);
+        if (!video) return;
 
-        const originalText = pill.textContent;
-        pill.textContent = '▶ PLAYING PREVIEW...';
-        setTimeout(() => {
-          pill.textContent = originalText;
-        }, 2000);
+        // Pause other videos first
+        document.querySelectorAll('.sample-video-elem').forEach(v => {
+          if (v !== video && !v.paused) {
+            v.pause();
+            const otherBtn = v.parentElement.querySelector('.video-custom-play-btn');
+            if (otherBtn) otherBtn.classList.remove('playing');
+          }
+        });
+
+        if (video.paused) {
+          video.play().then(() => {
+            if (playBtn) playBtn.classList.add('playing');
+          }).catch(err => {
+            console.error("Autoplay/play policy interrupted:", err);
+          });
+        } else {
+          video.pause();
+          if (playBtn) playBtn.classList.remove('playing');
+        }
       };
     });
   </script>
