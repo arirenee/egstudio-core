@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EG Studio | White-Label Video Fulfillment for B2B Agencies</title>
-  <meta name="description" content="Wholesale short-form video fulfillment infrastructure for B2B marketing agencies. 15 strategic vertical videos delivered in 30 days. $1,500 flat.">
+  <meta name="description" content="Wholesale short-form video infrastructure for B2B marketing agencies. 15 strategic vertical videos delivered in 30 days. $1,500 flat.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,8 +13,8 @@
     :root {
       --bg-black: #080808;
       --bg-surface: #111111;
-      --bg-card: #171717;
-      --bg-card-hover: #1e1e1e;
+      --bg-card: #161616;
+      --bg-card-hover: #1c1c1c;
       --border-color: #262626;
       --border-focus: #3f3f46;
       --text-white: #ffffff;
@@ -41,7 +41,6 @@
       overflow-x: hidden;
     }
 
-    /* Container Utilities */
     .container {
       width: 92%;
       max-width: 1180px;
@@ -60,7 +59,6 @@
     .text-green { color: var(--accent-green); }
     .text-muted { color: var(--text-gray); }
 
-    /* Typography */
     h1, h2, h3, h4 {
       font-weight: 800;
       letter-spacing: -0.025em;
@@ -97,7 +95,7 @@
       font-weight: 400;
     }
 
-    /* Buttons */
+    /* Action Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -156,7 +154,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: rgba(8, 8, 8, 0.88);
+      background-color: rgba(8, 8, 8, 0.9);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-color);
@@ -243,9 +241,14 @@
 
     /* 2. Hero Section */
     .hero-section {
-      padding: 6.5rem 0 5rem;
+      padding: 3.5rem 0 4.5rem;
       text-align: center;
       position: relative;
+    }
+    @media (min-width: 768px) {
+      .hero-section {
+        padding: 5rem 0 5rem;
+      }
     }
     .hero-title {
       font-size: clamp(2.2rem, 5.2vw, 3.85rem);
@@ -266,7 +269,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
     }
     .hero-proof-bar {
       display: inline-flex;
@@ -334,13 +337,13 @@
       margin-left: 0.4rem;
     }
 
-    /* Margin Simulator */
+    /* Dynamic Margin Calculator */
     .calc-container {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 12px;
       padding: 2.5rem;
-      max-width: 820px;
+      max-width: 840px;
       margin: 0 auto;
     }
     .calc-header {
@@ -481,6 +484,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
     }
     .sample-video-elem {
       width: 100%;
@@ -515,14 +519,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
       transition: transform 0.15s ease, opacity 0.2s ease;
       z-index: 6;
+      pointer-events: none;
     }
     .video-custom-play-btn.playing {
       opacity: 0;
-      pointer-events: none;
     }
     .archetype-info {
       padding: 1.25rem;
@@ -545,7 +548,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin: 1rem 0;
+      margin-top: 1rem;
     }
     .spec-pill {
       font-size: 0.68rem;
@@ -555,11 +558,6 @@
       border: 1px solid var(--border-color);
       padding: 0.15rem 0.45rem;
       border-radius: 3px;
-    }
-    .sample-actions {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
     }
     .drive-banner-box {
       margin-top: 3rem;
@@ -630,7 +628,24 @@
       width: fit-content;
     }
 
-    /* 6. Infrastructure */
+    /* Calibration Guarantee Callout */
+    .calibration-box {
+      margin-top: 2.5rem;
+      background: rgba(34, 197, 94, 0.05);
+      border: 1px solid var(--accent-green-border);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .calibration-icon {
+      font-size: 2rem;
+      color: var(--accent-green);
+      flex-shrink: 0;
+    }
+
+    /* 6. Infrastructure & Async Questionnaire */
     .infra-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -663,6 +678,34 @@
       font-size: 0.85rem;
       color: var(--text-gray);
       line-height: 1.6;
+    }
+
+    .async-onboarding-container {
+      margin-top: 3.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .async-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    .step-item {
+      background: var(--bg-black);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .step-num {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--accent-green);
+      margin-bottom: 0.5rem;
     }
 
     /* 7. Pricing */
@@ -855,6 +898,7 @@
       .section-container { padding: 4.5rem 0; }
       .calc-container { padding: 1.5rem; }
       .pricing-card-main { padding: 2.5rem 1.5rem; }
+      .calibration-box { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -868,7 +912,7 @@
         <a href="#economics">Economics</a>
         <a href="#samples">Sample Proof</a>
         <a href="#sprint-model">Sprint Model</a>
-        <a href="#infrastructure">Infrastructure</a>
+        <a href="#intake">Async Intake</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
@@ -886,7 +930,7 @@
       <a href="#economics" class="mobile-nav-link">Economics</a>
       <a href="#samples" class="mobile-nav-link">Sample Proof</a>
       <a href="#sprint-model" class="mobile-nav-link">Sprint Model</a>
-      <a href="#infrastructure" class="mobile-nav-link">Infrastructure</a>
+      <a href="#intake" class="mobile-nav-link">Async Intake</a>
       <a href="#pricing" class="mobile-nav-link">Pricing</a>
       <a href="#faq" class="mobile-nav-link">FAQ</a>
       <a href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">Reserve Sprint ($1,500)</a>
@@ -907,7 +951,7 @@
         <div class="hero-proof-bar">
           <span>Fixed $1,500 Scope</span>
           <span class="dot">•</span>
-          <span>48h Revision SLA</span>
+          <span>guaranteed 2 business days turnaround</span>
           <span class="dot">•</span>
           <span>100% White-Label Delivery</span>
         </div>
@@ -961,11 +1005,11 @@
           </table>
         </div>
 
-        <!-- Interactive Margin Simulator -->
+        <!-- Dynamic Margin Simulator -->
         <div class="calc-container">
           <div class="calc-header">
-            <h3>Interactive Retainer Profit Simulator</h3>
-            <p class="text-muted" style="font-size: 0.85rem;">Model your monthly agency cash expansion with EG Studio fulfillment.</p>
+            <h3>Dynamic Agency Margin Calculator</h3>
+            <p class="text-muted" style="font-size: 0.85rem;">Illustrate your monthly gross profit retention when reselling EG Studio wholesale fulfillment.</p>
           </div>
           <div class="calc-grid">
             <div class="calc-inputs">
@@ -990,7 +1034,7 @@
 
             <div class="calc-display-box">
               <div class="calc-metric-row">
-                <span class="calc-metric-label">Wholesale Cost (EG Studio)</span>
+                <span class="calc-metric-label">Wholesale Fulfillment Cost</span>
                 <span id="displayWholesale" class="calc-metric-value text-muted">$4,500</span>
               </div>
               <div class="calc-metric-row">
@@ -998,11 +1042,11 @@
                 <span id="displayBilling" class="calc-metric-value">$10,500</span>
               </div>
               <div class="calc-metric-row">
-                <span class="calc-metric-label">Retained Agency Net Margin</span>
+                <span class="calc-metric-label">Retained Gross Margin %</span>
                 <span id="displayMarginPercent" class="calc-metric-value text-green">57.1%</span>
               </div>
               <div class="calc-metric-row">
-                <span class="calc-metric-label">Net Agency Profit / Mo</span>
+                <span class="calc-metric-label">Retained Agency Gross Profit / Mo</span>
                 <span id="displayProfit" class="calc-metric-value highlight">$6,000</span>
               </div>
             </div>
@@ -1016,18 +1060,18 @@
       <div class="container">
         <div class="section-header text-center">
           <div class="eyebrow-tag">EXECUTION EXCELLENCE</div>
-          <h2 class="section-title">Interactive Proof Sandbox</h2>
-          <p class="section-subtitle">Four distinct B2B vertical archetypes engineered for conversion velocity. Click any video to play directly.</p>
+          <h2 class="section-title">High-Definition B2B Vertical Samples</h2>
+          <p class="section-subtitle">Four calibrated archetypes demonstrating raw-to-finished production standards. Click any asset to play directly with sound and controls.</p>
         </div>
 
         <div class="sandbox-grid">
           <!-- Archetype 1 -->
           <div class="archetype-card">
-            <div class="archetype-video-viewport" onclick="togglePlayVideo('video1', 'playBtn1')">
+            <div class="archetype-video-viewport" id="viewport1" onclick="togglePlay('video1', 'playBtn1')">
               <span class="video-overlay-badge">01. Executive Thought Leadership</span>
-              <video id="video1" class="sample-video-elem" playsinline webkit-playsinline loop preload="metadata" poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-man-giving-a-speech-at-a-business-meeting-41170-large.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
+              <video id="video1" class="sample-video-elem" playsinline webkit-playsinline loop controls preload="metadata" poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                Your browser does not support video playback.
               </video>
               <div class="video-custom-play-btn" id="playBtn1">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -1036,28 +1080,23 @@
             <div class="archetype-info">
               <div>
                 <h4>Executive Thought Leadership</h4>
-                <p>Dynamic kinetic typography, voice isolation, and contextual narrative pacing built for LinkedIn.</p>
+                <p>Kinetic typography, dynamic punch-ins, audio enhancement, and retention-focused narrative pacing.</p>
               </div>
               <div class="archetype-specs">
                 <span class="spec-pill">Voice Isolation</span>
-                <span class="spec-pill">Punch Zooms</span>
-                <span class="spec-pill">SRT Subtitles</span>
-              </div>
-              <div class="sample-actions">
-                <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.75rem; padding: 0.5rem;">
-                  Inspect Master Files ↗
-                </a>
+                <span class="spec-pill">Dynamic Zoom</span>
+                <span class="spec-pill">Burned-in SRT</span>
               </div>
             </div>
           </div>
 
           <!-- Archetype 2 -->
           <div class="archetype-card">
-            <div class="archetype-video-viewport" onclick="togglePlayVideo('video2', 'playBtn2')">
+            <div class="archetype-video-viewport" id="viewport2" onclick="togglePlay('video2', 'playBtn2')">
               <span class="video-overlay-badge">02. B2B SaaS Feature Cutdown</span>
-              <video id="video2" class="sample-video-elem" playsinline webkit-playsinline loop preload="metadata" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-screen-close-up-41362-large.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
+              <video id="video2" class="sample-video-elem" playsinline webkit-playsinline loop controls preload="metadata" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+                Your browser does not support video playback.
               </video>
               <div class="video-custom-play-btn" id="playBtn2">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -1066,28 +1105,23 @@
             <div class="archetype-info">
               <div>
                 <h4>B2B SaaS Feature Cutdown</h4>
-                <p>High-resolution UI motion tracking, callout badges, and clean feature walkthroughs.</p>
+                <p>UI framing, motion callouts, cursor highlight tracks, and clean branded typography overlays.</p>
               </div>
               <div class="archetype-specs">
                 <span class="spec-pill">UI Framing</span>
                 <span class="spec-pill">Motion Graphics</span>
-                <span class="spec-pill">Sound FX</span>
-              </div>
-              <div class="sample-actions">
-                <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.75rem; padding: 0.5rem;">
-                  Inspect Master Files ↗
-                </a>
+                <span class="spec-pill">Sound FX Stems</span>
               </div>
             </div>
           </div>
 
           <!-- Archetype 3 -->
           <div class="archetype-card">
-            <div class="archetype-video-viewport" onclick="togglePlayVideo('video3', 'playBtn3')">
-              <span class="video-overlay-badge">03. Case Study & Social Proof</span>
-              <video id="video3" class="sample-video-elem" playsinline webkit-playsinline loop preload="metadata" poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-businesswoman-talking-on-a-video-call-with-a-laptop-42998-large.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
+            <div class="archetype-video-viewport" id="viewport3" onclick="togglePlay('video3', 'playBtn3')">
+              <span class="video-overlay-badge">03. Case Study & Proof Hook</span>
+              <video id="video3" class="sample-video-elem" playsinline webkit-playsinline loop controls preload="metadata" poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+                Your browser does not support video playback.
               </video>
               <div class="video-custom-play-btn" id="playBtn3">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -1095,29 +1129,24 @@
             </div>
             <div class="archetype-info">
               <div>
-                <h4>Case Study & Testimonial</h4>
-                <p>Client testimonial cutdown highlighting verified metrics, proof badges, and narrative hooks.</p>
+                <h4>Case Study & Proof Hook</h4>
+                <p>Highlighting client ROI metrics, quote badges, and clean B-roll overlays to build pipeline trust.</p>
               </div>
               <div class="archetype-specs">
                 <span class="spec-pill">Metric Badges</span>
-                <span class="spec-pill">B-Roll Sync</span>
-                <span class="spec-pill">Emotional Arc</span>
-              </div>
-              <div class="sample-actions">
-                <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.75rem; padding: 0.5rem;">
-                  Inspect Master Files ↗
-                </a>
+                <span class="spec-pill">B-Roll Cutaway</span>
+                <span class="spec-pill">Trust Badges</span>
               </div>
             </div>
           </div>
 
           <!-- Archetype 4 -->
           <div class="archetype-card">
-            <div class="archetype-video-viewport" onclick="togglePlayVideo('video4', 'playBtn4')">
+            <div class="archetype-video-viewport" id="viewport4" onclick="togglePlay('video4', 'playBtn4')">
               <span class="video-overlay-badge">04. Webinar / Podcast Repurpose</span>
-              <video id="video4" class="sample-video-elem" playsinline webkit-playsinline loop preload="metadata" poster="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=600&q=80">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-podcaster-talking-into-a-microphone-in-a-studio-43180-large.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
+              <video id="video4" class="sample-video-elem" playsinline webkit-playsinline loop controls preload="metadata" poster="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=600&q=80">
+                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4" type="video/mp4">
+                Your browser does not support video playback.
               </video>
               <div class="video-custom-play-btn" id="playBtn4">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -1125,100 +1154,95 @@
             </div>
             <div class="archetype-info">
               <div>
-                <h4>Podcast / Webinar Repurpose</h4>
-                <p>Extraction of 45–60s viral hooks from long-form footage with 9:16 vertical re-framing.</p>
+                <h4>Webinar & Podcast Repurpose</h4>
+                <p>Hook extraction from long-form conversations, multi-speaker framing, and high-contrast captions.</p>
               </div>
               <div class="archetype-specs">
-                <span class="spec-pill">Hook Mining</span>
+                <span class="spec-pill">Hook Extraction</span>
                 <span class="spec-pill">Multi-Speaker</span>
-                <span class="spec-pill">Color Match</span>
-              </div>
-              <div class="sample-actions">
-                <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.75rem; padding: 0.5rem;">
-                  Inspect Master Files ↗
-                </a>
+                <span class="spec-pill">Dynamic Crop</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Google Drive Direct Access Box -->
+        <!-- Google Drive Shared Asset Package -->
         <div class="drive-banner-box">
           <div>
-            <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Want to audit raw agency project deliverables?</h4>
-            <p style="font-size: 0.825rem; color: var(--text-gray);">Inspect our master client handoff folder containing full-resolution MP4s, project assets, and .SRT files.</p>
+            <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Audit the Master Production Asset Packages</h4>
+            <p style="font-size: 0.825rem; color: var(--text-gray);">Inspect our shared Google Drive folder containing full-resolution master exports, source files, and .SRT sidecars.</p>
           </div>
           <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-outline-green">
-            <span>Open Google Drive Samples</span> ↗
+            <span>Open Google Drive Samples Folder</span> ↗
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 5. THE 30-DAY AGENCY SPRINT SLA MATRIX -->
+    <!-- 5. THE 30-DAY MILESTONE SLA MATRIX & CALIBRATION GUARANTEE -->
     <section id="sprint-model" class="section-container bg-surface">
       <div class="container">
         <div class="section-header text-center">
           <div class="eyebrow-tag">RIGID OPERATIONAL SLA</div>
-          <h2 class="section-title">The 30-Day Fulfillment Cadence</h2>
-          <p class="section-subtitle">A synchronized 4-milestone production timeline designed to give your agency predictable delivery dates.</p>
+          <h2 class="section-title">Explicit 30-Day Milestone SLA</h2>
+          <p class="section-subtitle">Structured batch deliveries on Days 10, 20, and 30 to give your account managers guaranteed fulfillment predictability.</p>
         </div>
 
         <div class="sla-matrix-grid">
           <!-- Milestone 1 -->
           <div class="sla-milestone-card">
             <div class="milestone-num">Milestone 01</div>
-            <div class="milestone-days">Days 1–5</div>
-            <div class="milestone-deliverable">Ingestion & Style Calibration</div>
-            <p class="milestone-desc">Async onboarding, client branding kit upload, font/color profile setup, and 1 pilot asset delivery for brand sign-off.</p>
+            <div class="milestone-days">Days 1–10</div>
+            <div class="milestone-deliverable">Batch 1 Delivery (Videos 1–5)</div>
+            <p class="milestone-desc">Async intake, brand kit calibration, pilot video approval, plus the first 5 finalized vertical video assets delivered for client review.</p>
             <div class="milestone-sla-badge">
-              <span>SLA: Pilot Signoff in 48h</span>
+              <span>SLA: 5 Finished Assets + Pilot</span>
             </div>
           </div>
 
           <!-- Milestone 2 -->
           <div class="sla-milestone-card">
             <div class="milestone-num">Milestone 02</div>
-            <div class="milestone-days">Days 6–12</div>
-            <div class="milestone-deliverable">Batch 1 Delivery (5 Assets)</div>
-            <p class="milestone-desc">Delivery of the first 5 finished strategic videos to your white-label review portal for client presentation.</p>
+            <div class="milestone-days">Days 11–20</div>
+            <div class="milestone-deliverable">Batch 2 Delivery (Videos 6–10)</div>
+            <p class="milestone-desc">Delivery of the second batch of 5 assets, running simultaneously with guaranteed 2 business days turnaround on any requested Batch 1 revisions.</p>
             <div class="milestone-sla-badge">
-              <span>SLA: 5 Finished Videos</span>
+              <span>SLA: 5 Finished Assets + Revisions</span>
             </div>
           </div>
 
           <!-- Milestone 3 -->
           <div class="sla-milestone-card">
             <div class="milestone-num">Milestone 03</div>
-            <div class="milestone-days">Days 13–20</div>
-            <div class="milestone-deliverable">Batch 2 Delivery (5 Assets)</div>
-            <p class="milestone-desc">Delivery of the next 5 assets, running alongside revision turnaround for Batch 1 assets if client feedback is received.</p>
+            <div class="milestone-days">Days 21–30</div>
+            <div class="milestone-deliverable">Batch 3 Delivery (Videos 11–15)</div>
+            <p class="milestone-desc">Final 5 assets delivered, closing all outstanding revision notes and archiving complete master files (MP4s + .SRT files) to your Drive.</p>
             <div class="milestone-sla-badge">
-              <span>SLA: 48h Revision Turnaround</span>
+              <span>SLA: Final 5 Assets + Master Archive</span>
             </div>
           </div>
+        </div>
 
-          <!-- Milestone 4 -->
-          <div class="sla-milestone-card">
-            <div class="milestone-num">Milestone 04</div>
-            <div class="milestone-days">Days 21–30</div>
-            <div class="milestone-deliverable">Batch 3 & Master Handoff (5 Assets)</div>
-            <p class="milestone-desc">Final 5 assets delivered, all outstanding revisions finalized, and complete master package (MP4s + .SRT files) archived to Drive.</p>
-            <div class="milestone-sla-badge">
-              <span>SLA: Full Package Complete</span>
-            </div>
+        <!-- 100% Calibration Guarantee -->
+        <div class="calibration-box">
+          <div class="calibration-icon">🛡️</div>
+          <div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">100% Production Calibration Guarantee</h3>
+            <p style="font-size: 0.85rem; color: #d4d4d8; line-height: 1.5;">
+              During Days 1–3, we produce a single pilot asset to lock down typography styling, motion graphics, audio mastering, and color profiles. The 30-day delivery timeline proceeds once your agency provides written sign-off on the calibrated pilot.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. WHITE-LABEL OPERATING INFRASTRUCTURE -->
-    <section id="infrastructure" class="section-container">
+    <!-- 6. ASYNC ONBOARDING & ZERO-FRICTION PIPELINE -->
+    <section id="intake" class="section-container">
       <div class="container">
         <div class="section-header text-center">
-          <div class="eyebrow-tag">GHOST INFRASTRUCTURE</div>
-          <h2 class="section-title">White-Label Handoff Mechanics</h2>
-          <p class="section-subtitle">We operate as your agency's silent backend. Your clients never see our brand or know we exist.</p>
+          <div class="eyebrow-tag">ZERO SALES CALL FRICTION</div>
+          <h2 class="section-title">Frictionless Asynchronous Intake</h2>
+          <p class="section-subtitle">No 60-minute qualification calls or calendar tennis. Reserve your slot and submit briefs asynchronously in 10 minutes.</p>
         </div>
 
         <div class="infra-grid">
@@ -1226,25 +1250,49 @@
             <div class="infra-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
             </div>
-            <h3>100% Unbranded Review Portals</h3>
-            <p>Every review link, Frame.io project, and delivery folder is stripped of EG Studio branding. You present all links directly under your agency's banner.</p>
+            <h3>100% Ghost White-Label Portals</h3>
+            <p>Every review link, Frame.io project, and delivery folder is completely unbranded. You present deliverables directly under your agency's banner.</p>
           </div>
 
           <div class="infra-card">
             <div class="infra-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
             </div>
-            <h3>Strict Async Briefing Intake</h3>
-            <p>No 60-minute sync meetings required. Submit raw assets, timestamps, and brand notes through our structured 10-minute intake workflow.</p>
+            <h3>Asynchronous Onboarding Brief</h3>
+            <p>Immediately after Stripe checkout, complete our structured onboarding questionnaire with your client's raw links, brand fonts, and notes.</p>
           </div>
 
           <div class="infra-card">
             <div class="infra-icon">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
             </div>
-            <h3>Full Commercial Licensing Stems</h3>
+            <h3>Full Commercial Licensing</h3>
             <p>All background audio tracks, SFX, graphics, and kinetic typography packs carry lifetime commercial indemnification for your agency and your client.</p>
           </div>
+        </div>
+
+        <div class="async-onboarding-container">
+          <h3>The 3-Step Instant Fulfillment Kickoff</h3>
+          <div class="async-steps-grid">
+            <div class="step-item">
+              <div class="step-num">STEP 01</div>
+              <h4 style="font-size: 0.95rem; margin-bottom: 0.35rem;">Stripe Checkout</h4>
+              <p style="font-size: 0.8rem; color: var(--text-gray);">Lock in your fixed $1,500 sprint slot via direct whole-dollar Stripe checkout.</p>
+            </div>
+            <div class="step-item">
+              <div class="step-num">STEP 02</div>
+              <h4 style="font-size: 0.95rem; margin-bottom: 0.35rem;">Async Questionnaire</h4>
+              <p style="font-size: 0.8rem; color: var(--text-gray);">Submit client footage links (Drive/Dropbox/Zoom) and branding kit guidelines.</p>
+            </div>
+            <div class="step-item">
+              <div class="step-num">STEP 03</div>
+              <h4 style="font-size: 0.95rem; margin-bottom: 0.35rem;">Milestone Delivery</h4>
+              <p style="font-size: 0.8rem; color: var(--text-gray);">Receive Batch 1 (Day 10), Batch 2 (Day 20), and Batch 3 (Day 30) automatically.</p>
+            </div>
+          </div>
+          <a href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.9rem 2.25rem;">
+            Initiate Sprint Now ($1,500)
+          </a>
         </div>
       </div>
     </section>
@@ -1253,9 +1301,9 @@
     <section id="pricing" class="section-container bg-surface">
       <div class="container text-center">
         <div class="section-header">
-          <div class="eyebrow-tag">WHOLESALE WHOLE-DOLLAR PRICING</div>
-          <h2 class="section-title">Transparent Wholesale Sprint</h2>
-          <p class="section-subtitle">No long-term retainer lock-ins. Buy fulfillment sprints as you close agency clients.</p>
+          <div class="eyebrow-tag">WHOLESALE PRICING</div>
+          <h2 class="section-title">Fixed $1,500 Wholesale Sprint</h2>
+          <p class="section-subtitle">No long-term retainer lock-ins. Buy fulfillment sprints on-demand as you close agency clients.</p>
         </div>
 
         <div class="pricing-wrap">
@@ -1268,16 +1316,16 @@
             </div>
             <div class="pricing-unit-cost">Unit Cost: $100 per finished, platform-ready vertical video</div>
 
-            <p style="font-size: 0.875rem; color: var(--text-gray);">Guaranteed 30-day turnaround delivered across 3 structured milestones.</p>
+            <p style="font-size: 0.875rem; color: var(--text-gray);">Guaranteed 30-day turnaround delivered across Days 10, 20, and 30.</p>
 
             <ul class="pricing-checklist">
               <li><span class="check-icon">✓</span> <span><strong>15 Strategic Vertical Videos</strong> (Up to 60s each, 9:16 format)</span></li>
-              <li><span class="check-icon">✓</span> <span><strong>Up to 90 minutes</strong> of raw footage ingestion & hook mining</span></li>
-              <li><span class="check-icon">✓</span> <span><strong>2 Revision Rounds per asset</strong> with guaranteed 48h turnaround</span></li>
-              <li><span class="check-icon">✓</span> <span><strong>100% White-Label Delivery</strong> via unbranded review portals</span></li>
+              <li><span class="check-icon">✓</span> <span><strong>Up to 90 minutes</strong> of raw footage ingestion & hook extraction</span></li>
+              <li><span class="check-icon">✓</span> <span><strong>2 Revision Rounds per asset</strong> with guaranteed 2 business days turnaround</span></li>
+              <li><span class="check-icon">✓</span> <span><strong>100% White-Label Review Portals</strong> for seamless client handoff</span></li>
               <li><span class="check-icon">✓</span> <span><strong>Burned-in Subtitles + Standalone .SRT Files</strong> for every asset</span></li>
               <li><span class="check-icon">✓</span> <span><strong>Full Commercial Licensing</strong> for all audio, SFX, and motion assets</span></li>
-              <li><span class="check-icon">✓</span> <span><strong>Calibration Guarantee:</strong> Pilot asset approved before batch scaling</span></li>
+              <li><span class="check-icon">✓</span> <span><strong>100% Calibration Guarantee:</strong> Pilot asset approved before batch scaling</span></li>
             </ul>
 
             <a href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">
@@ -1319,17 +1367,17 @@
               <span class="faq-chevron">▼</span>
             </button>
             <div class="faq-answer">
-              Each $1,500 sprint covers up to 90 minutes of total raw source footage (Zoom recordings, podcast episodes, raw iPhone videos, keynote presentations, or product demo screencasts). If your client has larger archives, we provide hourly ingestion add-ons.
+              <p>Each $1,500 sprint covers up to 90 minutes of total raw source footage (Zoom recordings, podcast episodes, raw iPhone videos, keynote presentations, or product demo screencasts). Projects exceeding 90 minutes are scoped individually upon request.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question">
-              <span>How do revision rounds and the 48-hour SLA function?</span>
+              <span>How do revision rounds and turnaround SLAs function?</span>
               <span class="faq-chevron">▼</span>
             </button>
             <div class="faq-answer">
-              Each asset includes 2 structured revision cycles. Once your agency or client leaves timestamped notes inside the review portal, our editing team turns around updated versions within 48 business hours.
+              Each asset includes 2 structured revision cycles. Once your agency or client leaves timestamped notes inside the review portal, our editing team turns around updated versions within 2 business days.
             </div>
           </div>
 
@@ -1349,7 +1397,7 @@
               <span class="faq-chevron">▼</span>
             </button>
             <div class="faq-answer">
-              During Days 1–5, we edit a single pilot video to lock in font choices, brand color palettes, pacing, and caption formatting. We only move into batch production once you give written sign-off on the pilot asset.
+              During Days 1–3, we edit a single pilot video to lock in font choices, brand color palettes, pacing, and caption formatting. The 30-day delivery timeline proceeds once your agency provides written sign-off on the calibrated pilot.
             </div>
           </div>
 
@@ -1376,7 +1424,7 @@
             Reserve Your Agency Sprint Slot ($1,500)
           </a>
           <a href="mailto:ops@egstudio.tech" class="contact-ops-link">
-            Have bespoke requirements? <span>Email operators: ops@egstudio.tech</span>
+            Have bespoke requirements? <span>Direct Inquiries: ops@egstudio.tech</span>
           </a>
         </div>
       </div>
@@ -1392,9 +1440,10 @@
       <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
         <a href="#economics" style="color: inherit; text-decoration: none;">Economics</a>
         <a href="#samples" style="color: inherit; text-decoration: none;">Samples</a>
-        <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Drive Folder</a>
+        <a href="#sprint-model" style="color: inherit; text-decoration: none;">Sprint Model</a>
+        <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Drive Asset Folder</a>
         <a href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Stripe Checkout</a>
-        <a href="mailto:ops@egstudio.tech" style="color: inherit; text-decoration: none;">ops@egstudio.tech</a>
+        <a href="mailto:ops@egstudio.tech" style="color: inherit; text-decoration: none;">Direct Inquiries: ops@egstudio.tech</a>
       </div>
     </div>
   </footer>
@@ -1402,7 +1451,7 @@
   <!-- JAVASCRIPT LOGIC -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Current year
+      // 1. Current year in footer
       const yearEl = document.getElementById('currentYear');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -1423,7 +1472,7 @@
         });
       }
 
-      // 3. Margin Engine Simulator
+      // 3. Dynamic Margin Engine Simulator
       const retainerInput = document.getElementById('retainerInput');
       const clientCountInput = document.getElementById('clientCountInput');
       const displayWholesale = document.getElementById('displayWholesale');
@@ -1460,7 +1509,7 @@
         }
       };
 
-      // 4. FAQ Accordion Logic
+      // 4. FAQ Accordion
       const faqItems = document.querySelectorAll('.faq-item');
       faqItems.forEach(item => {
         const btn = item.querySelector('.faq-question');
@@ -1473,30 +1522,53 @@
         });
       });
 
-      // 5. Video Playback Controls
-      window.togglePlayVideo = function(videoId, buttonId) {
+      // 5. Video Playback Engine (Cross-Browser Reliable Handler)
+      const allVideos = document.querySelectorAll('.sample-video-elem');
+      
+      allVideos.forEach(vid => {
+        const btn = vid.parentElement.querySelector('.video-custom-play-btn');
+        
+        vid.addEventListener('play', () => {
+          if (btn) btn.classList.add('playing');
+        });
+        
+        vid.addEventListener('pause', () => {
+          if (btn) btn.classList.remove('playing');
+        });
+
+        vid.addEventListener('ended', () => {
+          if (btn) btn.classList.remove('playing');
+        });
+      });
+
+      window.togglePlay = function(videoId, btnId) {
         const video = document.getElementById(videoId);
-        const playBtn = document.getElementById(buttonId);
+        const btn = document.getElementById(btnId);
         if (!video) return;
 
-        // Pause other videos first
-        document.querySelectorAll('.sample-video-elem').forEach(v => {
+        // Pause all other active videos
+        allVideos.forEach(v => {
           if (v !== video && !v.paused) {
             v.pause();
-            const otherBtn = v.parentElement.querySelector('.video-custom-play-btn');
-            if (otherBtn) otherBtn.classList.remove('playing');
           }
         });
 
         if (video.paused) {
-          video.play().then(() => {
-            if (playBtn) playBtn.classList.add('playing');
-          }).catch(err => {
-            console.error("Autoplay/play policy interrupted:", err);
-          });
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.then(() => {
+              if (btn) btn.classList.add('playing');
+            }).catch(error => {
+              console.warn("Video playback requires user gesture or muted audio:", error);
+              video.muted = true;
+              video.play().then(() => {
+                if (btn) btn.classList.add('playing');
+              });
+            });
+          }
         } else {
           video.pause();
-          if (playBtn) playBtn.classList.remove('playing');
+          if (btn) btn.classList.remove('playing');
         }
       };
     });
