@@ -51,7 +51,7 @@
     }
 
     .section-container {
-      padding: 5.5rem 0;
+      padding: 5rem 0;
       border-bottom: 1px solid var(--border-color);
       position: relative;
     }
@@ -97,7 +97,7 @@
       font-weight: 400;
     }
 
-    /* Action Buttons */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -151,7 +151,7 @@
       font-size: 1.05rem;
     }
 
-    /* 1. Global Navigation */
+    /* Navigation */
     .nav-container {
       position: sticky;
       top: 0;
@@ -241,9 +241,9 @@
       .mobile-drawer { display: none !important; }
     }
 
-    /* 2. Hero Section */
+    /* Hero Section */
     .hero-section {
-      padding: 3rem 0 4.5rem;
+      padding: 3.5rem 0 4.5rem;
       text-align: center;
       position: relative;
     }
@@ -292,7 +292,7 @@
       font-weight: bold;
     }
 
-    /* 3. Agency Economic Arbitrage */
+    /* Comparative Table */
     .arbitrage-table-container {
       overflow-x: auto;
       border: 1px solid var(--border-color);
@@ -339,7 +339,7 @@
       margin-left: 0.4rem;
     }
 
-    /* Dynamic Margin Calculator */
+    /* Calculator */
     .calc-container {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
@@ -457,316 +457,90 @@
       font-weight: 900;
     }
 
-    /* 4. Interactive Proof Sandbox (Engineered for Vertical Video) */
-    .sandbox-grid {
+    /* Samples Showcase: Clean B2B Deliverable Archetypes */
+    .archetypes-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.75rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
       margin-top: 2rem;
     }
     .archetype-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      overflow: hidden;
+      border-radius: 10px;
+      padding: 1.75rem;
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      position: relative;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
     }
     .archetype-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.3);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+      transform: translateY(-3px);
+      border-color: var(--border-focus);
     }
-
-    /* Dedicated Card Header Bar (No Overlap) */
-    .card-top-bar {
-      padding: 0.75rem 1rem;
-      background: #121212;
-      border-bottom: 1px solid var(--border-color);
+    .card-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 0.5rem;
-      z-index: 10;
+      margin-bottom: 1.25rem;
     }
-    .archetype-tag {
+    .meta-tag {
       font-size: 0.72rem;
       font-weight: 800;
-      color: var(--text-white);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .badge-indicator {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent-green);
-      display: inline-block;
-      box-shadow: 0 0 6px var(--accent-green);
-      flex-shrink: 0;
-    }
-    
-    .sound-toggle-btn {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid var(--border-color);
-      color: var(--text-gray);
-      padding: 0.25rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      transition: all 0.15s;
-    }
-    .sound-toggle-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
-      color: var(--text-white);
-    }
-    .sound-toggle-btn.active {
-      background: var(--accent-green-bg);
-      border-color: var(--accent-green);
       color: var(--accent-green);
-    }
-
-    .archetype-video-viewport {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      background: #020202;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-    .sample-video-elem {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      background: #000;
-      display: block;
-      transition: filter 0.3s ease, transform 0.3s ease;
-    }
-    .sample-video-elem.raw-mode {
-      filter: saturate(0.4) contrast(0.8) brightness(0.75);
-      transform: scale(0.92);
-    }
-
-    /* Live Agency Motion Overlays */
-    .motion-layer {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 8;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 1.25rem;
-      transition: opacity 0.2s ease;
-    }
-    .motion-layer.hidden {
-      opacity: 0;
-    }
-    
-    /* Short-form Caption Pill */
-    .kinetic-caption-box {
-      margin-top: auto;
-      margin-bottom: 2.75rem;
-      text-align: center;
-    }
-    .kinetic-caption-word {
-      display: inline-block;
-      background: #ffe600;
-      color: #000;
-      font-weight: 900;
-      font-size: 0.95rem;
-      padding: 0.25rem 0.65rem;
-      border-radius: 4px;
       text-transform: uppercase;
-      letter-spacing: -0.02em;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.8);
-      animation: pulseCaption 1.8s infinite;
+      letter-spacing: 0.08em;
     }
-    @keyframes pulseCaption {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    .voice-iso-marker {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(0, 0, 0, 0.75);
-      border: 1px solid var(--accent-green-border);
-      color: var(--accent-green);
-      font-size: 0.65rem;
-      font-weight: 800;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .saas-ui-marker {
-      position: absolute;
-      top: 36%;
-      right: 10%;
-      background: rgba(15, 23, 42, 0.92);
-      border: 1px solid var(--accent-blue);
-      color: var(--accent-blue);
+    .format-tag {
       font-size: 0.68rem;
-      font-weight: 800;
-      padding: 0.3rem 0.6rem;
+      font-weight: 700;
+      color: var(--text-dark-gray);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      padding: 0.15rem 0.45rem;
       border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.35);
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      animation: floatBadge 3s infinite ease-in-out;
     }
-    @keyframes floatBadge {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
+    .archetype-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
     }
-
-    .roi-stat-marker {
-      position: absolute;
-      bottom: 28%;
-      left: 10%;
-      background: rgba(6, 78, 59, 0.92);
-      border: 1px solid var(--accent-green);
-      color: #86efac;
-      font-size: 0.72rem;
-      font-weight: 900;
-      padding: 0.35rem 0.75rem;
-      border-radius: 6px;
-      box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
-      letter-spacing: 0.02em;
-    }
-
-    .podcast-speaker-marker {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(88, 28, 135, 0.9);
-      border: 1px solid var(--accent-purple);
-      color: #e9d5ff;
-      font-size: 0.65rem;
-      font-weight: 800;
-      padding: 0.25rem 0.6rem;
-      border-radius: 4px;
-      text-transform: uppercase;
-    }
-
-    .video-play-indicator {
-      position: absolute;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      color: var(--text-white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-      z-index: 15;
-    }
-    .video-play-indicator.visible {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-
-    /* Video Card Footer */
-    .archetype-info {
-      padding: 1.35rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-top: 1px solid var(--border-color);
-      background: var(--bg-card);
-    }
-    .archetype-info h4 {
-      font-size: 1.05rem;
-      margin-bottom: 0.4rem;
-    }
-    .archetype-info p {
-      font-size: 0.825rem;
+    .archetype-card p {
+      font-size: 0.85rem;
       color: var(--text-gray);
-      line-height: 1.5;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
     }
-    .archetype-specs {
+    .specs-list {
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin: 1rem 0;
+      margin-bottom: 1.5rem;
     }
-    .spec-pill {
+    .spec-item {
       font-size: 0.68rem;
       font-weight: 600;
-      color: var(--text-dark-gray);
+      color: #d4d4d8;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border-color);
-      padding: 0.15rem 0.45rem;
+      padding: 0.2rem 0.5rem;
       border-radius: 3px;
     }
 
-    /* Comparison Button Strip */
-    .compare-control-bar {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.4rem;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 0.25rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color);
-      margin-top: 0.25rem;
-    }
-    .compare-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-dark-gray);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.45rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: inherit;
-      transition: all 0.15s;
-    }
-    .compare-btn.active {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text-white);
-    }
-    .compare-btn.active.polished {
-      color: var(--accent-green);
-    }
-
     .drive-banner-box {
-      margin-top: 3rem;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px dashed var(--border-color);
-      border-radius: 8px;
-      padding: 1.5rem;
+      margin-top: 3.5rem;
+      background: rgba(34, 197, 94, 0.04);
+      border: 1px solid var(--accent-green-border);
+      border-radius: 10px;
+      padding: 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
 
-    /* 5. SLA Matrix */
+    /* SLA Matrix */
     .sla-matrix-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -778,7 +552,6 @@
       border: 1px solid var(--border-color);
       border-radius: 8px;
       padding: 1.75rem;
-      position: relative;
       display: flex;
       flex-direction: column;
     }
@@ -822,7 +595,7 @@
       width: fit-content;
     }
 
-    /* Calibration Guarantee Callout */
+    /* Calibration Guarantee */
     .calibration-box {
       margin-top: 2.5rem;
       background: rgba(34, 197, 94, 0.05);
@@ -839,7 +612,7 @@
       flex-shrink: 0;
     }
 
-    /* 6. Infrastructure & Async Questionnaire */
+    /* Infrastructure */
     .infra-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -902,7 +675,7 @@
       margin-bottom: 0.5rem;
     }
 
-    /* 7. Pricing */
+    /* Pricing */
     .pricing-wrap {
       max-width: 620px;
       margin: 0 auto;
@@ -988,7 +761,7 @@
       box-shadow: 0 0 8px var(--accent-green);
     }
 
-    /* 8. FAQ */
+    /* FAQ */
     .faq-container {
       max-width: 800px;
       margin: 0 auto;
@@ -1038,7 +811,7 @@
     }
     .faq-item.active .faq-answer { display: block; }
 
-    /* 9. Terminal CTA */
+    /* Terminal CTA */
     .terminal-cta-section {
       padding: 6.5rem 0;
       background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #080808 85%);
@@ -1093,12 +866,13 @@
       .calc-container { padding: 1.5rem; }
       .pricing-card-main { padding: 2.5rem 1.5rem; }
       .calibration-box { flex-direction: column; text-align: center; }
+      .drive-banner-box { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 1. GLOBAL NAVIGATION BAR -->
+  <!-- 1. GLOBAL NAVIGATION -->
   <header class="nav-container">
     <div class="container nav-inner">
       <a href="#" class="brand-logo">EG<span>STUDIO</span></a>
@@ -1132,7 +906,7 @@
   </header>
 
   <main>
-    <!-- 2. ABOVE-THE-FOLD HERO SECTION -->
+    <!-- 2. HERO SECTION -->
     <section class="hero-section">
       <div class="container">
         <div class="eyebrow-tag">WHITE-LABEL CONTENT INFRASTRUCTURE FOR B2B MARKETING AGENCIES</div>
@@ -1152,7 +926,7 @@
       </div>
     </section>
 
-    <!-- 3. AGENCY ECONOMIC ARBITRAGE & MARGIN ENGINE -->
+    <!-- 3. AGENCY ECONOMIC ARBITRAGE -->
     <section id="economics" class="section-container bg-surface">
       <div class="container">
         <div class="section-header text-center">
@@ -1199,7 +973,7 @@
           </table>
         </div>
 
-        <!-- Dynamic Margin Simulator -->
+        <!-- Margin Simulator -->
         <div class="calc-container">
           <div class="calc-header">
             <h3>Dynamic Agency Margin Calculator</h3>
@@ -1249,222 +1023,117 @@
       </div>
     </section>
 
-    <!-- 4. INTERACTIVE PROOF SANDBOX: B2B VERTICALS -->
+    <!-- 4. SAMPLE PROOF: 4 CORE B2B DELIVERABLE ARCHETYPES -->
     <section id="samples" class="section-container">
       <div class="container">
         <div class="section-header text-center">
-          <div class="eyebrow-tag">EXECUTION EXCELLENCE</div>
-          <h2 class="section-title">High-Definition B2B Vertical Samples</h2>
-          <p class="section-subtitle">Four calibrated archetypes demonstrating raw-to-finished production standards. Tap any video to pause or play, and toggle sound or polish mode.</p>
+          <div class="eyebrow-tag">PRODUCTION ARTIFACTS</div>
+          <h2 class="section-title">Production Execution Standards</h2>
+          <p class="section-subtitle">We fulfill four distinct B2B video archetypes engineered for conversion velocity, executive authority, and social retention.</p>
         </div>
 
-        <div class="sandbox-grid">
-          <!-- Sample 01: Executive Thought Leadership -->
-          <div class="archetype-card" id="card-sample1">
-            <div class="card-top-bar">
-              <span class="archetype-tag"><span class="badge-indicator"></span> 01. Thought Leadership</span>
-              <button type="button" class="sound-toggle-btn" id="soundBtn1" onclick="toggleAudioTrack('video1', this)">
-                <span>🔇 Unmute</span>
-              </button>
-            </div>
-            
-            <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video1', 'playInd1')">
-              <!-- B2B Executive Talking Head Vertical Video -->
-              <video id="video1" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-businesswoman-talking-on-a-video-call-with-a-laptop-42998-large.mp4" type="video/mp4">
-              </video>
-
-              <div class="video-play-indicator" id="playInd1">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="archetypes-grid">
+          <!-- Archetype 01 -->
+          <div class="archetype-card">
+            <div>
+              <div class="card-meta">
+                <span class="meta-tag">Archetype 01</span>
+                <span class="format-tag">9:16 Vertical</span>
               </div>
-
-              <!-- Motion Overlays -->
-              <div class="motion-layer" id="motionLayer1">
-                <div class="voice-iso-marker">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/></svg>
-                  <span>AI VOICE ISOLATED</span>
-                </div>
-                <div class="kinetic-caption-box">
-                  <span class="kinetic-caption-word">CAC IS UP 42%</span>
-                </div>
+              <h3>Executive Thought Leadership</h3>
+              <p>Turn raw founder speaking footage into authoritative social assets with narrative pacing and vocal enhancement.</p>
+              <div class="specs-list">
+                <span class="spec-item">Kinetic Subtitles</span>
+                <span class="spec-item">Punch-In Zooms</span>
+                <span class="spec-item">Vocal Mastering</span>
+                <span class="spec-item">Burned-in .SRT</span>
               </div>
             </div>
-
-            <div class="archetype-info">
-              <div>
-                <h4>01. Executive Thought Leadership</h4>
-                <p>Kinetic typography, dynamic punch-ins, audio enhancement, and retention-focused narrative pacing.</p>
-              </div>
-              <div class="archetype-specs">
-                <span class="spec-pill">Voice Isolation</span>
-                <span class="spec-pill">Dynamic Zoom</span>
-                <span class="spec-pill">Burned-in SRT</span>
-              </div>
-              
-              <div class="compare-control-bar">
-                <button type="button" class="compare-btn" onclick="setCompareMode('video1', 'motionLayer1', this, 'raw')">Raw Ingest</button>
-                <button type="button" class="compare-btn active polished" onclick="setCompareMode('video1', 'motionLayer1', this, 'polished')">EG Studio Polish</button>
-              </div>
-            </div>
+            <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.8rem; padding: 0.6rem;">
+              Inspect Master Exports ↗
+            </a>
           </div>
 
-          <!-- Sample 02: B2B SaaS Feature Cutdown -->
-          <div class="archetype-card" id="card-sample2">
-            <div class="card-top-bar">
-              <span class="archetype-tag"><span class="badge-indicator"></span> 02. B2B SaaS Cutdown</span>
-              <button type="button" class="sound-toggle-btn" id="soundBtn2" onclick="toggleAudioTrack('video2', this)">
-                <span>🔇 Unmute</span>
-              </button>
-            </div>
-
-            <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video2', 'playInd2')">
-              <!-- B2B Tech / Code / Product Screen Video -->
-              <video id="video2" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-screen-close-up-41362-large.mp4" type="video/mp4">
-              </video>
-
-              <div class="video-play-indicator" id="playInd2">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <!-- Archetype 02 -->
+          <div class="archetype-card">
+            <div>
+              <div class="card-meta">
+                <span class="meta-tag">Archetype 02</span>
+                <span class="format-tag">9:16 Vertical</span>
               </div>
-
-              <div class="motion-layer" id="motionLayer2">
-                <div class="saas-ui-marker">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                  <span>1-CLICK SYNC</span>
-                </div>
-                <div class="kinetic-caption-box">
-                  <span class="kinetic-caption-word" style="background:#38bdf8; color:#0f172a;">PIPELINE AUTOMATED</span>
-                </div>
+              <h3>B2B SaaS Feature Cutdowns</h3>
+              <p>Transform 30-minute product walkthroughs and screen recordings into high-converting 60-second feature highlights.</p>
+              <div class="specs-list">
+                <span class="spec-item">UI Motion Framing</span>
+                <span class="spec-item">Cursor Highlight</span>
+                <span class="spec-item">Callout Overlays</span>
+                <span class="spec-item">Sound FX Stems</span>
               </div>
             </div>
-
-            <div class="archetype-info">
-              <div>
-                <h4>02. B2B SAAS FEATURE CUTDOWN</h4>
-                <p>UI framing, motion callouts, cursor highlight tracks, and clean branded typography overlays.</p>
-              </div>
-              <div class="archetype-specs">
-                <span class="spec-pill">UI Framing</span>
-                <span class="spec-pill">Motion Graphics</span>
-                <span class="spec-pill">Sound FX Stems</span>
-              </div>
-              
-              <div class="compare-control-bar">
-                <button type="button" class="compare-btn" onclick="setCompareMode('video2', 'motionLayer2', this, 'raw')">Raw Ingest</button>
-                <button type="button" class="compare-btn active polished" onclick="setCompareMode('video2', 'motionLayer2', this, 'polished')">EG Studio Polish</button>
-              </div>
-            </div>
+            <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.8rem; padding: 0.6rem;">
+              Inspect Master Exports ↗
+            </a>
           </div>
 
-          <!-- Sample 03: Case Study & Proof Hook -->
-          <div class="archetype-card" id="card-sample3">
-            <div class="card-top-bar">
-              <span class="archetype-tag"><span class="badge-indicator"></span> 03. Case Study & Proof</span>
-              <button type="button" class="sound-toggle-btn" id="soundBtn3" onclick="toggleAudioTrack('video3', this)">
-                <span>🔇 Unmute</span>
-              </button>
-            </div>
-
-            <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video3', 'playInd3')">
-              <!-- Executive Testimonial Speaker Video -->
-              <video id="video3" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-man-holding-a-speech-with-a-microphone-41264-large.mp4" type="video/mp4">
-              </video>
-
-              <div class="video-play-indicator" id="playInd3">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <!-- Archetype 03 -->
+          <div class="archetype-card">
+            <div>
+              <div class="card-meta">
+                <span class="meta-tag">Archetype 03</span>
+                <span class="format-tag">9:16 Vertical</span>
               </div>
-
-              <div class="motion-layer" id="motionLayer3">
-                <div class="roi-stat-marker">
-                  <span>▲ +$3.2M NET ARR</span>
-                </div>
-                <div class="kinetic-caption-box">
-                  <span class="kinetic-caption-word" style="background:#4ade80; color:#064e3b;">3.4X RETENTION</span>
-                </div>
+              <h3>Case Studies & Proof Hooks</h3>
+              <p>Extract client testimonials and ROI verification hooks that establish pipeline trust and sales momentum.</p>
+              <div class="specs-list">
+                <span class="spec-item">Metric Callouts</span>
+                <span class="spec-item">B-Roll Sync</span>
+                <span class="spec-item">Trust Badges</span>
+                <span class="spec-item">Dynamic Pacing</span>
               </div>
             </div>
-
-            <div class="archetype-info">
-              <div>
-                <h4>03. Case Study & Proof Hook</h4>
-                <p>Highlighting client ROI metrics, quote badges, and clean B-roll overlays to build pipeline trust.</p>
-              </div>
-              <div class="archetype-specs">
-                <span class="spec-pill">Metric Badges</span>
-                <span class="spec-pill">B-Roll Cutaway</span>
-                <span class="spec-pill">Trust Badges</span>
-              </div>
-              
-              <div class="compare-control-bar">
-                <button type="button" class="compare-btn" onclick="setCompareMode('video3', 'motionLayer3', this, 'raw')">Raw Ingest</button>
-                <button type="button" class="compare-btn active polished" onclick="setCompareMode('video3', 'motionLayer3', this, 'polished')">EG Studio Polish</button>
-              </div>
-            </div>
+            <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.8rem; padding: 0.6rem;">
+              Inspect Master Exports ↗
+            </a>
           </div>
 
-          <!-- Sample 04: Webinar & Podcast Repurpose -->
-          <div class="archetype-card" id="card-sample4">
-            <div class="card-top-bar">
-              <span class="archetype-tag"><span class="badge-indicator"></span> 04. Podcast / Repurpose</span>
-              <button type="button" class="sound-toggle-btn" id="soundBtn4" onclick="toggleAudioTrack('video4', this)">
-                <span>🔇 Unmute</span>
-              </button>
-            </div>
-
-            <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video4', 'playInd4')">
-              <!-- Studio Mic / Podcast Interview Video -->
-              <video id="video4" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=700&q=80">
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-podcaster-talking-into-a-microphone-in-a-studio-43180-large.mp4" type="video/mp4">
-              </video>
-
-              <div class="video-play-indicator" id="playInd4">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <!-- Archetype 04 -->
+          <div class="archetype-card">
+            <div>
+              <div class="card-meta">
+                <span class="meta-tag">Archetype 04</span>
+                <span class="format-tag">9:16 Vertical</span>
               </div>
-
-              <div class="motion-layer" id="motionLayer4">
-                <div class="podcast-speaker-marker">
-                  <span>EPISODE #142 HOOK</span>
-                </div>
-                <div class="kinetic-caption-box">
-                  <span class="kinetic-caption-word" style="background:#c084fc; color:#3b0764;">MULTI-SPEAKER SYNC</span>
-                </div>
+              <h3>Webinar & Podcast Repurposing</h3>
+              <p>Mine viral narrative hooks and tactical insights from 60-minute conversations for multi-platform distribution.</p>
+              <div class="specs-list">
+                <span class="spec-item">Hook Extraction</span>
+                <span class="spec-item">Multi-Speaker</span>
+                <span class="spec-item">Dynamic Crop</span>
+                <span class="spec-item">High-Contrast Text</span>
               </div>
             </div>
-
-            <div class="archetype-info">
-              <div>
-                <h4>04. Webinar & Podcast Repurpose</h4>
-                <p>Hook extraction from long-form conversations, multi-speaker framing, and high-contrast captions.</p>
-              </div>
-              <div class="archetype-specs">
-                <span class="spec-pill">Hook Extraction</span>
-                <span class="spec-pill">Multi-Speaker</span>
-                <span class="spec-pill">Dynamic Crop</span>
-              </div>
-              
-              <div class="compare-control-bar">
-                <button type="button" class="compare-btn" onclick="setCompareMode('video4', 'motionLayer4', this, 'raw')">Raw Ingest</button>
-                <button type="button" class="compare-btn active polished" onclick="setCompareMode('video4', 'motionLayer4', this, 'polished')">EG Studio Polish</button>
-              </div>
-            </div>
+            <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; font-size: 0.8rem; padding: 0.6rem;">
+              Inspect Master Exports ↗
+            </a>
           </div>
         </div>
 
-        <!-- Google Drive Shared Asset Package -->
+        <!-- Google Drive Direct Verification Hub -->
         <div class="drive-banner-box">
           <div>
-            <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Audit the Master Production Asset Packages</h4>
-            <p style="font-size: 0.825rem; color: var(--text-gray);">Inspect our shared Google Drive folder containing full-resolution master exports, source files, and .SRT sidecars.</p>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">Audit Full-Resolution Agency Production Packages</h3>
+            <p style="font-size: 0.85rem; color: var(--text-gray); max-width: 680px;">
+              Access our public client handoff drive containing raw footage ingestion samples, finished 4K/1080p vertical master MP4s, project stems, and standalone .SRT sidecar files.
+            </p>
           </div>
-          <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-outline-green">
-            <span>Open Google Drive Samples Folder</span> ↗
+          <a href="https://drive.google.com/drive/folders/1pmDW0snyxO2odGWCQLVdY9BNk13Lqm5g" target="_blank" rel="noopener noreferrer" class="btn btn-outline-green" style="padding: 0.9rem 1.75rem;">
+            <span>Open Google Drive Samples</span> ↗
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 5. THE 30-DAY MILESTONE SLA MATRIX & CALIBRATION GUARANTEE -->
+    <!-- 5. 30-DAY SLA CADENCE -->
     <section id="sprint-model" class="section-container bg-surface">
       <div class="container">
         <div class="section-header text-center">
@@ -1474,7 +1143,6 @@
         </div>
 
         <div class="sla-matrix-grid">
-          <!-- Milestone 1 -->
           <div class="sla-milestone-card">
             <div class="milestone-num">Milestone 01</div>
             <div class="milestone-days">Days 1–10</div>
@@ -1485,7 +1153,6 @@
             </div>
           </div>
 
-          <!-- Milestone 2 -->
           <div class="sla-milestone-card">
             <div class="milestone-num">Milestone 02</div>
             <div class="milestone-days">Days 11–20</div>
@@ -1496,7 +1163,6 @@
             </div>
           </div>
 
-          <!-- Milestone 3 -->
           <div class="sla-milestone-card">
             <div class="milestone-num">Milestone 03</div>
             <div class="milestone-days">Days 21–30</div>
@@ -1508,7 +1174,7 @@
           </div>
         </div>
 
-        <!-- 100% Calibration Guarantee -->
+        <!-- Calibration Guarantee -->
         <div class="calibration-box">
           <div class="calibration-icon">🛡️</div>
           <div>
@@ -1521,7 +1187,7 @@
       </div>
     </section>
 
-    <!-- 6. ASYNC ONBOARDING & ZERO-FRICTION PIPELINE -->
+    <!-- 6. ASYNC INTAKE -->
     <section id="intake" class="section-container">
       <div class="container">
         <div class="section-header text-center">
@@ -1582,7 +1248,7 @@
       </div>
     </section>
 
-    <!-- 7. TRANSPARENT WHOLESALE PRICING CONTAINER -->
+    <!-- 7. PRICING -->
     <section id="pricing" class="section-container bg-surface">
       <div class="container text-center">
         <div class="section-header">
@@ -1626,7 +1292,7 @@
       </div>
     </section>
 
-    <!-- 8. INSTITUTIONAL FAQ & RISK-REVERSAL MODULE -->
+    <!-- 8. FAQ -->
     <section id="faq" class="section-container">
       <div class="container">
         <div class="section-header text-center">
@@ -1699,7 +1365,7 @@
       </div>
     </section>
 
-    <!-- 9. TERMINAL CALL-TO-ACTION BAR -->
+    <!-- 9. TERMINAL CTA -->
     <section class="terminal-cta-section">
       <div class="container">
         <h2 class="terminal-title">Scale Your Agency's Video Delivery Capacity Today.</h2>
@@ -1806,101 +1472,6 @@
           }
         });
       });
-
-      // 5. iOS WebKit Native Autoplay Execution Engine
-      const allVideos = document.querySelectorAll('.sample-video-elem');
-      
-      allVideos.forEach(vid => {
-        vid.muted = true;
-        vid.defaultMuted = true;
-        vid.playsInline = true;
-        vid.setAttribute('playsinline', '');
-        vid.setAttribute('webkit-playsinline', '');
-
-        const playPromise = vid.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            window.addEventListener('touchstart', () => {
-              vid.play().catch(() => {});
-            }, { once: true });
-          });
-        }
-      });
-
-      // Tap-to-Play/Pause Handler
-      window.toggleVideoPlayback = function(videoId, indId) {
-        const video = document.getElementById(videoId);
-        const indicator = document.getElementById(indId);
-        if (!video) return;
-
-        if (video.paused) {
-          video.play();
-          if (indicator) {
-            indicator.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
-            indicator.classList.add('visible');
-            setTimeout(() => indicator.classList.remove('visible'), 500);
-          }
-        } else {
-          video.pause();
-          if (indicator) {
-            indicator.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
-            indicator.classList.add('visible');
-            setTimeout(() => indicator.classList.remove('visible'), 500);
-          }
-        }
-      };
-
-      // Sound Toggle (Unmute / Mute)
-      window.toggleAudioTrack = function(videoId, btnEl) {
-        const video = document.getElementById(videoId);
-        if (!video || !btnEl) return;
-
-        if (video.muted) {
-          allVideos.forEach(v => {
-            if (v !== video) {
-              v.muted = true;
-              const otherCard = v.closest('.archetype-card');
-              if (otherCard) {
-                const otherBtn = otherCard.querySelector('.sound-toggle-btn');
-                if (otherBtn) {
-                  otherBtn.classList.remove('active');
-                  otherBtn.innerHTML = '<span>🔇 Unmute</span>';
-                }
-              }
-            }
-          });
-
-          video.muted = false;
-          video.play();
-          btnEl.classList.add('active');
-          btnEl.innerHTML = '<span>🔊 Sound On</span>';
-        } else {
-          video.muted = true;
-          btnEl.classList.remove('active');
-          btnEl.innerHTML = '<span>🔇 Unmute</span>';
-        }
-      };
-
-      // 6. Raw Ingest vs. EG Studio Polish Comparison Mode
-      window.setCompareMode = function(videoId, motionId, buttonEl, mode) {
-        const video = document.getElementById(videoId);
-        const motionLayer = document.getElementById(motionId);
-        const parentBar = buttonEl.closest('.compare-control-bar');
-        
-        parentBar.querySelectorAll('.compare-btn').forEach(b => {
-          b.classList.remove('active', 'polished');
-        });
-        
-        buttonEl.classList.add('active');
-        if (mode === 'polished') {
-          buttonEl.classList.add('polished');
-          if (video) video.classList.remove('raw-mode');
-          if (motionLayer) motionLayer.classList.remove('hidden');
-        } else {
-          if (video) video.classList.add('raw-mode');
-          if (motionLayer) motionLayer.classList.add('hidden');
-        }
-      };
     });
   </script>
 </body>
