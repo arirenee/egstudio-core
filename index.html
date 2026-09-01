@@ -457,7 +457,7 @@
       font-weight: 900;
     }
 
-    /* 4. Interactive Proof Sandbox */
+    /* 4. Interactive Proof Sandbox (Engineered for iOS / Mobile Video) */
     .sandbox-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -480,15 +480,16 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
 
-    /* Dedicated Top Card Bar (Zero Overlap Guaranteed) */
+    /* Dedicated Top Bar: Absolute separation between Tag & Sound Controls */
     .card-top-bar {
-      padding: 0.85rem 1rem;
-      background: #111;
+      padding: 0.75rem 1rem;
+      background: #121212;
       border-bottom: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 0.5rem;
+      z-index: 10;
     }
     .archetype-tag {
       font-size: 0.72rem;
@@ -507,8 +508,33 @@
       background: var(--accent-green);
       display: inline-block;
       box-shadow: 0 0 6px var(--accent-green);
+      flex-shrink: 0;
     }
     
+    .sound-toggle-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-color);
+      color: var(--text-gray);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.15s;
+    }
+    .sound-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--text-white);
+    }
+    .sound-toggle-btn.active {
+      background: var(--accent-green-bg);
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+    }
+
     .archetype-video-viewport {
       position: relative;
       width: 100%;
@@ -518,6 +544,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
     }
     .sample-video-elem {
       width: 100%;
@@ -530,6 +557,28 @@
     .sample-video-elem.raw-mode {
       filter: saturate(0.5) contrast(0.85) brightness(0.8);
       transform: scale(0.94);
+    }
+
+    /* Custom Tap Play / Pause Overlay */
+    .video-play-indicator {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 15;
+    }
+    .video-play-indicator.visible {
+      opacity: 1;
+      transform: scale(1.05);
     }
 
     /* Live Agency Motion Overlays */
@@ -549,7 +598,7 @@
     }
     .kinetic-caption-box {
       margin-top: auto;
-      margin-bottom: 3.5rem;
+      margin-bottom: 2.75rem;
       text-align: center;
     }
     .kinetic-caption-word {
@@ -1189,7 +1238,7 @@
         <div class="section-header text-center">
           <div class="eyebrow-tag">EXECUTION EXCELLENCE</div>
           <h2 class="section-title">High-Definition B2B Vertical Samples</h2>
-          <p class="section-subtitle">Four calibrated archetypes demonstrating raw-to-finished production standards. Tap video controls for instant playback and sound, and toggle between raw ingest and EG Studio polish.</p>
+          <p class="section-subtitle">Four calibrated archetypes demonstrating raw-to-finished production standards. Tap any video to pause or play, and toggle sound or polish mode.</p>
         </div>
 
         <div class="sandbox-grid">
@@ -1197,13 +1246,19 @@
           <div class="archetype-card" id="card-sample1">
             <div class="card-top-bar">
               <span class="archetype-tag"><span class="badge-indicator"></span> 01. Thought Leadership</span>
-              <span class="spec-pill" style="margin: 0;">9:16 Vertical</span>
+              <button type="button" class="sound-toggle-btn" id="soundBtn1" onclick="toggleAudioTrack('video1', this)">
+                <span>🔇 Unmute</span>
+              </button>
             </div>
             
-            <div class="archetype-video-viewport">
-              <video id="video1" class="sample-video-elem" playsinline webkit-playsinline controls preload="auto" poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80">
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+            <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video1', 'playInd1')">
+              <video id="video1" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80">
+                <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
               </video>
+
+              <div class="video-play-indicator" id="playInd1">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
 
               <div class="motion-layer" id="motionLayer1">
                 <div class="kinetic-caption-box">
@@ -1234,13 +1289,19 @@
           <div class="archetype-card" id="card-sample2">
             <div class="card-top-bar">
               <span class="archetype-tag"><span class="badge-indicator"></span> 02. SaaS Cutdown</span>
-              <span class="spec-pill" style="margin: 0;">UI Motion</span>
+              <button type="button" class="sound-toggle-btn" id="soundBtn2" onclick="toggleAudioTrack('video2', this)">
+                <span>🔇 Unmute</span>
+              </button>
             </div>
 
-            <div class="archetype-video-viewport">
-              <video id="video2" class="sample-video-elem" playsinline webkit-playsinline controls preload="auto" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80">
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
+            <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video2', 'playInd2')">
+              <video id="video2" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80">
+                <source src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
               </video>
+
+              <div class="video-play-indicator" id="playInd2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
 
               <div class="motion-layer" id="motionLayer2">
                 <div class="saas-ui-marker">
@@ -1275,13 +1336,19 @@
           <div class="archetype-card" id="card-sample3">
             <div class="card-top-bar">
               <span class="archetype-tag"><span class="badge-indicator"></span> 03. Case Study</span>
-              <span class="spec-pill" style="margin: 0;">ROI Proof</span>
+              <button type="button" class="sound-toggle-btn" id="soundBtn3" onclick="toggleAudioTrack('video3', this)">
+                <span>🔇 Unmute</span>
+              </button>
             </div>
 
-            <div class="archetype-video-viewport">
-              <video id="video3" class="sample-video-elem" playsinline webkit-playsinline controls preload="auto" poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80">
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
+            <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video3', 'playInd3')">
+              <video id="video3" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
               </video>
+
+              <div class="video-play-indicator" id="playInd3">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
 
               <div class="motion-layer" id="motionLayer3">
                 <div class="roi-stat-marker">
@@ -1315,13 +1382,19 @@
           <div class="archetype-card" id="card-sample4">
             <div class="card-top-bar">
               <span class="archetype-tag"><span class="badge-indicator"></span> 04. Podcast / Repurpose</span>
-              <span class="spec-pill" style="margin: 0;">Multi-Speaker</span>
+              <button type="button" class="sound-toggle-btn" id="soundBtn4" onclick="toggleAudioTrack('video4', this)">
+                <span>🔇 Unmute</span>
+              </button>
             </div>
 
-            <div class="archetype-video-viewport">
-              <video id="video4" class="sample-video-elem" playsinline webkit-playsinline controls preload="auto" poster="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=700&q=80">
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4" type="video/mp4">
+            <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video4', 'playInd4')">
+              <video id="video4" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=700&q=80">
+                <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
               </video>
+
+              <div class="video-play-indicator" id="playInd4">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
 
               <div class="motion-layer" id="motionLayer4">
                 <div class="podcast-speaker-marker">
@@ -1708,7 +1781,83 @@
         });
       });
 
-      // 5. Raw Ingest vs. EG Studio Polish Comparison Mode
+      // 5. iOS WebKit Native Autoplay Execution Engine
+      const allVideos = document.querySelectorAll('.sample-video-elem');
+      
+      allVideos.forEach(vid => {
+        vid.muted = true;
+        vid.defaultMuted = true;
+        vid.playsInline = true;
+        vid.setAttribute('playsinline', '');
+        vid.setAttribute('webkit-playsinline', '');
+
+        const playPromise = vid.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Unblocks playback immediately upon the first user swipe/scroll/tap on screen
+            window.addEventListener('touchstart', () => {
+              vid.play().catch(() => {});
+            }, { once: true });
+          });
+        }
+      });
+
+      // Tap-to-Play/Pause Handler
+      window.toggleVideoPlayback = function(videoId, indId) {
+        const video = document.getElementById(videoId);
+        const indicator = document.getElementById(indId);
+        if (!video) return;
+
+        if (video.paused) {
+          video.play();
+          if (indicator) {
+            indicator.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+            indicator.classList.add('visible');
+            setTimeout(() => indicator.classList.remove('visible'), 500);
+          }
+        } else {
+          video.pause();
+          if (indicator) {
+            indicator.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+            indicator.classList.add('visible');
+            setTimeout(() => indicator.classList.remove('visible'), 500);
+          }
+        }
+      };
+
+      // Clean Header Sound Toggle (Unmute / Mute)
+      window.toggleAudioTrack = function(videoId, btnEl) {
+        const video = document.getElementById(videoId);
+        if (!video || !btnEl) return;
+
+        if (video.muted) {
+          // Mute other videos first
+          allVideos.forEach(v => {
+            if (v !== video) {
+              v.muted = true;
+              const otherCard = v.closest('.archetype-card');
+              if (otherCard) {
+                const otherBtn = otherCard.querySelector('.sound-toggle-btn');
+                if (otherBtn) {
+                  otherBtn.classList.remove('active');
+                  otherBtn.innerHTML = '<span>🔇 Unmute</span>';
+                }
+              }
+            }
+          });
+
+          video.muted = false;
+          video.play();
+          btnEl.classList.add('active');
+          btnEl.innerHTML = '<span>🔊 Sound On</span>';
+        } else {
+          video.muted = true;
+          btnEl.classList.remove('active');
+          btnEl.innerHTML = '<span>🔇 Unmute</span>';
+        }
+      };
+
+      // 6. Raw Ingest vs. EG Studio Polish Comparison Mode
       window.setCompareMode = function(videoId, motionId, buttonEl, mode) {
         const video = document.getElementById(videoId);
         const motionLayer = document.getElementById(motionId);
