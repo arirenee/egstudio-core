@@ -97,7 +97,7 @@
       font-weight: 400;
     }
 
-    /* Buttons */
+    /* Action Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -457,7 +457,7 @@
       font-weight: 900;
     }
 
-    /* 4. Interactive Proof Sandbox (Engineered for iOS / Mobile Video) */
+    /* 4. Interactive Proof Sandbox (Engineered for Vertical Video) */
     .sandbox-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -480,7 +480,7 @@
       box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
 
-    /* Dedicated Top Bar: Absolute separation between Tag & Sound Controls */
+    /* Dedicated Card Header Bar (No Overlap) */
     .card-top-bar {
       padding: 0.75rem 1rem;
       background: #121212;
@@ -539,7 +539,7 @@
       position: relative;
       width: 100%;
       aspect-ratio: 9 / 16;
-      background: #000;
+      background: #020202;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -555,30 +555,8 @@
       transition: filter 0.3s ease, transform 0.3s ease;
     }
     .sample-video-elem.raw-mode {
-      filter: saturate(0.5) contrast(0.85) brightness(0.8);
-      transform: scale(0.94);
-    }
-
-    /* Custom Tap Play / Pause Overlay */
-    .video-play-indicator {
-      position: absolute;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(0, 0, 0, 0.75);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: var(--text-white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-      z-index: 15;
-    }
-    .video-play-indicator.visible {
-      opacity: 1;
-      transform: scale(1.05);
+      filter: saturate(0.4) contrast(0.8) brightness(0.75);
+      transform: scale(0.92);
     }
 
     /* Live Agency Motion Overlays */
@@ -596,6 +574,8 @@
     .motion-layer.hidden {
       opacity: 0;
     }
+    
+    /* Short-form Caption Pill */
     .kinetic-caption-box {
       margin-top: auto;
       margin-bottom: 2.75rem;
@@ -607,7 +587,7 @@
       color: #000;
       font-weight: 900;
       font-size: 0.95rem;
-      padding: 0.25rem 0.6rem;
+      padding: 0.25rem 0.65rem;
       border-radius: 4px;
       text-transform: uppercase;
       letter-spacing: -0.02em;
@@ -619,18 +599,34 @@
       50% { transform: scale(1.05); }
     }
 
+    .voice-iso-marker {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid var(--accent-green-border);
+      color: var(--accent-green);
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
     .saas-ui-marker {
       position: absolute;
-      top: 38%;
-      right: 12%;
-      background: rgba(15, 23, 42, 0.9);
+      top: 36%;
+      right: 10%;
+      background: rgba(15, 23, 42, 0.92);
       border: 1px solid var(--accent-blue);
       color: var(--accent-blue);
       font-size: 0.68rem;
       font-weight: 800;
       padding: 0.3rem 0.6rem;
       border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.35);
       display: flex;
       align-items: center;
       gap: 0.3rem;
@@ -645,7 +641,7 @@
       position: absolute;
       bottom: 28%;
       left: 10%;
-      background: rgba(6, 78, 59, 0.9);
+      background: rgba(6, 78, 59, 0.92);
       border: 1px solid var(--accent-green);
       color: #86efac;
       font-size: 0.72rem;
@@ -658,8 +654,8 @@
 
     .podcast-speaker-marker {
       position: absolute;
-      top: 14%;
-      right: 10%;
+      top: 12px;
+      right: 12px;
       background: rgba(88, 28, 135, 0.9);
       border: 1px solid var(--accent-purple);
       color: #e9d5ff;
@@ -668,6 +664,27 @@
       padding: 0.25rem 0.6rem;
       border-radius: 4px;
       text-transform: uppercase;
+    }
+
+    .video-play-indicator {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 15;
+    }
+    .video-play-indicator.visible {
+      opacity: 1;
+      transform: scale(1.05);
     }
 
     /* Video Card Footer */
@@ -1232,7 +1249,7 @@
       </div>
     </section>
 
-    <!-- 4. INTERACTIVE PROOF SANDBOX -->
+    <!-- 4. INTERACTIVE PROOF SANDBOX: B2B VERTICALS -->
     <section id="samples" class="section-container">
       <div class="container">
         <div class="section-header text-center">
@@ -1252,15 +1269,21 @@
             </div>
             
             <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video1', 'playInd1')">
-              <video id="video1" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80">
-                <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+              <!-- B2B Executive Talking Head Vertical Video -->
+              <video id="video1" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-businesswoman-talking-on-a-video-call-with-a-laptop-42998-large.mp4" type="video/mp4">
               </video>
 
               <div class="video-play-indicator" id="playInd1">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               </div>
 
+              <!-- Motion Overlays -->
               <div class="motion-layer" id="motionLayer1">
+                <div class="voice-iso-marker">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/></svg>
+                  <span>AI VOICE ISOLATED</span>
+                </div>
                 <div class="kinetic-caption-box">
                   <span class="kinetic-caption-word">CAC IS UP 42%</span>
                 </div>
@@ -1288,15 +1311,16 @@
           <!-- Sample 02: B2B SaaS Feature Cutdown -->
           <div class="archetype-card" id="card-sample2">
             <div class="card-top-bar">
-              <span class="archetype-tag"><span class="badge-indicator"></span> 02. SaaS Cutdown</span>
+              <span class="archetype-tag"><span class="badge-indicator"></span> 02. B2B SaaS Cutdown</span>
               <button type="button" class="sound-toggle-btn" id="soundBtn2" onclick="toggleAudioTrack('video2', this)">
                 <span>🔇 Unmute</span>
               </button>
             </div>
 
             <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video2', 'playInd2')">
+              <!-- B2B Tech / Code / Product Screen Video -->
               <video id="video2" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80">
-                <source src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-code-screen-close-up-41362-large.mp4" type="video/mp4">
               </video>
 
               <div class="video-play-indicator" id="playInd2">
@@ -1335,15 +1359,16 @@
           <!-- Sample 03: Case Study & Proof Hook -->
           <div class="archetype-card" id="card-sample3">
             <div class="card-top-bar">
-              <span class="archetype-tag"><span class="badge-indicator"></span> 03. Case Study</span>
+              <span class="archetype-tag"><span class="badge-indicator"></span> 03. Case Study & Proof</span>
               <button type="button" class="sound-toggle-btn" id="soundBtn3" onclick="toggleAudioTrack('video3', this)">
                 <span>🔇 Unmute</span>
               </button>
             </div>
 
             <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video3', 'playInd3')">
-              <video id="video3" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80">
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              <!-- Executive Testimonial Speaker Video -->
+              <video id="video3" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-man-holding-a-speech-with-a-microphone-41264-large.mp4" type="video/mp4">
               </video>
 
               <div class="video-play-indicator" id="playInd3">
@@ -1388,8 +1413,9 @@
             </div>
 
             <div class="archetype-video-viewport" onclick="toggleVideoPlayback('video4', 'playInd4')">
+              <!-- Studio Mic / Podcast Interview Video -->
               <video id="video4" class="sample-video-elem" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=700&q=80">
-                <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-podcaster-talking-into-a-microphone-in-a-studio-43180-large.mp4" type="video/mp4">
               </video>
 
               <div class="video-play-indicator" id="playInd4">
@@ -1794,7 +1820,6 @@
         const playPromise = vid.play();
         if (playPromise !== undefined) {
           playPromise.catch(() => {
-            // Unblocks playback immediately upon the first user swipe/scroll/tap on screen
             window.addEventListener('touchstart', () => {
               vid.play().catch(() => {});
             }, { once: true });
@@ -1825,13 +1850,12 @@
         }
       };
 
-      // Clean Header Sound Toggle (Unmute / Mute)
+      // Sound Toggle (Unmute / Mute)
       window.toggleAudioTrack = function(videoId, btnEl) {
         const video = document.getElementById(videoId);
         if (!video || !btnEl) return;
 
         if (video.muted) {
-          // Mute other videos first
           allVideos.forEach(v => {
             if (v !== video) {
               v.muted = true;
