@@ -23,6 +23,8 @@
       --accent-green: #22c55e;
       --accent-green-bg: rgba(34, 197, 94, 0.12);
       --accent-green-border: rgba(34, 197, 94, 0.3);
+      --accent-blue: #38bdf8;
+      --accent-purple: #c084fc;
       --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
@@ -95,7 +97,7 @@
       font-weight: 400;
     }
 
-    /* Action Buttons */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -455,31 +457,34 @@
       font-weight: 900;
     }
 
-    /* 4. Interactive Proof Sandbox */
+    /* 4. Interactive Proof Sandbox (Autoplay Muted Video Players) */
     .sandbox-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.75rem;
       margin-top: 2rem;
     }
     .archetype-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s, border-color 0.2s;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
     }
     .archetype-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--border-focus);
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
     }
+    
     .archetype-video-viewport {
       position: relative;
       width: 100%;
       aspect-ratio: 9 / 16;
-      background: #000;
+      background: #050505;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -490,50 +495,192 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      background: #000;
+      background: #050505;
       display: block;
+      transition: filter 0.3s ease, transform 0.3s ease;
     }
+    .sample-video-elem.raw-mode {
+      filter: saturate(0.55) contrast(0.85) brightness(0.8);
+      transform: scale(0.92);
+    }
+
+    /* Overlay Badges & UI Elements */
     .video-overlay-badge {
       position: absolute;
       top: 12px;
       left: 12px;
       font-size: 0.68rem;
       font-weight: 800;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 0.25rem 0.55rem;
-      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
       text-transform: uppercase;
       color: #fff;
       pointer-events: none;
-      z-index: 5;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
     }
+    .badge-indicator {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      display: inline-block;
+      box-shadow: 0 0 6px var(--accent-green);
+    }
+
+    /* Sound Control Button */
+    .audio-control-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 20;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: var(--text-white);
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .audio-control-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: var(--text-white);
+    }
+    .audio-control-btn.unmuted {
+      background: var(--accent-green-bg);
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+    }
+
+    /* Live Agency Motion Overlays */
+    .motion-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 8;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.25rem;
+      transition: opacity 0.2s ease;
+    }
+    .motion-layer.hidden {
+      opacity: 0;
+    }
+    .kinetic-caption-box {
+      margin-top: auto;
+      margin-bottom: 2.75rem;
+      text-align: center;
+    }
+    .kinetic-caption-word {
+      display: inline-block;
+      background: #ffe600;
+      color: #000;
+      font-weight: 900;
+      font-size: 0.95rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+      animation: pulseCaption 1.8s infinite;
+    }
+    @keyframes pulseCaption {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .saas-ui-marker {
+      position: absolute;
+      top: 38%;
+      right: 14%;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--accent-blue);
+      color: var(--accent-blue);
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      animation: floatBadge 3s infinite ease-in-out;
+    }
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .roi-stat-marker {
+      position: absolute;
+      bottom: 24%;
+      left: 12%;
+      background: rgba(6, 78, 59, 0.9);
+      border: 1px solid var(--accent-green);
+      color: #86efac;
+      font-size: 0.72rem;
+      font-weight: 900;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+      letter-spacing: 0.02em;
+    }
+
+    .podcast-speaker-marker {
+      position: absolute;
+      top: 14%;
+      right: 12%;
+      background: rgba(88, 28, 135, 0.9);
+      border: 1px solid var(--accent-purple);
+      color: #e9d5ff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
     .video-custom-play-btn {
       position: absolute;
-      width: 58px;
-      height: 58px;
+      width: 62px;
+      height: 62px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       color: #000;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
-      transition: transform 0.15s ease, opacity 0.2s ease;
-      z-index: 6;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      z-index: 12;
       pointer-events: none;
-    }
-    .video-custom-play-btn.playing {
       opacity: 0;
     }
+    .video-custom-play-btn.paused {
+      opacity: 1;
+    }
+
+    /* Video Card Footer / Compare Switcher */
     .archetype-info {
-      padding: 1.25rem;
+      padding: 1.35rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       border-top: 1px solid var(--border-color);
+      background: var(--bg-card);
     }
     .archetype-info h4 {
       font-size: 1.05rem;
@@ -548,7 +695,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-top: 1rem;
+      margin: 1rem 0;
     }
     .spec-pill {
       font-size: 0.68rem;
@@ -559,6 +706,38 @@
       padding: 0.15rem 0.45rem;
       border-radius: 3px;
     }
+
+    /* Comparison Button Strip */
+    .compare-control-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.25rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      margin-top: 0.25rem;
+    }
+    .compare-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-dark-gray);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.45rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .compare-btn.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-white);
+    }
+    .compare-btn.active.polished {
+      color: var(--accent-green);
+    }
+
     .drive-banner-box {
       margin-top: 3rem;
       background: rgba(255, 255, 255, 0.02);
@@ -1055,31 +1234,50 @@
       </div>
     </section>
 
-    <!-- 4. INTERACTIVE PROOF SANDBOX: RAW-TO-FINISHED WORKFLOWS -->
+    <!-- 4. INTERACTIVE PROOF SANDBOX: 4 SAMPLE VIDEOS -->
     <section id="samples" class="section-container">
       <div class="container">
         <div class="section-header text-center">
           <div class="eyebrow-tag">EXECUTION EXCELLENCE</div>
           <h2 class="section-title">High-Definition B2B Vertical Samples</h2>
-          <p class="section-subtitle">Four calibrated archetypes demonstrating raw-to-finished production standards. Click any asset to play directly with sound and controls.</p>
+          <p class="section-subtitle">Four calibrated archetypes demonstrating raw-to-finished production standards. Videos play automatically in muted mode—tap the sound icon on any card to unmute audio.</p>
         </div>
 
         <div class="sandbox-grid">
-          <!-- Archetype 1 -->
-          <div class="archetype-card">
-            <div class="archetype-video-viewport" id="viewport1" onclick="togglePlay('video1', 'playBtn1')">
-              <span class="video-overlay-badge">01. Executive Thought Leadership</span>
-              <video id="video1" class="sample-video-elem" playsinline webkit-playsinline loop controls preload="metadata" poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80">
+          <!-- Sample 01: Executive Thought Leadership -->
+          <div class="archetype-card" id="card-sample1">
+            <div class="archetype-video-viewport" onclick="togglePlay('video1', 'playBtn1')">
+              <div class="video-overlay-badge">
+                <span class="badge-indicator"></span> 01. Thought Leadership
+              </div>
+
+              <!-- Unmute Button -->
+              <button type="button" class="audio-control-btn" id="audioBtn1" onclick="event.stopPropagation(); toggleAudio('video1', 'audioBtn1');">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="audio-icon"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                <span class="audio-label">Tap for Sound</span>
+              </button>
+              
+              <!-- Video Player (Autoplay + Muted with Audio Track) -->
+              <video id="video1" class="sample-video-elem" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=700&q=80">
                 <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-                Your browser does not support video playback.
               </video>
+
+              <!-- Live Polished Visual Overlays -->
+              <div class="motion-layer" id="motionLayer1">
+                <div class="kinetic-caption-box">
+                  <span class="kinetic-caption-word">CAC IS UP 42%</span>
+                </div>
+              </div>
+
+              <!-- Center Play Icon (Shown if paused) -->
               <div class="video-custom-play-btn" id="playBtn1">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
+
             <div class="archetype-info">
               <div>
-                <h4>Executive Thought Leadership</h4>
+                <h4>01. Executive Thought Leadership</h4>
                 <p>Kinetic typography, dynamic punch-ins, audio enhancement, and retention-focused narrative pacing.</p>
               </div>
               <div class="archetype-specs">
@@ -1087,24 +1285,50 @@
                 <span class="spec-pill">Dynamic Zoom</span>
                 <span class="spec-pill">Burned-in SRT</span>
               </div>
+              
+              <!-- Comparison Switcher -->
+              <div class="compare-control-bar">
+                <button type="button" class="compare-btn" onclick="setCompareMode('video1', 'motionLayer1', this, 'raw')">Raw Ingest</button>
+                <button type="button" class="compare-btn active polished" onclick="setCompareMode('video1', 'motionLayer1', this, 'polished')">EG Studio Polish</button>
+              </div>
             </div>
           </div>
 
-          <!-- Archetype 2 -->
-          <div class="archetype-card">
-            <div class="archetype-video-viewport" id="viewport2" onclick="togglePlay('video2', 'playBtn2')">
-              <span class="video-overlay-badge">02. B2B SaaS Feature Cutdown</span>
-              <video id="video2" class="sample-video-elem" playsinline webkit-playsinline loop controls preload="metadata" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80">
+          <!-- Sample 02: B2B SaaS Feature Cutdown -->
+          <div class="archetype-card" id="card-sample2">
+            <div class="archetype-video-viewport" onclick="togglePlay('video2', 'playBtn2')">
+              <div class="video-overlay-badge">
+                <span class="badge-indicator"></span> 02. SaaS Feature Cutdown
+              </div>
+
+              <!-- Unmute Button -->
+              <button type="button" class="audio-control-btn" id="audioBtn2" onclick="event.stopPropagation(); toggleAudio('video2', 'audioBtn2');">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="audio-icon"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                <span class="audio-label">Tap for Sound</span>
+              </button>
+
+              <video id="video2" class="sample-video-elem" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80">
                 <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4">
-                Your browser does not support video playback.
               </video>
+
+              <div class="motion-layer" id="motionLayer2">
+                <div class="saas-ui-marker">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  <span>1-CLICK SYNC</span>
+                </div>
+                <div class="kinetic-caption-box">
+                  <span class="kinetic-caption-word" style="background:#38bdf8; color:#0f172a;">PIPELINE AUTOMATED</span>
+                </div>
+              </div>
+
               <div class="video-custom-play-btn" id="playBtn2">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
+
             <div class="archetype-info">
               <div>
-                <h4>B2B SaaS Feature Cutdown</h4>
+                <h4>02. B2B SAAS FEATURE CUTDOWN</h4>
                 <p>UI framing, motion callouts, cursor highlight tracks, and clean branded typography overlays.</p>
               </div>
               <div class="archetype-specs">
@@ -1112,24 +1336,48 @@
                 <span class="spec-pill">Motion Graphics</span>
                 <span class="spec-pill">Sound FX Stems</span>
               </div>
+              
+              <div class="compare-control-bar">
+                <button type="button" class="compare-btn" onclick="setCompareMode('video2', 'motionLayer2', this, 'raw')">Raw Ingest</button>
+                <button type="button" class="compare-btn active polished" onclick="setCompareMode('video2', 'motionLayer2', this, 'polished')">EG Studio Polish</button>
+              </div>
             </div>
           </div>
 
-          <!-- Archetype 3 -->
-          <div class="archetype-card">
-            <div class="archetype-video-viewport" id="viewport3" onclick="togglePlay('video3', 'playBtn3')">
-              <span class="video-overlay-badge">03. Case Study & Proof Hook</span>
-              <video id="video3" class="sample-video-elem" playsinline webkit-playsinline loop controls preload="metadata" poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80">
+          <!-- Sample 03: Case Study & Proof Hook -->
+          <div class="archetype-card" id="card-sample3">
+            <div class="archetype-video-viewport" onclick="togglePlay('video3', 'playBtn3')">
+              <div class="video-overlay-badge">
+                <span class="badge-indicator"></span> 03. Case Study & Proof
+              </div>
+
+              <!-- Unmute Button -->
+              <button type="button" class="audio-control-btn" id="audioBtn3" onclick="event.stopPropagation(); toggleAudio('video3', 'audioBtn3');">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="audio-icon"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                <span class="audio-label">Tap for Sound</span>
+              </button>
+
+              <video id="video3" class="sample-video-elem" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80">
                 <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4" type="video/mp4">
-                Your browser does not support video playback.
               </video>
+
+              <div class="motion-layer" id="motionLayer3">
+                <div class="roi-stat-marker">
+                  <span>▲ +$3.2M NET ARR</span>
+                </div>
+                <div class="kinetic-caption-box">
+                  <span class="kinetic-caption-word" style="background:#4ade80; color:#064e3b;">3.4X RETENTION</span>
+                </div>
+              </div>
+
               <div class="video-custom-play-btn" id="playBtn3">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
+
             <div class="archetype-info">
               <div>
-                <h4>Case Study & Proof Hook</h4>
+                <h4>03. Case Study & Proof Hook</h4>
                 <p>Highlighting client ROI metrics, quote badges, and clean B-roll overlays to build pipeline trust.</p>
               </div>
               <div class="archetype-specs">
@@ -1137,30 +1385,59 @@
                 <span class="spec-pill">B-Roll Cutaway</span>
                 <span class="spec-pill">Trust Badges</span>
               </div>
+              
+              <div class="compare-control-bar">
+                <button type="button" class="compare-btn" onclick="setCompareMode('video3', 'motionLayer3', this, 'raw')">Raw Ingest</button>
+                <button type="button" class="compare-btn active polished" onclick="setCompareMode('video3', 'motionLayer3', this, 'polished')">EG Studio Polish</button>
+              </div>
             </div>
           </div>
 
-          <!-- Archetype 4 -->
-          <div class="archetype-card">
-            <div class="archetype-video-viewport" id="viewport4" onclick="togglePlay('video4', 'playBtn4')">
-              <span class="video-overlay-badge">04. Webinar / Podcast Repurpose</span>
-              <video id="video4" class="sample-video-elem" playsinline webkit-playsinline loop controls preload="metadata" poster="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=600&q=80">
+          <!-- Sample 04: Webinar & Podcast Repurpose -->
+          <div class="archetype-card" id="card-sample4">
+            <div class="archetype-video-viewport" onclick="togglePlay('video4', 'playBtn4')">
+              <div class="video-overlay-badge">
+                <span class="badge-indicator"></span> 04. Podcast / Webinar
+              </div>
+
+              <!-- Unmute Button -->
+              <button type="button" class="audio-control-btn" id="audioBtn4" onclick="event.stopPropagation(); toggleAudio('video4', 'audioBtn4');">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="audio-icon"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                <span class="audio-label">Tap for Sound</span>
+              </button>
+
+              <video id="video4" class="sample-video-elem" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=700&q=80">
                 <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4" type="video/mp4">
-                Your browser does not support video playback.
               </video>
+
+              <div class="motion-layer" id="motionLayer4">
+                <div class="podcast-speaker-marker">
+                  <span>EPISODE #142 HOOK</span>
+                </div>
+                <div class="kinetic-caption-box">
+                  <span class="kinetic-caption-word" style="background:#c084fc; color:#3b0764;">MULTI-SPEAKER SYNC</span>
+                </div>
+              </div>
+
               <div class="video-custom-play-btn" id="playBtn4">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               </div>
             </div>
+
             <div class="archetype-info">
               <div>
-                <h4>Webinar & Podcast Repurpose</h4>
+                <h4>04. Webinar & Podcast Repurpose</h4>
                 <p>Hook extraction from long-form conversations, multi-speaker framing, and high-contrast captions.</p>
               </div>
               <div class="archetype-specs">
                 <span class="spec-pill">Hook Extraction</span>
                 <span class="spec-pill">Multi-Speaker</span>
                 <span class="spec-pill">Dynamic Crop</span>
+              </div>
+              
+              <div class="compare-control-bar">
+                <button type="button" class="compare-btn" onclick="setCompareMode('video4', 'motionLayer4', this, 'raw')">Raw Ingest</button>
+                <button type="button" class="compare-btn active polished" onclick="setCompareMode('video4', 'motionLayer4', this, 'polished')">EG Studio Polish</button>
               </div>
             </div>
           </div>
@@ -1522,53 +1799,95 @@
         });
       });
 
-      // 5. Video Playback Engine (Cross-Browser Reliable Handler)
+      // 5. Video Autoplay (Muted) & Sound Toggle Controls
       const allVideos = document.querySelectorAll('.sample-video-elem');
       
+      // Auto-start video playback (muted) as soon as ready/visible
       allVideos.forEach(vid => {
-        const btn = vid.parentElement.querySelector('.video-custom-play-btn');
-        
-        vid.addEventListener('play', () => {
-          if (btn) btn.classList.add('playing');
-        });
-        
-        vid.addEventListener('pause', () => {
-          if (btn) btn.classList.remove('playing');
-        });
-
-        vid.addEventListener('ended', () => {
-          if (btn) btn.classList.remove('playing');
-        });
+        vid.muted = true;
+        const playPromise = vid.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Retry on touch/interaction if browser strict policy delays
+            document.addEventListener('touchstart', () => vid.play(), { once: true });
+          });
+        }
       });
 
+      // Toggle Audio (Mute / Unmute)
+      window.toggleAudio = function(videoId, btnId) {
+        const video = document.getElementById(videoId);
+        const btn = document.getElementById(btnId);
+        if (!video || !btn) return;
+
+        const label = btn.querySelector('.audio-label');
+        const icon = btn.querySelector('.audio-icon');
+
+        if (video.muted) {
+          // Unmute this video
+          // Mute other videos first to prevent overlapping audio
+          allVideos.forEach(v => {
+            if (v !== video) {
+              v.muted = true;
+              const otherCard = v.closest('.archetype-card');
+              if (otherCard) {
+                const otherBtn = otherCard.querySelector('.audio-control-btn');
+                if (otherBtn) {
+                  otherBtn.classList.remove('unmuted');
+                  otherBtn.querySelector('.audio-label').textContent = 'Tap for Sound';
+                  otherBtn.querySelector('.audio-icon').innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+                }
+              }
+            }
+          });
+
+          video.muted = false;
+          video.play();
+          btn.classList.add('unmuted');
+          if (label) label.textContent = 'Sound On';
+          if (icon) icon.innerHTML = '<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>';
+        } else {
+          // Mute back
+          video.muted = true;
+          btn.classList.remove('unmuted');
+          if (label) label.textContent = 'Tap for Sound';
+          if (icon) icon.innerHTML = '<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>';
+        }
+      };
+
+      // Play / Pause video click
       window.togglePlay = function(videoId, btnId) {
         const video = document.getElementById(videoId);
         const btn = document.getElementById(btnId);
         if (!video) return;
 
-        // Pause all other active videos
-        allVideos.forEach(v => {
-          if (v !== video && !v.paused) {
-            v.pause();
-          }
-        });
-
         if (video.paused) {
-          const playPromise = video.play();
-          if (playPromise !== undefined) {
-            playPromise.then(() => {
-              if (btn) btn.classList.add('playing');
-            }).catch(error => {
-              console.warn("Video playback requires user gesture or muted audio:", error);
-              video.muted = true;
-              video.play().then(() => {
-                if (btn) btn.classList.add('playing');
-              });
-            });
-          }
+          video.play();
+          if (btn) btn.classList.remove('paused');
         } else {
           video.pause();
-          if (btn) btn.classList.remove('playing');
+          if (btn) btn.classList.add('paused');
+        }
+      };
+
+      // 6. Raw Ingest vs. EG Studio Polish Comparison Mode
+      window.setCompareMode = function(videoId, motionId, buttonEl, mode) {
+        const video = document.getElementById(videoId);
+        const motionLayer = document.getElementById(motionId);
+        const parentBar = buttonEl.closest('.compare-control-bar');
+        
+        parentBar.querySelectorAll('.compare-btn').forEach(b => {
+          b.classList.remove('active', 'polished');
+        });
+        
+        buttonEl.classList.add('active');
+        if (mode === 'polished') {
+          buttonEl.classList.add('polished');
+          if (video) video.classList.remove('raw-mode');
+          if (motionLayer) motionLayer.classList.remove('hidden');
+        } else {
+          if (video) video.classList.add('raw-mode');
+          if (motionLayer) motionLayer.classList.add('hidden');
         }
       };
     });
