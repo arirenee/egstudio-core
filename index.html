@@ -12,6 +12,7 @@
 </head>
 <body>
   <div class="banner-closed" id="closedBanner">Intake is closed this cycle. Email ops@egstudio.tech to join the next queue.</div>
+
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html" aria-label="EG Studio home">EG Studio</a>
@@ -38,6 +39,7 @@
       <a class="btn btn-primary js-cta" href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" rel="noopener noreferrer">Start the $1,500 sprint</a>
     </div>
   </header>
+
   <main>
     <section class="hero">
       <div class="container">
@@ -55,7 +57,356 @@
         </div>
       </div>
     </section>
-    <p class="muted" style="text-align:center;padding:2rem">Loading stylesheet from assets/styles.css. If this page looks unstyled, the CSS file is still uploading.</p>
+
+    <section class="section section-alt" id="economics">
+      <div class="container">
+        <div class="text-center">
+          <div class="eyebrow">Unit economics</div>
+          <h2 class="section-title">What you staff vs what you keep</h2>
+          <p class="section-sub">Modeled against a $3,500–$5,000 monthly social retainer. Your resale price is yours.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Monthly cost</th>
+                <th>Management</th>
+                <th>Turnaround</th>
+                <th>Modeled gross keep</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>In-house junior editor</strong></td>
+                <td>$4,500–$6,000 loaded</td>
+                <td>Daily management</td>
+                <td>Capped at one person</td>
+                <td class="muted">Payroll eats the retainer</td>
+              </tr>
+              <tr>
+                <td><strong>Freelance bench</strong></td>
+                <td>$2,000–$3,500 variable</td>
+                <td>Quality and availability drift</td>
+                <td>No fixed SLA</td>
+                <td class="muted">Hours spent herding the bench</td>
+              </tr>
+              <tr class="hl">
+                <td><strong>EG Studio sprint</strong> <span class="badge">FIXED</span></td>
+                <td><strong>$1,500 flat</strong> · $100 / video</td>
+                <td>Async brief only</td>
+                <td>15 assets across Days 10 / 20 / 30</td>
+                <td><strong class="accent">Retainer minus $1,500</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="calc">
+          <h3>Margin model</h3>
+          <p class="muted text-center" style="font-size:0.85rem;">Illustration only. Not a performance claim.</p>
+          <div class="calc-grid">
+            <div>
+              <label for="retainerInput">Client monthly retainer</label>
+              <input class="field" id="retainerInput" type="number" value="3500" min="1500" step="250">
+              <div class="presets">
+                <button class="preset" type="button" data-retainer="2500">$2,500</button>
+                <button class="preset" type="button" data-retainer="3500">$3,500</button>
+                <button class="preset" type="button" data-retainer="5000">$5,000</button>
+              </div>
+              <label for="clientCountInput">Active video retainers</label>
+              <input class="field" id="clientCountInput" type="number" value="3" min="1" max="20">
+            </div>
+            <div class="metrics">
+              <div class="metric"><span>Wholesale cost</span><b id="displayWholesale">$4,500</b></div>
+              <div class="metric"><span>Agency billing</span><b id="displayBilling">$10,500</b></div>
+              <div class="metric"><span>Modeled keep %</span><b class="accent" id="displayMarginPercent">57.1%</b></div>
+              <div class="metric"><span>Modeled keep / mo</span><b class="big" id="displayProfit">$6,000</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="text-center">
+          <div class="eyebrow">Fulfillment set</div>
+          <h2 class="section-title">Four archetypes. That is the catalog.</h2>
+          <p class="section-sub">Every sprint uses these formats only. Masters deliver as MP4 + .SRT in an unbranded Frame.io or Drive folder after purchase.</p>
+        </div>
+        <div class="grid-4">
+          <article class="card">
+            <div class="meta"><span>Archetype 01</span><span>9:16</span></div>
+            <h3>Executive thought leadership</h3>
+            <p>Founder speaking footage to paced social cuts with captions and punch-ins.</p>
+            <div class="tags"><span class="tag">Kinetic captions</span><span class="tag">Punch-ins</span><span class="tag">Vocal pass</span><span class="tag">.SRT</span></div>
+          </article>
+          <article class="card">
+            <div class="meta"><span>Archetype 02</span><span>9:16</span></div>
+            <h3>B2B SaaS feature cutdowns</h3>
+            <p>Product walkthroughs and screen recordings to 60-second feature highlights.</p>
+            <div class="tags"><span class="tag">UI framing</span><span class="tag">Cursor</span><span class="tag">Callouts</span><span class="tag">SFX</span></div>
+          </article>
+          <article class="card">
+            <div class="meta"><span>Archetype 03</span><span>9:16</span></div>
+            <h3>Case studies & proof hooks</h3>
+            <p>Testimonials and result lines cut for pipeline and sales follow-up.</p>
+            <div class="tags"><span class="tag">Metric callouts</span><span class="tag">B-roll sync</span><span class="tag">Pacing</span></div>
+          </article>
+          <article class="card">
+            <div class="meta"><span>Archetype 04</span><span>9:16</span></div>
+            <h3>Webinar & podcast repurposing</h3>
+            <p>Long conversations mined for hooks and multi-platform cuts.</p>
+            <div class="tags"><span class="tag">Hook extract</span><span class="tag">Multi-speaker</span><span class="tag">Dynamic crop</span></div>
+          </article>
+        </div>
+        <p class="note">Sample masters are issued inside the sprint workspace. This page does not host a public asset dump.</p>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="sprint">
+      <div class="container">
+        <div class="text-center">
+          <div class="eyebrow">30-day SLA</div>
+          <h2 class="section-title">Three batches. Same calendar every sprint.</h2>
+          <p class="section-sub">Days 10, 20, and 30. Revision turns are 2 business days after timestamped notes. That is not a 2-day delivery promise for the full set.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="sla-num">Milestone 01</div>
+            <div class="sla-days">Days 1–10</div>
+            <h3>Batch 1 · videos 1–5</h3>
+            <p>Intake, brand calibration, pilot approval, first five finished verticals.</p>
+            <div class="chip">5 finished + pilot</div>
+          </article>
+          <article class="card">
+            <div class="sla-num">Milestone 02</div>
+            <div class="sla-days">Days 11–20</div>
+            <h3>Batch 2 · videos 6–10</h3>
+            <p>Second five assets. Batch 1 revisions turn in 2 business days from notes.</p>
+            <div class="chip">5 finished + revisions</div>
+          </article>
+          <article class="card">
+            <div class="sla-num">Milestone 03</div>
+            <div class="sla-days">Days 21–30</div>
+            <h3>Batch 3 · videos 11–15</h3>
+            <p>Final five assets, open notes closed, MP4 + .SRT archive in your unbranded folder.</p>
+            <div class="chip">Final 5 + archive</div>
+          </article>
+        </div>
+        <div class="cal">
+          <h3>Calibration gate</h3>
+          <p>Days 1–3 produce one pilot to lock type, color, pacing, and captions. The 30-day clock for the remaining batch work starts after written pilot sign-off.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="intake">
+      <div class="container">
+        <div class="text-center">
+          <div class="eyebrow">Async intake</div>
+          <h2 class="section-title">Pay. Brief. Receive batches.</h2>
+          <p class="section-sub">No discovery call. Stripe checkout, then the onboarding questionnaire with footage links and brand rules.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Ghost delivery</h3>
+            <p>Frame.io and delivery folders stay unbranded. We do not contact your client or stamp EG metadata on files.</p>
+          </article>
+          <article class="card">
+            <h3>Questionnaire after payment</h3>
+            <p>Raw links (Drive / Dropbox / Zoom), fonts, colors, and notes. That brief starts the sprint clock.</p>
+          </article>
+          <article class="card">
+            <h3>Commercial-use license</h3>
+            <p>Delivered videos, captions, and included motion/audio carry a commercial-use license for your agency and your client. See <a href="terms.html" style="color:#10B981">Terms</a>.</p>
+          </article>
+        </div>
+        <div class="steps">
+          <div class="grid-3">
+            <article class="card">
+              <div class="sla-num">Step 01</div>
+              <h3>Stripe</h3>
+              <p>$1,500 USD. One sprint. One seat.</p>
+            </article>
+            <article class="card">
+              <div class="sla-num">Step 02</div>
+              <h3>Questionnaire</h3>
+              <p>Footage + brand kit. No call required.</p>
+            </article>
+            <article class="card">
+              <div class="sla-num">Step 03</div>
+              <h3>Batches</h3>
+              <p>Day 10 / 20 / 30 on the SLA calendar.</p>
+            </article>
+          </div>
+          <div style="margin-top:1.5rem">
+            <a class="btn btn-primary js-cta" href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" rel="noopener noreferrer">Start the $1,500 sprint</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="pricing">
+      <div class="container text-center">
+        <div class="eyebrow">Pricing</div>
+        <h2 class="section-title">$1,500 per sprint</h2>
+        <p class="section-sub">No monthly lock. Buy a sprint when you close a client.</p>
+        <div class="price-wrap">
+          <div class="price-card">
+            <div class="price-flag">Fixed-scope sprint</div>
+            <div class="price-amt">$1,500 <span>/ sprint</span></div>
+            <p class="accent" style="font-weight:700;font-size:0.88rem;">$100 per finished 9:16 video</p>
+            <p class="muted" style="margin-top:0.65rem;font-size:0.88rem;">30-day delivery across Days 10, 20, and 30. Revision turns: 2 business days.</p>
+            <ul class="check">
+              <li><i>✓</i><span>15 vertical videos, up to 60 seconds, 9:16</span></li>
+              <li><i>✓</i><span>Up to 90 minutes of source footage</span></li>
+              <li><i>✓</i><span>2 revision rounds per asset · 2 business days each</span></li>
+              <li><i>✓</i><span>Unbranded review portal</span></li>
+              <li><i>✓</i><span>Burned-in captions + standalone .SRT</span></li>
+              <li><i>✓</i><span>Commercial-use license on delivered files</span></li>
+              <li><i>✓</i><span>Pilot approved before the remaining 14 scale</span></li>
+            </ul>
+            <a class="btn btn-primary btn-block js-cta" href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" rel="noopener noreferrer">Start the $1,500 sprint</a>
+            <div class="cap" id="capLine">
+              <span class="dot" id="capDot"></span>
+              <span id="capText">Intake is open. Checkout is $1,500 USD via Stripe.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="text-center">
+          <div class="eyebrow">FAQ</div>
+          <h2 class="section-title">Handoff, revisions, resale</h2>
+        </div>
+        <div class="faq">
+          <div class="faq-item">
+            <button type="button">How does white-label handoff work?<span>▼</span></button>
+            <div class="ans">Deliverables go to an unbranded Frame.io review link or a named folder (<code>[Client]_Batch01_Video01.mp4</code>). We do not contact your clients or attach EG Studio metadata to files.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button">What footage can we send?<span>▼</span></button>
+            <div class="ans">Each sprint covers up to 90 minutes of source (Zoom, podcast, iPhone, keynote, product capture). Work beyond 90 minutes is scoped separately through ops@egstudio.tech.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button">What is the turnaround SLA?<span>▼</span></button>
+            <div class="ans">The sprint is 15 finished videos in 30 days, in three batches on Days 10, 20, and 30. Each asset includes two revision rounds. After timestamped notes land in the review portal, the revision turn is 2 business days. The full set is not a 2-day job.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button">Can we set our own resale price?<span>▼</span></button>
+            <div class="ans">Yes. Pricing to your client is yours. The wholesale cost is $1,500 per sprint. Any retainer math on this page is a model, not a promised outcome.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button">What is the calibration gate?<span>▼</span></button>
+            <div class="ans">Days 1–3: one pilot to lock type, color, pacing, and captions. Batch production continues after written sign-off on that pilot.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button">Is this a monthly contract?<span>▼</span></button>
+            <div class="ans">No. Buy sprints as you close work. Repeat sprints can be purchased for recurring accounts when a seat is open.</div>
+          </div>
+          <div class="faq-item">
+            <button type="button">What if intake is closed?<span>▼</span></button>
+            <div class="ans">When this cycle is closed, checkout is taken down and the page says so. Email ops@egstudio.tech for the next queue. Do not pay if the page says intake is closed.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="terminal">
+      <div class="container">
+        <h2>15 videos. 30 days. $1,500.</h2>
+        <p class="muted" style="margin-bottom:1.5rem;">Fixed scope. Async intake. Unbranded delivery.</p>
+        <a class="btn btn-primary js-cta" href="https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06" rel="noopener noreferrer">Start the $1,500 sprint</a>
+        <p class="muted" style="margin-top:1.1rem;font-size:0.85rem;">Ops: <a href="mailto:ops@egstudio.tech" style="color:#fff">ops@egstudio.tech</a></p>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>EG Studio © <span id="year"></span>. White-label video fulfillment.</div>
+      <div class="footer-links">
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="refund.html">Refunds</a>
+        <a href="mailto:ops@egstudio.tech">ops@egstudio.tech</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const INTAKE_OPEN = true;
+    const STRIPE = "https://buy.stripe.com/aFabIU9yVc6I9zl5ZX9EI06";
+    const OPS = "mailto:ops@egstudio.tech";
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById("menuBtn");
+    const drawer = document.getElementById("drawer");
+    menuBtn.addEventListener("click", () => {
+      const open = drawer.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => drawer.classList.remove("open")));
+    document.querySelectorAll(".faq-item button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        const open = item.classList.contains("open");
+        document.querySelectorAll(".faq-item").forEach((i) => i.classList.remove("open"));
+        if (!open) item.classList.add("open");
+      });
+    });
+    const retainerInput = document.getElementById("retainerInput");
+    const clientCountInput = document.getElementById("clientCountInput");
+    function updateCalc() {
+      const retainer = parseFloat(retainerInput.value) || 0;
+      const clients = parseInt(clientCountInput.value, 10) || 1;
+      const wholesale = 1500 * clients;
+      const billing = retainer * clients;
+      const profit = Math.max(0, billing - wholesale);
+      const pct = billing > 0 ? ((profit / billing) * 100).toFixed(1) : "0.0";
+      document.getElementById("displayWholesale").textContent = "$" + wholesale.toLocaleString();
+      document.getElementById("displayBilling").textContent = "$" + billing.toLocaleString();
+      document.getElementById("displayProfit").textContent = "$" + profit.toLocaleString();
+      document.getElementById("displayMarginPercent").textContent = pct + "%";
+    }
+    retainerInput.addEventListener("input", updateCalc);
+    clientCountInput.addEventListener("input", updateCalc);
+    document.querySelectorAll("[data-retainer]").forEach((b) => {
+      b.addEventListener("click", () => {
+        retainerInput.value = b.getAttribute("data-retainer");
+        updateCalc();
+      });
+    });
+    function applyIntakeState() {
+      const ctas = document.querySelectorAll(".js-cta");
+      const banner = document.getElementById("closedBanner");
+      const dot = document.getElementById("capDot");
+      const text = document.getElementById("capText");
+      if (INTAKE_OPEN) {
+        banner.classList.remove("show");
+        ctas.forEach((a) => {
+          a.setAttribute("href", STRIPE);
+          a.textContent = "Start the $1,500 sprint";
+          a.classList.remove("is-disabled");
+          a.removeAttribute("aria-disabled");
+        });
+        dot.classList.remove("off");
+        text.textContent = "Intake is open. Checkout is $1,500 USD via Stripe.";
+        return;
+      }
+      banner.classList.add("show");
+      ctas.forEach((a) => {
+        a.setAttribute("href", OPS);
+        a.textContent = "Intake closed — email ops";
+        a.style.pointerEvents = "auto";
+      });
+      dot.classList.add("off");
+      text.textContent = "This cycle is full. Email ops@egstudio.tech for the next queue.";
+    }
+    applyIntakeState();
+  </script>
 </body>
 </html>
