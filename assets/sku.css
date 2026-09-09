@@ -15,3 +15,5 @@
 .offer-card .btn{width:100%;margin-top:auto}
 .order-close{text-align:center}
 .order-close .btn{width:min(100%,360px)}
+.demo-note{max-width:520px}
+@media(min-width:900px){.samples-grid{grid-template-columns:1fr 1fr 1fr}}
