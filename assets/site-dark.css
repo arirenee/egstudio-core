@@ -16,7 +16,7 @@
   --font: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --radius: 8px;
   --max: 720px;
-  --max-wide: 820px;
+  --max-wide: 980px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -30,6 +30,7 @@ body {
 }
 a { color: inherit; }
 .container { width: min(92%, var(--max)); margin: 0 auto; }
+#work .container { width: min(94%, var(--max-wide)); }
 .section { padding: 2.35rem 0; border-bottom: 1px solid var(--border); }
 @media (min-width: 768px) { .section { padding: 2.85rem 0; } }
 .section-alt { background: var(--bg-surface); }
@@ -54,6 +55,7 @@ h1, h2, h3 {
   text-align: center;
   line-height: 1.45;
 }
+.demo-note-tight { margin-top: -1rem; margin-bottom: 1.35rem; }
 .btn {
   display: inline-flex;
   align-items: center;
@@ -199,20 +201,20 @@ h1, h2, h3 {
   max-width: var(--max-wide);
   margin: 0 auto;
 }
-@media (min-width: 640px) { .samples-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 720px) { .samples-grid { grid-template-columns: 1fr 1fr 1fr; } }
 .sample-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 1rem;
+  padding: 0.85rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.7rem;
 }
 .sample-frame {
   position: relative;
   aspect-ratio: 9 / 16;
-  max-height: min(70vh, 560px);
+  max-height: min(68vh, 520px);
   width: 100%;
   margin: 0 auto;
   border-radius: 8px;
@@ -229,7 +231,7 @@ h1, h2, h3 {
   background: #000;
   border: 0;
 }
-.sample-card h3 { font-size: 0.92rem; margin: 0; }
+.sample-card h3 { font-size: 0.88rem; margin: 0; text-align: center; }
 .sample-card p { color: var(--muted); font-size: 0.82rem; margin: 0; }
 .faq { max-width: 640px; margin: 1.25rem auto 0; display: grid; gap: 0.65rem; }
 .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); }
