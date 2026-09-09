@@ -1,109 +1,15 @@
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: .75rem 1.5rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: .95rem;
-  text-decoration: none;
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text);
-}
-.btn-secondary:hover { border-color: #525252; }
-
-.offer-grid {
-  display: grid;
-  gap: 1rem;
-  max-width: 920px;
-  margin: 0 auto;
-}
-@media (min-width: 800px) {
-  .offer-grid { grid-template-columns: 1.15fr 1fr 1fr; align-items: stretch; }
-}
-
-.offer-card {
-  border: 1px solid var(--border);
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  padding: 1.25rem 1.15rem 1.15rem;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-}
-.offer-featured {
-  border-color: var(--accent-border);
-  background: var(--accent-bg);
-}
-.offer-kicker {
-  font-family: var(--font-display);
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: var(--muted-2);
-  margin-bottom: .35rem;
-}
-.offer-card h3 {
-  font-size: 1.15rem;
-  margin: 0 0 .15rem;
-}
-.offer-amt {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.55rem;
-  letter-spacing: -.03em;
-  margin: .2rem 0 .45rem;
-}
-.offer-amt span {
-  display: inline;
-  font-size: .8rem;
-  font-weight: 600;
-  color: var(--muted);
-  letter-spacing: 0;
-}
-.offer-line {
-  color: var(--text);
-  font-size: .9rem;
-  line-height: 1.4;
-  margin-bottom: .75rem;
-}
-.offer-points {
-  list-style: none;
-  display: grid;
-  gap: .4rem;
-  margin: 0 0 1.1rem;
-  padding: 0;
-  flex: 1;
-}
-.offer-points li {
-  color: var(--muted);
-  font-size: .85rem;
-  padding-left: 1rem;
-  position: relative;
-}
-.offer-points li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  color: var(--muted-2);
-}
-.offer-card .btn { width: 100%; margin-top: auto; }
-
-.format-list.tight { margin-top: 1.25rem; margin-bottom: 0; }
-
-.sample-frame {
-  max-height: min(70vh, 560px);
-  background: #000;
-}
-.sample-video {
-  object-fit: contain;
-  object-position: center bottom;
-}
-
-.section { padding: 2.25rem 0; }
-@media (min-width: 768px) { .section { padding: 2.75rem 0; } }
-.hero { padding: 1.75rem 0 2rem; }
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.75rem 1.5rem;font-family:var(--font-display);font-weight:600;font-size:.95rem;text-decoration:none;border-radius:var(--radius);border:1px solid var(--border);background:transparent;color:var(--text)}
+.btn-secondary:hover{border-color:#525252}
+.offer-grid{display:grid;gap:1rem;max-width:920px;margin:0 auto}
+@media(min-width:800px){.offer-grid{grid-template-columns:1.12fr 1fr 1fr}}
+.offer-card{border:1px solid var(--border);background:var(--bg-card);border-radius:var(--radius);padding:1.25rem 1.15rem 1.15rem;text-align:left;display:flex;flex-direction:column}
+.offer-featured{border-color:var(--accent-border);background:var(--accent-bg)}
+.offer-kicker{font-family:var(--font-display);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);margin-bottom:.35rem}
+.offer-card h3{font-size:1.15rem;margin:0 0 .15rem}
+.offer-amt{font-family:var(--font-display);font-weight:800;font-size:1.5rem;letter-spacing:-.03em;margin:.2rem 0 .45rem}
+.offer-amt span{font-size:.8rem;font-weight:600;color:var(--muted);letter-spacing:0}
+.offer-line{color:var(--text);font-size:.9rem;line-height:1.4;margin-bottom:.75rem}
+.offer-points{list-style:none;display:grid;gap:.4rem;margin:0 0 1.1rem;padding:0;flex:1}
+.offer-points li{color:var(--muted);font-size:.85rem;padding-left:1rem;position:relative}
+.offer-points li::before{content:"\2013";position:absolute;left:0;color:var(--muted-2)}
+.offer-card .btn{width:100%;margin-top:auto}
