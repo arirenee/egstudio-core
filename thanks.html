@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment received · EG Studio</title>
-<meta name="description" content="Payment received. Send the brief to start production.">
+<title>Send the brief · EG Studio</title>
+<meta name="description" content="Payment received. Send the brief to start the sprint.">
 <meta name="theme-color" content="#080808">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://egstudio.tech/thanks.html">
@@ -14,21 +14,34 @@
 <link rel="stylesheet" href="assets/styles.css">
 <script src="https://tally.so/widgets/embed.js"></script>
 <style>
-  .thanks-page { padding: 2rem 0 3.5rem; }
-  .thanks-page h1 { font-size: clamp(1.6rem, 4vw, 2rem); margin: 0 0 0.75rem; text-align: center; }
-  .thanks-lead { color: var(--muted); text-align: center; max-width: 520px; margin: 0 auto 1.5rem; font-size: 0.95rem; }
+  .thanks-page { padding: 1.5rem 0 3rem; }
+  .thanks-page h1 { font-size: clamp(1.5rem, 4vw, 1.85rem); margin: 0 0 0.55rem; text-align: center; }
+  .thanks-lead { color: var(--muted); text-align: center; max-width: 420px; margin: 0 auto 1.15rem; font-size: 0.95rem; line-height: 1.4; }
+  .next-list {
+    list-style: none;
+    max-width: 420px;
+    margin: 0 auto 1.35rem;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+  .next-list li { padding-left: 1.1rem; position: relative; }
+  .next-list li::before { content: "\2013"; position: absolute; left: 0; color: var(--muted-2); }
   .tally-wrap {
     max-width: 640px;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 1.15rem;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 0.5rem 0.65rem 0.85rem;
+    padding: 0.35rem 0.55rem 0.65rem;
     overflow: hidden;
   }
-  .tally-wrap iframe { display: block; width: 100%; border: 0; min-height: 480px; background: transparent; }
-  .thanks-fallback { text-align: center; font-size: 0.85rem; color: var(--muted); }
-  .thanks-fallback a { color: var(--text); }
+  .tally-wrap iframe { display: block; width: 100%; border: 0; min-height: 420px; background: transparent; }
+  .thanks-fallback { text-align: center; font-size: 0.8rem; color: var(--muted-2); }
+  .thanks-fallback a { color: var(--muted); }
 </style>
 </head>
 <body>
@@ -40,11 +53,16 @@
 <main class="thanks-page">
 <div class="container">
 <h1>Payment received.</h1>
-<p class="thanks-lead">The production clock starts when this brief is submitted. Footage links, fonts, colors, and the folder name go here. No call.</p>
+<p class="thanks-lead">Send the brief. That starts the work. No call.</p>
+<ul class="next-list">
+<li>Days 1–3: one style sample.</li>
+<li>Days 10, 20, and 30: the rest of the videos.</li>
+<li>Your client never sees EG Studio.</li>
+</ul>
 <div class="tally-wrap">
-<iframe data-tally-src="https://tally.so/embed/rjZd1v?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="EG Studio Client Onboarding"></iframe>
+<iframe data-tally-src="https://tally.so/embed/rjZd1v?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="200" frameborder="0" marginheight="0" marginwidth="0" title="EG Studio brief"></iframe>
 </div>
-<p class="thanks-fallback">Form blocked? Open <a href="https://tally.so/r/rjZd1v" rel="noopener noreferrer">the brief in a new tab</a> or email <a href="mailto:ops@egstudio.tech">ops@egstudio.tech</a>.</p>
+<p class="thanks-fallback"><a href="https://tally.so/r/rjZd1v" rel="noopener noreferrer">Open the brief in a new tab</a> · <a href="mailto:ops@egstudio.tech">ops@egstudio.tech</a></p>
 </div>
 </main>
 <footer>
